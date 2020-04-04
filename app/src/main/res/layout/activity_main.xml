@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -11,17 +12,40 @@
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="No More Trash !"
+        android:textColor="#000"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/boutonStatistiques"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:text="Statistiques"
+
+        app:layout_constraintTop_toBottomOf="@+id/text"/>
+    <Button
+        android:id="@+id/boutonSignalement"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:text="Signaler un déchet"
+        app:layout_constraintTop_toBottomOf="@+id/boutonStatistiques"/>
+    <Button
+        android:id="@+id/boutonMesSignalements"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:text="Mes signalements"
+        app:layout_constraintTop_toBottomOf="@+id/boutonSignalement"/>
+
+
+    <Button
         android:id="@+id/boutonMap"
         android:layout_width="200dp"
         android:layout_height="100dp"
         android:text="Map"
-        app:layout_constraintTop_toBottomOf="@+id/text"/>
+        app:layout_constraintTop_toBottomOf="@+id/boutonMesSignalements"/>
 
 </LinearLayout>

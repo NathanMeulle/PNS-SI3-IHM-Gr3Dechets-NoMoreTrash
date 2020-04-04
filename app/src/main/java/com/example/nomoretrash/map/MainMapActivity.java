@@ -1,13 +1,16 @@
 package com.example.nomoretrash.map;
 
-import androidx.appcompat.app.AppCompatActivity;
-import com.example.nomoretrash.R;
-
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.View;
+import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.nomoretrash.MainActivity;
+import com.example.nomoretrash.R;
+import com.example.nomoretrash.statistiques.StatistiquesActivity;
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
@@ -28,8 +31,17 @@ public class MainMapActivity extends AppCompatActivity {
         IMapController mapController;
 
         super.onCreate(savedInstanceState);
-        Configuration.getInstance().load(   getApplicationContext(), PreferenceManager.getDefaultSharedPreferences(getApplicationContext()) );
+        Configuration.getInstance().load(getApplicationContext(), PreferenceManager.getDefaultSharedPreferences(getApplicationContext()));
         setContentView(R.layout.activity_main_map);
+
+        final Button buttonStat = findViewById(R.id.boutonRetour);
+        buttonStat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainMapActivity.this.finish();
+
+            }
+        });
 
         map = findViewById(R.id.map);
         map.setTileSource(TileSourceFactory.MAPNIK);
@@ -42,7 +54,7 @@ public class MainMapActivity extends AppCompatActivity {
         mapController.setCenter(startPoint);
 
         ArrayList<OverlayItem> items = new ArrayList<OverlayItem>();
-        OverlayItem home = new OverlayItem("Maison de Léo","C'est là ou ses parents habitent", new GeoPoint(43.189122, 5.704391));
+        OverlayItem home = new OverlayItem("Maison de Léo", "C'est là ou ses parents habitent", new GeoPoint(43.189122, 5.704391));
         Drawable m = home.getMarker(0);
 
         items.add(home);
@@ -64,13 +76,13 @@ public class MainMapActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
         map.onResume();
     }
 
     @Override
-    public void onPause(){
+    public void onPause() {
         super.onPause();
         map.onPause();
     }
