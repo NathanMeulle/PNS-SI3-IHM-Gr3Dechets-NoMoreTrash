@@ -1,12 +1,13 @@
 package com.example.nomoretrash.map;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.nomoretrash.R;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 
-import com.example.nomoretrash.R;
+
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
@@ -28,7 +29,7 @@ public class MainMapActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         Configuration.getInstance().load(   getApplicationContext(), PreferenceManager.getDefaultSharedPreferences(getApplicationContext()) );
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_map);
 
         map = findViewById(R.id.map);
         map.setTileSource(TileSourceFactory.MAPNIK);
