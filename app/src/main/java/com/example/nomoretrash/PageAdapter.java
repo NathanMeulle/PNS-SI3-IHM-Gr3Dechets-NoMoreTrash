@@ -5,7 +5,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.nomoretrash.signalements.DescriptionFragment;
+import com.example.nomoretrash.signalements.FinalisationFragment;
 import com.example.nomoretrash.signalements.LocalisationFragment;
+import com.example.nomoretrash.signalements.PhotoFragment;
 
 public class PageAdapter extends FragmentPagerAdapter {
 
@@ -17,7 +19,7 @@ public class PageAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return(2);
+        return(4);
     }
 
     @Override
@@ -27,10 +29,10 @@ public class PageAdapter extends FragmentPagerAdapter {
                 return DescriptionFragment.newInstance();
             case 1:
                 return LocalisationFragment.newInstance();
-//            case 2:
-//                return PhotoFragment.newInstance();
-//            case 3:
-//                return FinalisationFragment.newInstance();
+            case 2:
+                return PhotoFragment.newInstance();
+            case 3:
+                return FinalisationFragment.newInstance();
             default:
                 return null;
         }
@@ -43,10 +45,10 @@ public class PageAdapter extends FragmentPagerAdapter {
                 return "Description";
             case 1:
                 return "Localisation";
-//            case 2:
-//                return "Photo";
-//            case 3:
-//                return "Finalisation";
+            case 2:
+                return "Photo";
+            case 3:
+                return "Finalisation";
             default:
                 return null;
         }

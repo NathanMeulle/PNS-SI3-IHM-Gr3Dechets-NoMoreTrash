@@ -13,6 +13,10 @@ public class PhotoFragment extends Fragment {
     public PhotoFragment() {//vide
     }
 
+    public static PhotoFragment newInstance() {
+        return (new PhotoFragment());
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.photo_fragment, container, false);
