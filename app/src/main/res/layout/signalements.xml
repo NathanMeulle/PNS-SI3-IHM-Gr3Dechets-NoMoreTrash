@@ -4,28 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:id="@+id/boutonRetour"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Retour"/>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Effectuer un signalement"
-        android:textSize="25sp"
-        android:textColor="#000"/>
-    
-    <fragment
-        android:id="@+id/description"
-        android:name="com.example.nomoretrash.signalements.DescriptionFragment"
-        android:layout_weight="1"
+    <!-- 1 | Add TabLayout to handle tabs -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/activity_main_tabs"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="wrap_content"
+        android:background="#C8F1B6"
+    />
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/activity_main_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
 </LinearLayout>
