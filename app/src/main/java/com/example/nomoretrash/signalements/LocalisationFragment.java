@@ -12,6 +12,12 @@ import com.example.nomoretrash.R;
 public class LocalisationFragment extends Fragment {
     public LocalisationFragment() {//vide
     }
+
+    public static DescriptionFragment newInstance() {
+        return (new DescriptionFragment());
+    }
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.localisation_fragment, container, false);
