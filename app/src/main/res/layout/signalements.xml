@@ -4,40 +4,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <!-- 1 | Add TabLayout to handle tabs -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/activity_main_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#C8F1B6"
+    />
+    <androidx.viewpager.widget.ViewPager
+        android:layout_below="@+id/activity_main_tabs"
+        android:id="@+id/activity_main_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
     <Button
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginLeft="20dp"
+        android:layout_alignParentLeft="true"
         android:id="@+id/boutonRetour"
+        android:layout_alignParentBottom="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Retour"/>
 
     <Button
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginRight="20dp"
         android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
         android:id="@+id/boutonSuivant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Suivant"/>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_below="@id/boutonRetour"
-        android:layout_marginTop="8dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Effectuer un signalement"
-        android:textSize="25sp"
-        android:textColor="#000"/>
-
-    <fragment
-        android:id="@+id/fragment"
-        android:name="com.example.nomoretrash.signalements.DescriptionFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/textView"
-        android:layout_weight="1" />
 
 </RelativeLayout>

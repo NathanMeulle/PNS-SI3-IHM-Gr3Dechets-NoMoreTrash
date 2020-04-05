@@ -35,6 +35,7 @@
         android:layout_width="match_parent"
         android:background="@color/ButtonTwo"
         android:layout_height="100dp"
+        android:layout_marginTop="10dp"
         android:text="Signaler un déchet"
         app:layout_constraintTop_toBottomOf="@+id/boutonStatistiques"/>
     <Button
@@ -42,6 +43,7 @@
         android:background="@color/ButtonOne"
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:layout_marginTop="10dp"
         android:text="Mes signalements"
         app:layout_constraintTop_toBottomOf="@+id/boutonSignalement"/>
 
@@ -51,6 +53,7 @@
         android:background="@color/ButtonTwo"
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:layout_marginTop="10dp"
         android:text="Map"
         app:layout_constraintTop_toBottomOf="@+id/boutonMesSignalements"/>
 

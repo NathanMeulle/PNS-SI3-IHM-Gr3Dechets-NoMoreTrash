@@ -13,6 +13,10 @@ public class DescriptionFragment extends Fragment {
     public DescriptionFragment() {//vide
     }
 
+    public static DescriptionFragment newInstance() {
+        return (new DescriptionFragment());
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.description_fragment, container, false);
