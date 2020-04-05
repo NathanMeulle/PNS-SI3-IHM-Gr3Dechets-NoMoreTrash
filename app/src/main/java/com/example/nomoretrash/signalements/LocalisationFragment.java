@@ -13,8 +13,8 @@ public class LocalisationFragment extends Fragment {
     public LocalisationFragment() {//vide
     }
 
-    public static DescriptionFragment newInstance() {
-        return (new DescriptionFragment());
+    public static LocalisationFragment newInstance() {
+        return (new LocalisationFragment());
     }
 
 
