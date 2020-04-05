@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:id="@+id/info_general"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Informations générales"
+        android:layout_marginLeft="40dp"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/chatbox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info_general"
+        />
+
+    <TextView
+        android:id="@+id/dechet_unique"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Déchet unique"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@id/chatbox1"
+        app:layout_constraintLeft_toRightOf="@id/chatbox1"
+        />
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/chatbox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/chatbox1"
+        app:layout_constraintTop_toBottomOf="@+id/chatbox1"
+        />
+
+    <TextView
+        android:id="@+id/decharge_sauvage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Déchage sauvage"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@id/chatbox2"
+        app:layout_constraintLeft_toRightOf="@id/chatbox2"
+        />
+
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Type"
+        android:layout_marginLeft="40dp"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chatbox2"
+        />
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/chatbox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/type"
+        />
+
+    <TextView
+        android:id="@+id/verre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verre"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@id/chatbox3"
+        app:layout_constraintLeft_toRightOf="@id/chatbox3"
+        />
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/chatbox4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/chatbox3"
+        app:layout_constraintTop_toBottomOf="@+id/chatbox3"
+        />
+
+    <TextView
+        android:id="@+id/carton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Carton"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@id/chatbox4"
+        app:layout_constraintLeft_toRightOf="@id/chatbox4"
+        />
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/chatbox5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/chatbox4"
+        app:layout_constraintTop_toBottomOf="@+id/chatbox4"
+        />
+
+    <TextView
+        android:id="@+id/papier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Papier"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@id/chatbox5"
+        app:layout_constraintLeft_toRightOf="@id/chatbox5"
+        />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/chatbox6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/chatbox5"
+        app:layout_constraintTop_toBottomOf="@+id/chatbox5"
+        />
+
+    <TextView
+        android:id="@+id/plastique"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Plastique"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@id/chatbox6"
+        app:layout_constraintLeft_toRightOf="@id/chatbox6"
+        />
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/chatbox7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/chatbox6"
+        app:layout_constraintTop_toBottomOf="@+id/chatbox6"
+        />
+
+    <TextView
+        android:id="@+id/metal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Métal"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@id/chatbox7"
+        app:layout_constraintLeft_toRightOf="@id/chatbox7"
+        />
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/chatbox8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/chatbox7"
+        app:layout_constraintTop_toBottomOf="@+id/chatbox7"
+        />
+
+    <TextView
+        android:id="@+id/autre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Autre"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@id/chatbox8"
+        app:layout_constraintLeft_toRightOf="@id/chatbox8"
+        />
+
+    <EditText
+        android:id="@+id/preciser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Préciser"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintLeft_toRightOf="@id/autre"
+        app:layout_constraintTop_toTopOf="@id/autre"
+        app:layout_constraintBottom_toBottomOf="@id/autre"
+        />
+
+    <TextView
+        android:id="@+id/taille"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Taille"
+        android:layout_marginLeft="40dp"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chatbox8"
+        />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/chatbox9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taille"
+        />
+
+    <TextView
+        android:id="@+id/moins30cm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Moins de 30 cm"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@id/chatbox9"
+        app:layout_constraintLeft_toRightOf="@id/chatbox9"
+        />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/chatbox10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/chatbox9"
+        app:layout_constraintTop_toBottomOf="@+id/chatbox9"
+        />
+
+    <TextView
+        android:id="@+id/plus30cm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Plus de 30 cm"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@id/chatbox10"
+        app:layout_constraintLeft_toRightOf="@id/chatbox10"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
