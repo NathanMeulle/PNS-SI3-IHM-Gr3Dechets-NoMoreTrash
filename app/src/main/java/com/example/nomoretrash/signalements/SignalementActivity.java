@@ -17,6 +17,8 @@ import com.google.android.material.tabs.TabLayout;
 public class SignalementActivity extends AppCompatActivity {
 
     ViewPager pager;
+    Button buttonRetour;
+    Button buttonSuivant;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +28,8 @@ public class SignalementActivity extends AppCompatActivity {
         //Configure ViewPager
         this.configureViewPagerAndTabs();
 
-        final Button buttonSuivant = findViewById(R.id.boutonSuivant);
+
+        buttonSuivant = findViewById(R.id.boutonSuivant);
         buttonSuivant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,12 +42,13 @@ public class SignalementActivity extends AppCompatActivity {
             }
         });
 
-        final Button buttonRetour = findViewById(R.id.boutonRetour);
+        buttonRetour = findViewById(R.id.boutonRetour);
         buttonRetour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(pager.getCurrentItem()==0)
+                if(pager.getCurrentItem()==0) {
                     SignalementActivity.this.finish();
+                }
                 else {
                     pager.arrowScroll(View.FOCUS_LEFT);
                 }
@@ -52,7 +56,6 @@ public class SignalementActivity extends AppCompatActivity {
 
             }
         });
-
 
     }
 

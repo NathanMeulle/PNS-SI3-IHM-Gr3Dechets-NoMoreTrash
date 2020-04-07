@@ -1,5 +1,6 @@
 package com.example.nomoretrash;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -16,6 +17,8 @@ public class PageAdapter extends FragmentPagerAdapter {
     public PageAdapter(FragmentManager mgr) {
         super(mgr);
     }
+
+
 
     @Override
     public int getCount() {
@@ -44,7 +47,7 @@ public class PageAdapter extends FragmentPagerAdapter {
             case 0:
                 return "Description";
             case 1:
-                return "Localisation";
+                return "Position";
             case 2:
                 return "Photo";
             case 3:
