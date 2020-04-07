@@ -45,5 +45,17 @@
         android:backgroundTint="#FFF"
         />
 
+    <Button
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/boutonFinir"
+        android:layout_alignParentBottom="true"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="Valider"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

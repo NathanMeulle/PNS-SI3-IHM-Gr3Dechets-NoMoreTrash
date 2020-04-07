@@ -19,25 +19,5 @@
         android:layout_height="match_parent"/>
 
 
-    <Button
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_alignParentLeft="true"
-        android:id="@+id/boutonRetour"
-        android:layout_alignParentBottom="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Retour"/>
-
-    <Button
-        android:layout_marginBottom="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/boutonSuivant"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Suivant"/>
-
 
 </RelativeLayout>

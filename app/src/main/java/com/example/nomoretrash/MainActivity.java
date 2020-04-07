@@ -47,14 +47,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final Button buttonMap = findViewById(R.id.boutonMap);
-        buttonMap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MainMapActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 }
 
