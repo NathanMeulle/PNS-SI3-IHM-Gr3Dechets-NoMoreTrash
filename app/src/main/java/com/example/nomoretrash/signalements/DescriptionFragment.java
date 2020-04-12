@@ -1,24 +1,24 @@
 package com.example.nomoretrash.signalements;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.util.Log;
 
 
 import androidx.fragment.app.Fragment;
 
 import com.example.nomoretrash.R;
 
+
 public class DescriptionFragment extends Fragment {
 
-    private FinalisationFragment finalisationFragment;
     public static boolean DECHET_UNIQUE = false;
     public static boolean DECHARGE_SAUVAGE = false;
+
+
 
     public static boolean VERRE = false;
     public static boolean CARTON = false;
@@ -27,8 +27,10 @@ public class DescriptionFragment extends Fragment {
     public static boolean METAL = false;
     public static boolean AUTRE = false;
 
+
     public static boolean GROS = false;
     public static boolean PETIT = false;
+
 
 
     public DescriptionFragment() {//vide
@@ -51,7 +53,13 @@ public class DescriptionFragment extends Fragment {
 
             }
         });
+        checkBoxCreation(rootView);
+        return rootView;
+    }
 
+
+
+    private void checkBoxCreation(View rootView) {
         CheckBox checkBox_dechet_unique = rootView.findViewById(R.id.checkbox_dechet_unique);
         CheckBox checkbox_decharge_sauvage = rootView.findViewById(R.id.checkbox_decharge_sauvage);
         CheckBox checkbox_verre = rootView.findViewById(R.id.checkbox_verre);
@@ -99,7 +107,7 @@ public class DescriptionFragment extends Fragment {
                 Log.d("VERRE", VERRE+"");
             }
         });
-
+       
         checkbox_carton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -174,6 +182,7 @@ public class DescriptionFragment extends Fragment {
 
         checkbox_petit.setOnClickListener(new View.OnClickListener() {
             @Override
+            
             public void onClick(View view) {
                 if( !PETIT)
                     PETIT = true;
@@ -184,18 +193,47 @@ public class DescriptionFragment extends Fragment {
                 Log.d("PETIT", PETIT+"");
             }
         });
+    /*
+    ########################### GETTERS ###########################
+     */
 
-
-
-
-
-
-
-        return rootView;
-
+    public static boolean isDechetUnique() {
+        return DECHET_UNIQUE;
     }
 
-    public static boolean getDechetUnique() {
-        return DECHET_UNIQUE;
+    public static boolean isDechargeSauvage() {
+        return DECHARGE_SAUVAGE;
+    }
+
+    public static boolean isVERRE() {
+        return VERRE;
+    }
+
+    public static boolean isCARTON() {
+        return CARTON;
+    }
+
+    public static boolean isPAPIER() {
+        return PAPIER;
+    }
+
+    public static boolean isPLASTIQUE() {
+        return PLASTIQUE;
+    }
+
+    public static boolean isMETAL() {
+        return METAL;
+    }
+
+    public static boolean isAUTRE() {
+        return AUTRE;
+    }
+
+    public static boolean isPETIT() {
+        return PETIT;
+    }
+
+    public static boolean isGROS() {
+        return GROS;
     }
 }

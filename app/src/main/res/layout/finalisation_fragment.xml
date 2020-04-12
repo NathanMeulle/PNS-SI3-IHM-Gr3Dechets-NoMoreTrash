@@ -28,6 +28,7 @@
         android:src="@drawable/photo"
         android:background="#000"
         android:padding="1dp"
+        android:rotation="0"
         />
 
 
