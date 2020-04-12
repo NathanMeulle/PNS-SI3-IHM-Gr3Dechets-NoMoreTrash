@@ -60,8 +60,8 @@ public class DescriptionFragment extends Fragment {
         //Création des CheckBox
         checkBoxCreation(rootView);
 
+        //Pour cocher automatiquement "autre" si l'editText est completé
         final CheckBox checkbox_autre = rootView.findViewById(R.id.checkbox_autre);
-
         EditText text_autre = rootView.findViewById(R.id.preciser);
         text_autre.addTextChangedListener(new TextWatcher() {
             @Override
