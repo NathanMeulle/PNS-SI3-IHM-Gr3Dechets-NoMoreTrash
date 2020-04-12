@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/description_fragment"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
@@ -20,7 +21,7 @@
         />
 
     <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/chatbox1"
+        android:id="@+id/checkbox_dechet_unique"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
@@ -36,15 +37,15 @@
         android:text="Déchet unique"
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="@id/chatbox1"
-        app:layout_constraintLeft_toRightOf="@id/chatbox1"
+        app:layout_constraintTop_toTopOf="@id/checkbox_dechet_unique"
+        app:layout_constraintLeft_toRightOf="@id/checkbox_dechet_unique"
         />
     <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/chatbox2"
+        android:id="@+id/checkbox_decharge_sauvage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="@id/chatbox1"
-        app:layout_constraintTop_toBottomOf="@+id/chatbox1"
+        app:layout_constraintLeft_toLeftOf="@id/checkbox_dechet_unique"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_dechet_unique"
         />
 
     <TextView
@@ -54,8 +55,8 @@
         android:text="Déchage sauvage"
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="@id/chatbox2"
-        app:layout_constraintLeft_toRightOf="@id/chatbox2"
+        app:layout_constraintTop_toTopOf="@id/checkbox_decharge_sauvage"
+        app:layout_constraintLeft_toRightOf="@id/checkbox_decharge_sauvage"
         />
 
     <TextView
@@ -69,10 +70,10 @@
         android:textStyle="bold"
         android:layout_marginTop="20dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/chatbox2"
+        app:layout_constraintTop_toBottomOf="@id/checkbox_decharge_sauvage"
         />
     <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/chatbox3"
+        android:id="@+id/checkbox_verre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
@@ -88,15 +89,15 @@
         android:text="Verre"
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="@id/chatbox3"
-        app:layout_constraintLeft_toRightOf="@id/chatbox3"
+        app:layout_constraintTop_toTopOf="@id/checkbox_verre"
+        app:layout_constraintLeft_toRightOf="@id/checkbox_verre"
         />
     <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/chatbox4"
+        android:id="@+id/checkbox_carton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="@id/chatbox3"
-        app:layout_constraintTop_toBottomOf="@+id/chatbox3"
+        app:layout_constraintLeft_toLeftOf="@id/checkbox_verre"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_verre"
         />
 
     <TextView
@@ -106,15 +107,15 @@
         android:text="Carton"
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="@id/chatbox4"
-        app:layout_constraintLeft_toRightOf="@id/chatbox4"
+        app:layout_constraintTop_toTopOf="@id/checkbox_carton"
+        app:layout_constraintLeft_toRightOf="@id/checkbox_carton"
         />
     <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/chatbox5"
+        android:id="@+id/checkbox_papier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="@id/chatbox4"
-        app:layout_constraintTop_toBottomOf="@+id/chatbox4"
+        app:layout_constraintLeft_toLeftOf="@id/checkbox_carton"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_carton"
         />
 
     <TextView
@@ -124,16 +125,16 @@
         android:text="Papier"
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="@id/chatbox5"
-        app:layout_constraintLeft_toRightOf="@id/chatbox5"
+        app:layout_constraintTop_toTopOf="@id/checkbox_papier"
+        app:layout_constraintLeft_toRightOf="@id/checkbox_papier"
         />
 
     <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/chatbox6"
+        android:id="@+id/checkbox_plastique"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="@id/chatbox5"
-        app:layout_constraintTop_toBottomOf="@+id/chatbox5"
+        app:layout_constraintLeft_toLeftOf="@id/checkbox_papier"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_papier"
         />
 
     <TextView
@@ -143,15 +144,15 @@
         android:text="Plastique"
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="@id/chatbox6"
-        app:layout_constraintLeft_toRightOf="@id/chatbox6"
+        app:layout_constraintTop_toTopOf="@id/checkbox_plastique"
+        app:layout_constraintLeft_toRightOf="@id/checkbox_plastique"
         />
     <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/chatbox7"
+        android:id="@+id/checkbox_metal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="@id/chatbox6"
-        app:layout_constraintTop_toBottomOf="@+id/chatbox6"
+        app:layout_constraintLeft_toLeftOf="@id/checkbox_plastique"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_plastique"
         />
 
     <TextView
@@ -161,15 +162,15 @@
         android:text="Métal"
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="@id/chatbox7"
-        app:layout_constraintLeft_toRightOf="@id/chatbox7"
+        app:layout_constraintTop_toTopOf="@id/checkbox_metal"
+        app:layout_constraintLeft_toRightOf="@id/checkbox_metal"
         />
     <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/chatbox8"
+        android:id="@+id/checkbox_autre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="@id/chatbox7"
-        app:layout_constraintTop_toBottomOf="@+id/chatbox7"
+        app:layout_constraintLeft_toLeftOf="@id/checkbox_metal"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_metal"
         />
 
     <TextView
@@ -179,8 +180,8 @@
         android:text="Autre"
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="@id/chatbox8"
-        app:layout_constraintLeft_toRightOf="@id/chatbox8"
+        app:layout_constraintTop_toTopOf="@id/checkbox_autre"
+        app:layout_constraintLeft_toRightOf="@id/checkbox_autre"
         />
 
     <EditText
@@ -207,11 +208,11 @@
         android:textStyle="bold"
         android:layout_marginTop="20dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/chatbox8"
+        app:layout_constraintTop_toBottomOf="@id/checkbox_autre"
         />
 
     <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/chatbox9"
+        android:id="@+id/checkbox_petit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
@@ -227,16 +228,16 @@
         android:text="Moins de 30 cm"
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="@id/chatbox9"
-        app:layout_constraintLeft_toRightOf="@id/chatbox9"
+        app:layout_constraintTop_toTopOf="@id/checkbox_petit"
+        app:layout_constraintLeft_toRightOf="@id/checkbox_petit"
         />
 
     <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/chatbox10"
+        android:id="@+id/checkbox_gros"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="@id/chatbox9"
-        app:layout_constraintTop_toBottomOf="@+id/chatbox9"
+        app:layout_constraintLeft_toLeftOf="@id/checkbox_petit"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_petit"
         />
 
     <TextView
@@ -246,8 +247,8 @@
         android:text="Plus de 30 cm"
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="@id/chatbox10"
-        app:layout_constraintLeft_toRightOf="@id/chatbox10"
+        app:layout_constraintTop_toTopOf="@id/checkbox_gros"
+        app:layout_constraintLeft_toRightOf="@id/checkbox_gros"
         />
 
     <Button

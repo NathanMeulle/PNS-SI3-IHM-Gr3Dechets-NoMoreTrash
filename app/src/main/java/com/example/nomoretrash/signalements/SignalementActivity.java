@@ -1,9 +1,12 @@
 package com.example.nomoretrash.signalements;
 
 import android.os.Bundle;
+import android.util.Log;
+
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.nomoretrash.PageAdapter;
@@ -13,6 +16,7 @@ import com.google.android.material.tabs.TabLayout;
 public class SignalementActivity extends AppCompatActivity {
 
     ViewPager pager;
+    private PagerAdapter mPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +25,29 @@ public class SignalementActivity extends AppCompatActivity {
 
         //Configure ViewPager
         this.configureViewPagerAndTabs();
+
+        //PageAdapter permettant de mettre à jour les fragments
+        mPagerAdapter = new PageAdapter(getSupportFragmentManager());
+        pager.setAdapter(mPagerAdapter);
+        pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            int CurrentFragment = 0;
+
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                CurrentFragment = position;
+                Log.d("sort:", "onPageSelected: "+position);
+                mPagerAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
 
     }
