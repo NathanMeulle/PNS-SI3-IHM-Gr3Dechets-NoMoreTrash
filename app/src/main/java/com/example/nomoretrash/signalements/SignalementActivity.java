@@ -39,7 +39,6 @@ public class SignalementActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 CurrentFragment = position;
-                Log.d("sort:", "onPageSelected: "+position);
                 mPagerAdapter.notifyDataSetChanged();
             }
 

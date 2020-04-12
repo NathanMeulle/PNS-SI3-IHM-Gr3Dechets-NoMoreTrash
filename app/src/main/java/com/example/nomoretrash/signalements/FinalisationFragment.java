@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -12,6 +13,8 @@ import androidx.fragment.app.Fragment;
 import com.example.nomoretrash.R;
 
 public class FinalisationFragment extends Fragment {
+
+    ImageView mImageView;
     public FinalisationFragment(){
         //vide
     }
@@ -34,6 +37,14 @@ public class FinalisationFragment extends Fragment {
 
             }
         });
+
+        //Affichage de la photo
+        if(PhotoFragment.getImage_uri()!=null) {
+            mImageView = rootView.findViewById(R.id.photo);
+            mImageView.setImageURI(PhotoFragment.getImage_uri());
+            mImageView.setRotation(90);
+        }
+
 
 
         if(DescriptionFragment.DECHET_UNIQUE)

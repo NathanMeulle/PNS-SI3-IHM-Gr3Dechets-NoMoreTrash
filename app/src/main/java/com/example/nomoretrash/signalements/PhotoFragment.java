@@ -29,7 +29,7 @@ public class PhotoFragment extends Fragment {
     private static final int IMAGE_CAPTURE_CODE = 1001;
     ImageView mImageView;
     Button mPhotoButton;
-    Uri image_uri;
+    public static Uri image_uri;
 
 
     public PhotoFragment() {//vide
@@ -97,7 +97,12 @@ public class PhotoFragment extends Fragment {
         //super.onActivityResult(requestCode, resultCode, data);
         if(resultCode== -1){
             mImageView.setImageURI(image_uri);
+            mImageView.setRotation(90);
         }
 
+    }
+
+    public static Uri getImage_uri() {
+        return image_uri;
     }
 }

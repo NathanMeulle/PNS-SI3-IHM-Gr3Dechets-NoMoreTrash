@@ -1,7 +1,6 @@
 package com.example.nomoretrash.signalements;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,11 +12,9 @@ import androidx.fragment.app.Fragment;
 
 import com.example.nomoretrash.R;
 
-import java.util.ArrayList;
 
 public class DescriptionFragment extends Fragment {
 
-    private FinalisationFragment finalisationFragment;
     public static boolean DECHET_UNIQUE = false;
     public static boolean DECHARGE_SAUVAGE = false;
     public static boolean VERRE = false;
@@ -135,10 +132,6 @@ public class DescriptionFragment extends Fragment {
     /*
     ########################### GETTERS ###########################
      */
-
-    public FinalisationFragment getFinalisationFragment() {
-        return finalisationFragment;
-    }
 
     public static boolean isDechetUnique() {
         return DECHET_UNIQUE;
