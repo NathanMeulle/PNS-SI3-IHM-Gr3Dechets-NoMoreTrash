@@ -1,12 +1,15 @@
 package com.example.nomoretrash.signalements;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 
 
 import androidx.fragment.app.Fragment;
@@ -54,7 +57,31 @@ public class DescriptionFragment extends Fragment {
 
             }
         });
+        //Création des CheckBox
         checkBoxCreation(rootView);
+
+        final CheckBox checkbox_autre = rootView.findViewById(R.id.checkbox_autre);
+
+        EditText text_autre = rootView.findViewById(R.id.preciser);
+        text_autre.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(!String.valueOf(s).equals(""))
+                    checkbox_autre.setChecked(true);
+                else
+                    checkbox_autre.setChecked(false);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
         return rootView;
     }
 
