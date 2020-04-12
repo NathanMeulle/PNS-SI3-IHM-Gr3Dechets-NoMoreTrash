@@ -38,6 +38,7 @@ public class FinalisationFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        recap = "";
 
         View rootView = inflater.inflate(R.layout.finalisation_fragment, container, false);
 
@@ -45,7 +46,9 @@ public class FinalisationFragment extends Fragment {
         boutonFinaliser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (part1 && part2 && part3) {
+                    DescriptionFragment.reinitialiseCheckbox();
                     FinalisationFragment.this.getActivity().finish();
 
                 } else {
