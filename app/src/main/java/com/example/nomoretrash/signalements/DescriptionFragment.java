@@ -1,6 +1,7 @@
 package com.example.nomoretrash.signalements;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -75,128 +76,101 @@ public class DescriptionFragment extends Fragment {
         checkBox_dechet_unique.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if( !DECHET_UNIQUE)
+                if (!DECHET_UNIQUE)
                     DECHET_UNIQUE = true;
                 else
                     DECHET_UNIQUE = false;
 
-                Log.d("DECHET_UNIQUE", DECHET_UNIQUE+"");
+                Log.d("DECHET_UNIQUE", DECHET_UNIQUE + "");
             }
         });
 
         checkbox_decharge_sauvage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if( !DECHARGE_SAUVAGE)
-                    DECHARGE_SAUVAGE = true;
-                else
-                    DECHARGE_SAUVAGE = false;
+                DECHARGE_SAUVAGE = !DECHARGE_SAUVAGE;
 
-                Log.d("DECHARGE_SAUVAGE", DECHARGE_SAUVAGE+"");
+                Log.d("DECHARGE_SAUVAGE", DECHARGE_SAUVAGE + "");
             }
         });
 
         checkbox_verre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if( !VERRE)
-                    VERRE = true;
-                else
-                    VERRE = false;
+                VERRE = !VERRE;
 
-                Log.d("VERRE", VERRE+"");
+                Log.d("VERRE", VERRE + "");
             }
         });
-       
+
         checkbox_carton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if( !CARTON)
-                    CARTON = true;
-                else
-                    CARTON = false;
+                CARTON= !CARTON;
 
-                Log.d("CARTON", CARTON+"");
+                Log.d("CARTON", CARTON + "");
             }
         });
 
         checkbox_papier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if( !PAPIER)
-                    PAPIER = true;
-                else
-                    PAPIER = false;
+                PAPIER = !PAPIER;
 
-                Log.d("PAPIER", PAPIER+"");
+                Log.d("PAPIER", PAPIER + "");
             }
         });
 
         checkbox_plastique.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if( !PLASTIQUE)
-                    PLASTIQUE = true;
-                else
-                    PLASTIQUE = false;
+                PLASTIQUE = !PLASTIQUE;
 
-                Log.d("PLASTIQUE", PLASTIQUE+"");
+                Log.d("PLASTIQUE", PLASTIQUE + "");
             }
         });
 
         checkbox_metal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if( !METAL)
-                    METAL = true;
-                else
-                    METAL = false;
+                METAL = !METAL;
 
-                Log.d("METAL", METAL+"");
+                Log.d("METAL", METAL + "");
             }
         });
 
         checkbox_autre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if( !AUTRE)
-                    AUTRE = true;
-                else
-                    AUTRE = false;
+                AUTRE = !AUTRE ;
 
-                Log.d("AUTRE", AUTRE+"");
+                Log.d("AUTRE", AUTRE + "");
             }
         });
 
         checkbox_gros.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if( !GROS)
-                    GROS = true;
-                else
-                    GROS = false;
+                GROS = !GROS;
 
-                Log.d("GROS", GROS+"");
+                Log.d("GROS", GROS + "");
             }
         });
 
         checkbox_petit.setOnClickListener(new View.OnClickListener() {
             @Override
-            
+
             public void onClick(View view) {
-                if( !PETIT)
-                    PETIT = true;
-                else
-                    PETIT = false;
+                PETIT = !PETIT;
 
 
-                Log.d("PETIT", PETIT+"");
+                Log.d("PETIT", PETIT + "");
             }
         });
     /*
     ########################### GETTERS ###########################
      */
-
+    }
     public static boolean isDechetUnique() {
         return DECHET_UNIQUE;
     }

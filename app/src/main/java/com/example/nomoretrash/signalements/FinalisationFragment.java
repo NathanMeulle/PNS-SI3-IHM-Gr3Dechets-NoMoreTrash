@@ -18,7 +18,8 @@ import com.example.nomoretrash.R;
 public class FinalisationFragment extends Fragment {
 
     ImageView mImageView;
-    public FinalisationFragment(){
+
+    public FinalisationFragment() {
         //vide
     }
 
@@ -43,51 +44,41 @@ public class FinalisationFragment extends Fragment {
         Button boutonFinaliser = rootView.findViewById(R.id.boutonFinir);
         boutonFinaliser.setOnClickListener(new View.OnClickListener() {
             @Override
-                public void onClick(View v) {
-                if (part1 && part2 && part3){
+            public void onClick(View v) {
+                if (part1 && part2 && part3) {
                     FinalisationFragment.this.getActivity().finish();
 
-                }
-                else {
+                } else {
                     Toast.makeText(getContext(), "Des champs dans la  page description sont manquants", Toast.LENGTH_LONG).show();
                 }
-
-
             }
+        });
+
+        setRecap();
+        ((TextView) rootView.findViewById(R.id.recap)).setText(recap);
 
         //Affichage de la photo
-        if(PhotoFragment.getImage_uri()!=null) {
+        if (PhotoFragment.getImage_uri() != null) {
             mImageView = rootView.findViewById(R.id.photo);
             mImageView.setImageURI(PhotoFragment.getImage_uri());
             mImageView.setRotation(90);
         }
 
 
-
-
-        });
-
-
-        setRecap();
-        ((TextView)rootView.findViewById(R.id.recap)).setText(recap);
-
-
-
         return rootView;
     }
 
-    public void setRecap(){
+    public void setRecap() {
         recap = "Recapitulatif : ";
-        if(DescriptionFragment.DECHET_UNIQUE ||DescriptionFragment.DECHARGE_SAUVAGE){
-            part1 = true ;
-            if(DescriptionFragment.DECHET_UNIQUE)
-                recap+="dechet unique";
+        if (DescriptionFragment.DECHET_UNIQUE || DescriptionFragment.DECHARGE_SAUVAGE) {
+            part1 = true;
+            if (DescriptionFragment.DECHET_UNIQUE)
+                recap += "dechet unique";
             else
-                recap+="décharge sauvage";
-        }
-        else part1 = false ;
+                recap += "décharge sauvage";
+        } else part1 = false;
 
-        if(DescriptionFragment.VERRE || DescriptionFragment.CARTON ||DescriptionFragment.PAPIER || DescriptionFragment.PLASTIQUE || DescriptionFragment.METAL ||DescriptionFragment.AUTRE) {
+        if (DescriptionFragment.VERRE || DescriptionFragment.CARTON || DescriptionFragment.PAPIER || DescriptionFragment.PLASTIQUE || DescriptionFragment.METAL || DescriptionFragment.AUTRE) {
             recap += ", composé de";
             part2 = true;
             if (DescriptionFragment.VERRE)
@@ -103,15 +94,14 @@ public class FinalisationFragment extends Fragment {
             if (DescriptionFragment.AUTRE)
                 // TODO: 12/04/2020 a modifier en fonction de se qu'écrit l'utilisateur
                 recap += " autre,";
-        }
-        else part2 = false;
-        if(DescriptionFragment.GROS ||DescriptionFragment.PETIT) {
+        } else part2 = false;
+        if (DescriptionFragment.GROS || DescriptionFragment.PETIT) {
             part3 = true;
             if (DescriptionFragment.GROS)
                 recap += " mesurant plus de 30 cm";
             else
                 recap += " mesurant moins de 30 cm";
-        }
-        else part3 = false;
+        } else part3 = false;
     }
 }
+
