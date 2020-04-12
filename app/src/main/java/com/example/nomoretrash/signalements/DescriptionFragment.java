@@ -18,6 +18,17 @@ public class DescriptionFragment extends Fragment {
 
     private FinalisationFragment finalisationFragment;
     public static boolean DECHET_UNIQUE = false;
+    public static boolean DECHARGE_SAUVAGE = false;
+
+    public static boolean VERRE = false;
+    public static boolean CARTON = false;
+    public static boolean PAPIER = false;
+    public static boolean PLASTIQUE = false;
+    public static boolean METAL = false;
+    public static boolean AUTRE = false;
+
+    public static boolean GROS = false;
+    public static boolean PETIT = false;
 
 
     public DescriptionFragment() {//vide
@@ -56,10 +67,124 @@ public class DescriptionFragment extends Fragment {
         checkBox_dechet_unique.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DECHET_UNIQUE = true;
-                Log.d(DECHET_UNIQUE+"", DECHET_UNIQUE+"");
+                if( !DECHET_UNIQUE)
+                    DECHET_UNIQUE = true;
+                else
+                    DECHET_UNIQUE = false;
+
+                Log.d("DECHET_UNIQUE", DECHET_UNIQUE+"");
             }
         });
+
+        checkbox_decharge_sauvage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if( !DECHARGE_SAUVAGE)
+                    DECHARGE_SAUVAGE = true;
+                else
+                    DECHARGE_SAUVAGE = false;
+
+                Log.d("DECHARGE_SAUVAGE", DECHARGE_SAUVAGE+"");
+            }
+        });
+
+        checkbox_verre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if( !VERRE)
+                    VERRE = true;
+                else
+                    VERRE = false;
+
+                Log.d("VERRE", VERRE+"");
+            }
+        });
+
+        checkbox_carton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if( !CARTON)
+                    CARTON = true;
+                else
+                    CARTON = false;
+
+                Log.d("CARTON", CARTON+"");
+            }
+        });
+
+        checkbox_papier.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if( !PAPIER)
+                    PAPIER = true;
+                else
+                    PAPIER = false;
+
+                Log.d("PAPIER", PAPIER+"");
+            }
+        });
+
+        checkbox_plastique.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if( !PLASTIQUE)
+                    PLASTIQUE = true;
+                else
+                    PLASTIQUE = false;
+
+                Log.d("PLASTIQUE", PLASTIQUE+"");
+            }
+        });
+
+        checkbox_metal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if( !METAL)
+                    METAL = true;
+                else
+                    METAL = false;
+
+                Log.d("METAL", METAL+"");
+            }
+        });
+
+        checkbox_autre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if( !AUTRE)
+                    AUTRE = true;
+                else
+                    AUTRE = false;
+
+                Log.d("AUTRE", AUTRE+"");
+            }
+        });
+
+        checkbox_gros.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if( !GROS)
+                    GROS = true;
+                else
+                    GROS = false;
+
+                Log.d("GROS", GROS+"");
+            }
+        });
+
+        checkbox_petit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if( !PETIT)
+                    PETIT = true;
+                else
+                    PETIT = false;
+
+
+                Log.d("PETIT", PETIT+"");
+            }
+        });
+
 
 
 
