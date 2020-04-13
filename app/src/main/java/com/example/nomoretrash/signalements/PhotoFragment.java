@@ -27,7 +27,7 @@ public class PhotoFragment extends Fragment {
     static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int PERMISSION_CODE = 1000;
     private static final int IMAGE_CAPTURE_CODE = 1001;
-    ImageView mImageView;
+    public static ImageView mImageView;
     Button mPhotoButton;
     public static Uri image_uri;
 

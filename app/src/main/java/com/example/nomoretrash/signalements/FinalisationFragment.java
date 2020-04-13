@@ -17,10 +17,12 @@ import com.example.nomoretrash.R;
 
 public class FinalisationFragment extends Fragment {
 
+    private SignalementObject signalementObject;
     ImageView mImageView;
 
     public FinalisationFragment() {
-        //vide
+        //on récupère l'objet signalemnt
+        this.signalementObject = DescriptionFragment.getSignalementObject();
     }
 
 
@@ -48,7 +50,7 @@ public class FinalisationFragment extends Fragment {
             public void onClick(View v) {
 
                 if (part1 && part2 && part3) {
-                    DescriptionFragment.reinitialiseCheckbox();
+                    Toast.makeText(getContext(), "Votre signalement a bien été enregistré !", Toast.LENGTH_LONG).show();
                     FinalisationFragment.this.getActivity().finish();
 
                 } else {
@@ -73,34 +75,34 @@ public class FinalisationFragment extends Fragment {
 
     public void setRecap() {
         recap = "Recapitulatif : ";
-        if (DescriptionFragment.DECHET_UNIQUE || DescriptionFragment.DECHARGE_SAUVAGE) {
+        if (signalementObject.isDECHET_UNIQUE() || signalementObject.isDECHARGE_SAUVAGE()) {
             part1 = true;
-            if (DescriptionFragment.DECHET_UNIQUE)
+            if (signalementObject.isDECHET_UNIQUE())
                 recap += "dechet unique";
             else
                 recap += "décharge sauvage";
         } else part1 = false;
 
-        if (DescriptionFragment.VERRE || DescriptionFragment.CARTON || DescriptionFragment.PAPIER || DescriptionFragment.PLASTIQUE || DescriptionFragment.METAL || DescriptionFragment.AUTRE) {
+        if (signalementObject.isVERRE() || signalementObject.isCARTON() || signalementObject.isPAPIER() || signalementObject.isPLASTIQUE() || signalementObject.isMETAL() || signalementObject.isAUTRE()) {
             recap += ", composé de";
             part2 = true;
-            if (DescriptionFragment.VERRE)
+            if (signalementObject.isVERRE())
                 recap += " verre,";
-            if (DescriptionFragment.CARTON)
+            if (signalementObject.isCARTON())
                 recap += " carton,";
-            if (DescriptionFragment.PAPIER)
+            if (signalementObject.isPAPIER())
                 recap += " papier,";
-            if (DescriptionFragment.PLASTIQUE)
+            if (signalementObject.isPLASTIQUE())
                 recap += " plastique,";
-            if (DescriptionFragment.METAL)
+            if (signalementObject.isMETAL())
                 recap += " métal,";
-            if (DescriptionFragment.AUTRE)
+            if (signalementObject.isAUTRE())
                 // TODO: 12/04/2020 a modifier en fonction de se qu'écrit l'utilisateur
                 recap += " autre,";
         } else part2 = false;
-        if (DescriptionFragment.GROS || DescriptionFragment.PETIT) {
+        if (signalementObject.isGROS() || signalementObject.isPETIT()) {
             part3 = true;
-            if (DescriptionFragment.GROS)
+            if (signalementObject.isGROS())
                 recap += " mesurant plus de 30 cm";
             else
                 recap += " mesurant moins de 30 cm";
