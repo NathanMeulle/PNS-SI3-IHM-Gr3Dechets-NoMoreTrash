@@ -1,7 +1,10 @@
 package com.example.nomoretrash.signalements;
 
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +16,9 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.nomoretrash.MainActivity;
 import com.example.nomoretrash.R;
+import com.example.nomoretrash.map.MainMapActivity;
 
 public class FinalisationFragment extends Fragment {
 
@@ -28,9 +33,9 @@ public class FinalisationFragment extends Fragment {
 
     private String recap = "";
 
-    private Boolean part1 = false;
-    private Boolean part2 = false;
-    private Boolean part3 = false;
+    private boolean part1 = false;
+    private boolean part2 = false;
+    private boolean part3 = false;
 
 
     public static FinalisationFragment newInstance() {
@@ -51,7 +56,10 @@ public class FinalisationFragment extends Fragment {
 
                 if (part1 && part2 && part3) {
                     Toast.makeText(getContext(), "Votre signalement a bien été enregistré !", Toast.LENGTH_LONG).show();
-                    FinalisationFragment.this.getActivity().finish();
+                    Intent resultIntent = new Intent();
+                    resultIntent.putExtra("mon_signalement", DescriptionFragment.getSignalementObject().toString());
+                    getActivity().setResult(Activity.RESULT_OK, resultIntent);
+                    getActivity().finish();
 
                 } else {
                     Toast.makeText(getContext(), "Des champs dans la  page description sont manquants", Toast.LENGTH_LONG).show();
@@ -108,5 +116,6 @@ public class FinalisationFragment extends Fragment {
                 recap += " mesurant moins de 30 cm";
         } else part3 = false;
     }
+
 }
 

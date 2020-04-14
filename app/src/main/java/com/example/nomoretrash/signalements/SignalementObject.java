@@ -1,9 +1,14 @@
 package com.example.nomoretrash.signalements;
 
+import android.media.Image;
 import android.net.Uri;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.widget.ImageView;
 
-public class SignalementObject {
+import androidx.annotation.NonNull;
+
+public class SignalementObject implements Parcelable {
 
     private boolean DECHET_UNIQUE;
     private boolean DECHARGE_SAUVAGE;
@@ -19,7 +24,7 @@ public class SignalementObject {
     private boolean PETIT;
 
     private String localisation;
-    private ImageView photo;
+    private String photo;
     private String autreInfos;
 
     public SignalementObject() {
@@ -37,7 +42,7 @@ public class SignalementObject {
         PETIT = false;
 
         localisation = "";
-        photo = null;
+        photo = "";
         autreInfos = "";
     }
 
@@ -89,7 +94,7 @@ public class SignalementObject {
         return localisation;
     }
 
-    public ImageView getPhoto() {
+    public String getPhoto() {
         return photo;
     }
 
@@ -146,7 +151,7 @@ public class SignalementObject {
         this.localisation = localisation;
     }
 
-    public void setPhoto(ImageView photo) {
+    public void setPhoto(String photo) {
         this.photo = photo;
     }
 
@@ -198,4 +203,106 @@ public class SignalementObject {
         this.PETIT = !this.PETIT;
     }
 
+    /*
+    ########################### Parseur ###########################
+     */
+
+    public SignalementObject(Parcel in) {
+        String[] data = new String[13];
+
+        in.readStringArray(data);
+        this.DECHET_UNIQUE = Boolean.parseBoolean(data[0]);
+        this.DECHARGE_SAUVAGE = Boolean.parseBoolean(data[1]);
+
+        this.VERRE = Boolean.parseBoolean(data[2]);
+        this.CARTON = Boolean.parseBoolean(data[3]);
+        this.PAPIER = Boolean.parseBoolean(data[4]);
+        this.PLASTIQUE = Boolean.parseBoolean(data[5]);
+        this.METAL = Boolean.parseBoolean(data[6]);
+        this.AUTRE = Boolean.parseBoolean(data[7]);
+
+        this.GROS = Boolean.parseBoolean(data[8]);
+        this.PETIT = Boolean.parseBoolean(data[9]);
+
+        this.localisation = data[10];
+        this.photo = data[11];
+        this.autreInfos = data[12];
+
+    }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeStringArray(new String[]{String.valueOf(this.DECHET_UNIQUE),
+                String.valueOf(this.DECHARGE_SAUVAGE),
+                String.valueOf(this.VERRE),
+                String.valueOf(this.CARTON),
+                String.valueOf(this.PAPIER),
+                String.valueOf(this.PLASTIQUE),
+                String.valueOf(this.METAL),
+                String.valueOf(this.AUTRE),
+                String.valueOf(this.GROS),
+                String.valueOf(this.PETIT),
+                String.valueOf(this.localisation),
+                String.valueOf(this.photo),
+                String.valueOf(this.autreInfos)});
+
+    }
+
+    public static final Parcelable.Creator<SignalementObject> CREATOR = new Parcelable.Creator<SignalementObject>() {
+        @Override
+        public SignalementObject createFromParcel(Parcel source) {
+            return new SignalementObject(source);
+        }
+
+        @Override
+        public SignalementObject[] newArray(int size) {
+            return new SignalementObject[size];
+        }
+    };
+
+    @NonNull
+    @Override
+    public String toString() {
+        String date = "14/04";
+        String recap = "Signalement du " + date + ". \nRécapitulatif : ";
+        if (isDECHET_UNIQUE() || isDECHARGE_SAUVAGE()) {
+            if (isDECHET_UNIQUE())
+                recap += "dechet unique";
+            else
+                recap += "décharge sauvage";
+        }
+        if (isVERRE() || isCARTON() || isPAPIER() || isPLASTIQUE() || isMETAL() || isAUTRE()) {
+            recap += ", composé de";
+            if (isVERRE())
+                recap += " verre,";
+            if (isCARTON())
+                recap += " carton,";
+            if (isPAPIER())
+                recap += " papier,";
+            if (isPLASTIQUE())
+                recap += " plastique,";
+            if (isMETAL())
+                recap += " métal,";
+            if (isAUTRE())
+                // TODO: 12/04/2020 a modifier en fonction de se qu'écrit l'utilisateur
+                recap += " autre,";
+        }
+        if (isGROS() || isPETIT()) {
+            if (isGROS())
+                recap += " mesurant plus de 30 cm";
+            else
+                recap += " mesurant moins de 30 cm";
+
+        }
+
+        recap+="\nStatut : en cours de traitement";
+        return recap;
+
+    }
 }
