@@ -9,8 +9,12 @@ import java.util.Objects;
 
 public class ApplicationDemo extends Application {
     public static final String CHANNEL_ID = "channelNoMoreTrash";
+
     private static NotificationManager notificationManager;
 
+    public static NotificationManager getNotificationManager() {
+        return notificationManager;
+    }
 
     private void createNotificationChannel(CharSequence name, String descriptionChannel, int importance) {
         // for API 26+

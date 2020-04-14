@@ -3,6 +3,8 @@ package com.example.nomoretrash.signalements;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.Context;
+import android.graphics.drawable.Icon;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
@@ -14,11 +16,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.nomoretrash.MainActivity;
+import com.example.nomoretrash.ApplicationDemo;
 import com.example.nomoretrash.R;
 import com.example.nomoretrash.map.MainMapActivity;
+
+import static com.example.nomoretrash.ApplicationDemo.CHANNEL_ID;
 
 public class FinalisationFragment extends Fragment {
 
@@ -38,6 +44,8 @@ public class FinalisationFragment extends Fragment {
     private boolean part3 = false;
 
 
+    private int notificationId = 0;
+
     public static FinalisationFragment newInstance() {
         return (new FinalisationFragment());
     }
@@ -56,10 +64,47 @@ public class FinalisationFragment extends Fragment {
 
                 if (part1 && part2 && part3) {
                     Toast.makeText(getContext(), "Votre signalement a bien été enregistré !", Toast.LENGTH_LONG).show();
-                    Intent resultIntent = new Intent();
-                    resultIntent.putExtra("mon_signalement", DescriptionFragment.getSignalementObject().toString());
-                    getActivity().setResult(Activity.RESULT_OK, resultIntent);
-                    getActivity().finish();
+
+                    // Create two threads:
+                    Thread thread1 = new Thread() {
+                        public void run() {
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                            Intent resultIntent = new Intent();
+                            resultIntent.putExtra("mon_signalement", DescriptionFragment.getSignalementObject().toString());
+                            getActivity().setResult(Activity.RESULT_OK, resultIntent);
+                            getActivity().finish();
+                        }
+                    };
+
+                    Thread thread2 = new Thread() {
+                        public void run() {
+                            Context saveContext = getActivity().getApplicationContext();
+                            String saveChannelId = CHANNEL_ID;
+                            String titleConfirmation = "Prise en compte de votre signalement";
+                            String notifConfirmation = "Il sera traité dans les plus brefs délais.";
+                            String titleChecked = "Déchet nettoyé";
+                            String notifChecked = "Le déchet signalé a été nettoyé, Merci !";
+                            sendNotificationOnChannel(R.drawable.chargement, titleConfirmation, notifConfirmation, saveChannelId, NotificationCompat.PRIORITY_DEFAULT, saveContext);
+                            sendNotificationOnChannel(R.drawable.validation, titleChecked, notifChecked, saveChannelId, NotificationCompat.PRIORITY_HIGH, saveContext);
+                        }
+                    };
+
+                    // Start the downloads.
+                    thread1.start();
+                    thread2.start();
+
+                    // Wait for them both to finish
+                    try {
+                        thread1.join();
+                        //thread2.join();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
 
                 } else {
                     Toast.makeText(getContext(), "Des champs dans la  page description sont manquants", Toast.LENGTH_LONG).show();
@@ -79,6 +124,25 @@ public class FinalisationFragment extends Fragment {
 
 
         return rootView;
+    }
+
+    private void sendNotificationOnChannel(int icon, String title, String message, String channelId, int priority, Context context) {
+
+        try {
+            for(int i = 1 ; i <= 10; i++){
+                Thread.sleep(1000);
+                System.out.println(i+" seconde(s) se sont écoulée");
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        NotificationCompat.Builder notification = new NotificationCompat.Builder( context,  channelId)
+                .setSmallIcon(icon)
+                .setContentTitle( title )
+                .setContentText( message )
+                .setPriority( priority );
+        ApplicationDemo.getNotificationManager().notify( ++notificationId, notification.build());
     }
 
     public void setRecap() {
@@ -116,6 +180,5 @@ public class FinalisationFragment extends Fragment {
                 recap += " mesurant moins de 30 cm";
         } else part3 = false;
     }
-
 }
 
