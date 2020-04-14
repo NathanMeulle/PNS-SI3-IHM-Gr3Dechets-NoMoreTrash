@@ -31,9 +31,9 @@ public class PageAdapter extends FragmentPagerAdapter {
             case 0:
                 return DescriptionFragment.newInstance();
             case 1:
-                return LocalisationFragment.newInstance();
-            case 2:
                 return PhotoFragment.newInstance();
+            case 2:
+                return LocalisationFragment.newInstance();
             case 3:
                 return FinalisationFragment.newInstance();
             default:
@@ -47,11 +47,11 @@ public class PageAdapter extends FragmentPagerAdapter {
             case 0:
                 return "Description";
             case 1:
-                return "Position";
-            case 2:
                 return "Photo";
+            case 2:
+                return "Position";
             case 3:
-                return "Finalisation";
+                return "Validation";
             default:
                 return null;
         }
