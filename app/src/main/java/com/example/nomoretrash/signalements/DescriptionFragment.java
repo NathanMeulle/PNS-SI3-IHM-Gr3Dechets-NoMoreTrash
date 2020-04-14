@@ -16,6 +16,9 @@ import androidx.fragment.app.Fragment;
 
 import com.example.nomoretrash.R;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class DescriptionFragment extends Fragment {
 
@@ -26,6 +29,11 @@ public class DescriptionFragment extends Fragment {
     public DescriptionFragment() {
         //Création d'un nouveau objet Signalement
         signalementObject = new SignalementObject();
+        //Ajout de la date de création du signalement
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/YYYY HH:mm");
+        String result = formatter.format(date);
+        signalementObject.setDate(result);
     }
 
     public static DescriptionFragment newInstance() {

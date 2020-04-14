@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 
 public class SignalementObject implements Parcelable {
 
+    private String date;
+
     private boolean DECHET_UNIQUE;
     private boolean DECHARGE_SAUVAGE;
 
@@ -101,6 +103,9 @@ public class SignalementObject implements Parcelable {
     public String getAutreInfos() {
         return autreInfos;
     }
+    public String getDate() {
+        return date;
+    }
 
         /*
     ########################### SETTERS ###########################
@@ -159,7 +164,10 @@ public class SignalementObject implements Parcelable {
         this.autreInfos = autreInfos;
     }
 
-        /*
+    public void setDate(String date) {
+        this.date = date;
+    }
+    /*
     ########################### INVERSEURS ###########################
      */
 
@@ -208,7 +216,7 @@ public class SignalementObject implements Parcelable {
      */
 
     public SignalementObject(Parcel in) {
-        String[] data = new String[13];
+        String[] data = new String[14];
 
         in.readStringArray(data);
         this.DECHET_UNIQUE = Boolean.parseBoolean(data[0]);
@@ -227,6 +235,7 @@ public class SignalementObject implements Parcelable {
         this.localisation = data[10];
         this.photo = data[11];
         this.autreInfos = data[12];
+        this.date = data[13];
 
     }
 
@@ -250,7 +259,8 @@ public class SignalementObject implements Parcelable {
                 String.valueOf(this.PETIT),
                 String.valueOf(this.localisation),
                 String.valueOf(this.photo),
-                String.valueOf(this.autreInfos)});
+                String.valueOf(this.autreInfos),
+                date});
 
     }
 
@@ -269,7 +279,6 @@ public class SignalementObject implements Parcelable {
     @NonNull
     @Override
     public String toString() {
-        String date = "14/04";
         String recap = "Signalement du " + date + ". \nRécapitulatif : ";
         if (isDECHET_UNIQUE() || isDECHARGE_SAUVAGE()) {
             if (isDECHET_UNIQUE())
