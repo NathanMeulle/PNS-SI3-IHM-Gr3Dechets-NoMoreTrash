@@ -22,10 +22,21 @@
         android:textSize="25sp"
         android:textColor="#000"/>
 
-   <ListView
+    <ListView
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/signalementList"
-       />
+        />
+    <TextView
+        android:id="@android:id/empty"
+        android:text = "Aucun signalement"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:textSize="25sp"
+        android:gravity="center_vertical|center_horizontal"/>
+
+
 
 </LinearLayout>

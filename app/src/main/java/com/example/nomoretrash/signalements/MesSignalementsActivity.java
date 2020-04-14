@@ -3,7 +3,6 @@ package com.example.nomoretrash.signalements;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -13,10 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nomoretrash.R;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class MesSignalementsActivity extends AppCompatActivity {
 
@@ -25,14 +21,17 @@ public class MesSignalementsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mes_signalements);
 
+        ListView listView = findViewById(R.id.signalementList);
 
         Intent intent = getIntent();
         if(intent.hasExtra("ma_liste_de_signalements")){
             ArrayList<String> res = intent.getStringArrayListExtra("ma_liste_de_signalements");
-            ListView listView = findViewById(R.id.signalementList);
             ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, res);
             listView.setAdapter(adapter);
         }
+
+        TextView emptyText = (TextView)findViewById(android.R.id.empty);
+        listView.setEmptyView(emptyText);
 
 
 
