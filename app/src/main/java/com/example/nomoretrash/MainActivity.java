@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.nomoretrash.map.MainMapActivity;
+
 import com.example.nomoretrash.signalements.MesSignalementsActivity;
 import com.example.nomoretrash.signalements.SignalementActivity;
 import com.example.nomoretrash.statistiques.StatistiquesActivity;

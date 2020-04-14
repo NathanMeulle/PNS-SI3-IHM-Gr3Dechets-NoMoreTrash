@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
@@ -8,6 +9,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@color/Background"
+    android:id="@+id/container"
     >
 
     <ImageView
@@ -34,35 +36,56 @@
         app:layout_constraintLeft_toRightOf="@id/logo"
         />
 
-    <Button
-        android:layout_marginTop="100dp"
-        android:id="@+id/boutonStatistiques"
-        android:background="@color/ButtonOne"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:textSize="22sp"
-        android:text="Statistiques"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/text"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        >
 
-        app:layout_constraintTop_toBottomOf="@+id/text"/>
-    <Button
-        android:id="@+id/boutonSignalement"
-        android:layout_width="match_parent"
-        android:background="@color/ButtonTwo"
-        android:layout_height="100dp"
-        android:layout_marginTop="50dp"
-        android:textSize="22sp"
-        android:text="Signaler un déchet"
-        app:layout_constraintTop_toBottomOf="@+id/boutonStatistiques"/>
-    <Button
-        android:id="@+id/boutonMesSignalements"
-        android:background="@color/ButtonOne"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="50dp"
-        android:textSize="22sp"
-        android:text="Mes signalements"
-        app:layout_constraintTop_toBottomOf="@+id/boutonSignalement"/>
+        <Button
+            android:id="@+id/boutonStatistiques"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:backgroundTint="#3FA33F"
+            android:text="Statistiques"
+            android:textColor="#FFF"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
+        <Button
+            android:id="@+id/boutonSignalement"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:textSize="22sp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="#FFF"
+            android:textStyle="bold"
+            android:backgroundTint="#3FA33F"
+            android:text="Signaler un déchet"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/boutonMesSignalements"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="#FFF"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:backgroundTint="#3FA33F"
+            android:text="Mes signalements"
+            android:textSize="22sp" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

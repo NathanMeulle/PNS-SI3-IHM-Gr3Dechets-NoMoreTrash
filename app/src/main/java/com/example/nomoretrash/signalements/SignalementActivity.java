@@ -1,7 +1,6 @@
 package com.example.nomoretrash.signalements;
 
 import android.os.Bundle;
-import android.util.Log;
 
 
 
@@ -18,10 +17,12 @@ public class SignalementActivity extends AppCompatActivity {
     ViewPager pager;
     private PagerAdapter mPagerAdapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signalements);
+
 
         //Configure ViewPager
         this.configureViewPagerAndTabs();

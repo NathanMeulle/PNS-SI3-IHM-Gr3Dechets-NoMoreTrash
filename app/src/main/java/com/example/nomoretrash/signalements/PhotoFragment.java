@@ -24,15 +24,19 @@ import com.example.nomoretrash.R;
 
 public class PhotoFragment extends Fragment {
 
+    private SignalementObject signalementObject;
+
     static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int PERMISSION_CODE = 1000;
     private static final int IMAGE_CAPTURE_CODE = 1001;
-    public static ImageView mImageView;
+    private ImageView mImageView;
     Button mPhotoButton;
     public static Uri image_uri;
 
 
-    public PhotoFragment() {//vide
+    public PhotoFragment() {
+        //on récupère l'objet signalemnt
+        this.signalementObject = DescriptionFragment.getSignalementObject();
     }
 
     public static PhotoFragment newInstance() {
@@ -86,7 +90,7 @@ public class PhotoFragment extends Fragment {
                     openCamera();
                 }
                 else {
-                    Toast.makeText(this.getContext(), "Permission denied...", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this.getContext(), "Permission refusée...", Toast.LENGTH_SHORT).show();
                 }
             }
         }

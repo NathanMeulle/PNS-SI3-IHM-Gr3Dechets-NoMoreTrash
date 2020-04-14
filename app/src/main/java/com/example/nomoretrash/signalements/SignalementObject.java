@@ -1,11 +1,12 @@
 package com.example.nomoretrash.signalements;
 
+import android.net.Uri;
 import android.widget.ImageView;
 
 public class SignalementObject {
 
-    private boolean DECHET_UNIQUE = false;
-    private boolean DECHARGE_SAUVAGE = false;
+    private boolean DECHET_UNIQUE;
+    private boolean DECHARGE_SAUVAGE;
 
     private boolean VERRE;
     private boolean CARTON;
