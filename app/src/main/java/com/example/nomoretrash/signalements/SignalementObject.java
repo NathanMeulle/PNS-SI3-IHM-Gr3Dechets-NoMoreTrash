@@ -253,8 +253,11 @@ public class SignalementObject {
                 recap += " mesurant moins de 30 cm";
 
         }
+        if(!autreInfos.equals(""))
+            recap+="\nAutres informations : " + autreInfos;
+        else recap+="\n";
 
-        recap+="\nStatut : en cours de traitement";
+        recap+="Statut : en cours de traitement";
         return recap;
 
     }

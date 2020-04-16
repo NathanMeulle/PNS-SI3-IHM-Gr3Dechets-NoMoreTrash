@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -58,7 +59,7 @@ public class FinalisationFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         recap = "";
 
-        View rootView = inflater.inflate(R.layout.finalisation_fragment, container, false);
+        final View rootView = inflater.inflate(R.layout.finalisation_fragment, container, false);
 
         Button boutonFinaliser = rootView.findViewById(R.id.boutonFinir);
         boutonFinaliser.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +67,10 @@ public class FinalisationFragment extends Fragment {
             public void onClick(View v) {
 
                 if (part1 && part2 && part3) {
+                    //on récupère les autres infos
+                    EditText editText = rootView.findViewById(R.id.info_comp);
+                    signalementObject.setAutreInfos(editText.getText().toString());
+
                     Toast.makeText(getContext(), "Signalement enregistré !", Toast.LENGTH_LONG).show();
                     sendNotification();
                 } else {
@@ -79,6 +84,8 @@ public class FinalisationFragment extends Fragment {
         setRecap();
         ((TextView) rootView.findViewById(R.id.recap)).setText(recap);
         displayPhoto(rootView);
+
+
 
         return rootView;
     }
