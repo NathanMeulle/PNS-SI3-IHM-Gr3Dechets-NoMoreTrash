@@ -18,6 +18,7 @@ public class SignalementObject {
     private boolean PLASTIQUE;
     private boolean METAL;
     private boolean AUTRE;
+    private String autreType;
 
     private boolean GROS;
     private boolean PETIT;
@@ -36,6 +37,7 @@ public class SignalementObject {
         PLASTIQUE = false;
         METAL = false;
         AUTRE = false;
+        autreType="";
 
         GROS = false;
         PETIT = false;
@@ -100,11 +102,15 @@ public class SignalementObject {
     public String getAutreInfos() {
         return autreInfos;
     }
+
     public String getDate() {
         return date;
     }
 
-        /*
+    public String getAutreType() {
+        return autreType;
+    }
+    /*
     ########################### SETTERS ###########################
      */
 
@@ -164,6 +170,11 @@ public class SignalementObject {
     public void setDate(String date) {
         this.date = date;
     }
+
+    public void setAutreType(String autreType) {
+        this.autreType = autreType;
+    }
+
     /*
     ########################### INVERSEURS ###########################
      */

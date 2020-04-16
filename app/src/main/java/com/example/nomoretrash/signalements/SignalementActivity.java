@@ -50,6 +50,16 @@ public class SignalementActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {//méthode pour changer la fonction du bouton retour
+        int item =  pager.getCurrentItem();
+        if(item==0)
+            this.finish(); // si on sur description on revient sur l'écran d'accueil
+        else
+            pager.setCurrentItem(item-1); //on revient sur la page précedente
+
+    }
+
     private void configureViewPagerAndTabs(){
         //Get ViewPager from layout
         pager = (ViewPager)findViewById(R.id.activity_main_viewpager);

@@ -1,12 +1,15 @@
 package com.example.nomoretrash.signalements;
 
+import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -60,7 +63,7 @@ public class DescriptionFragment extends Fragment {
 
         //Pour cocher automatiquement "autre" si l'editText est completé
         final CheckBox checkbox_autre = rootView.findViewById(R.id.checkbox_autre);
-        EditText text_autre = rootView.findViewById(R.id.preciser);
+        final EditText text_autre = rootView.findViewById(R.id.preciser);
         text_autre.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -69,10 +72,17 @@ public class DescriptionFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if(!String.valueOf(s).equals(""))
+                if(!String.valueOf(s).equals("")) {
                     checkbox_autre.setChecked(true);
-                else
+                    signalementObject.changeAUTRE();
+
+                }
+
+                else {
                     checkbox_autre.setChecked(false);
+                    signalementObject.changeAUTRE();
+
+                }
             }
 
             @Override
@@ -213,6 +223,8 @@ public class DescriptionFragment extends Fragment {
             }
         });
     }
+
+
 
 
     public static SignalementObject getSignalementObject() {
