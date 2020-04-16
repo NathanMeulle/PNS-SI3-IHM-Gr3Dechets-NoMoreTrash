@@ -4,6 +4,8 @@ package com.example.nomoretrash.signalements;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Matrix;
 import android.graphics.drawable.Icon;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -64,48 +66,7 @@ public class FinalisationFragment extends Fragment {
 
                 if (part1 && part2 && part3) {
                     Toast.makeText(getContext(), "Votre signalement a bien été enregistré !", Toast.LENGTH_LONG).show();
-
-                    // Create two threads:
-                    Thread thread1 = new Thread() {
-                        public void run() {
-                            try {
-                                Thread.sleep(1000);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                            Intent resultIntent = new Intent();
-                            resultIntent.putExtra("mon_signalement", DescriptionFragment.getSignalementObject().toString());
-                            getActivity().setResult(Activity.RESULT_OK, resultIntent);
-                            getActivity().finish();
-                        }
-                    };
-
-                    Thread thread2 = new Thread() {
-                        public void run() {
-                            Context saveContext = getActivity().getApplicationContext();
-                            String saveChannelId = CHANNEL_ID;
-                            String titleConfirmation = "Prise en compte de votre signalement";
-                            String notifConfirmation = "Il sera traité dans les plus brefs délais.";
-                            String titleChecked = "Déchet nettoyé";
-                            String notifChecked = "Le déchet signalé a été nettoyé, Merci !";
-                            sendNotificationOnChannel(R.drawable.chargement, titleConfirmation, notifConfirmation, saveChannelId, NotificationCompat.PRIORITY_DEFAULT, saveContext);
-                            sendNotificationOnChannel(R.drawable.validation, titleChecked, notifChecked, saveChannelId, NotificationCompat.PRIORITY_HIGH, saveContext);
-                        }
-                    };
-
-                    // Start the downloads.
-                    thread1.start();
-                    thread2.start();
-
-                    // Wait for them both to finish
-                    try {
-                        thread1.join();
-                        //thread2.join();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
-
+                    sendNotification();
                 } else {
                     Toast.makeText(getContext(), "Des champs dans la  page description sont manquants", Toast.LENGTH_LONG).show(); //Affichage du toast
                     SignalementActivity.pager.setCurrentItem(0); // retour automatique sur la page description
@@ -115,19 +76,67 @@ public class FinalisationFragment extends Fragment {
 
         setRecap();
         ((TextView) rootView.findViewById(R.id.recap)).setText(recap);
+        displayPhoto(rootView);
 
+        return rootView;
+    }
+
+
+
+    private void displayPhoto(View rootView) {
         //Affichage de la photo
         if (this.signalementObject.getPhoto() != null) {
             mImageView = rootView.findViewById(R.id.photo);
             mImageView.setImageBitmap(this.signalementObject.getPhoto());
             mImageView.setRotation(90);
         }
-
-
-        return rootView;
     }
 
-    private void sendNotificationOnChannel(int icon, String title, String message, String channelId, int priority, Context context) {
+
+    private void sendNotification() {
+        // Create two threads:
+        Thread thread1 = new Thread() {
+            public void run() {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra("mon_signalement", DescriptionFragment.getSignalementObject().toString());
+                getActivity().setResult(Activity.RESULT_OK, resultIntent);
+                getActivity().finish();
+            }
+        };
+
+        Thread thread2 = new Thread() {
+            public void run() {
+                Context saveContext = getActivity().getApplicationContext();
+                String saveChannelId = CHANNEL_ID;
+                String titleConfirmation = "Prise en compte de votre signalement";
+                String notifConfirmation = "Il sera traité dans les plus brefs délais.";
+                String titleChecked = "Déchet nettoyé";
+                String notifChecked = "Le déchet signalé a été nettoyé, Merci !";
+                sendNotificationOnChannel(R.drawable.chargement, titleConfirmation, notifConfirmation, saveChannelId, NotificationCompat.PRIORITY_DEFAULT, saveContext, signalementObject.getPhoto());
+                sendNotificationOnChannel(R.drawable.validation, titleChecked, notifChecked, saveChannelId, NotificationCompat.PRIORITY_HIGH, saveContext, null);
+            }
+        };
+
+        // Start the downloads.
+        thread1.start();
+        thread2.start();
+
+        // Wait for them both to finish
+        try {
+            thread1.join();
+            //thread2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private void sendNotificationOnChannel(int icon, String title, String message, String channelId, int priority, Context context, Bitmap photo) {
 
         try {
             for(int i = 1 ; i <= 10; i++){
@@ -137,14 +146,17 @@ public class FinalisationFragment extends Fragment {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-        NotificationCompat.Builder notification = new NotificationCompat.Builder( context,  channelId)
-                .setSmallIcon(icon)
-                .setContentTitle( title )
-                .setContentText( message )
-                .setPriority( priority );
+        NotificationCompat.Builder notification = new NotificationCompat.Builder(context, channelId);
+        if(photo!=null){
+             notification.setSmallIcon(icon).setContentTitle(title).setContentText(message).setPriority(priority)
+                    .setLargeIcon(RotateBitmap(signalementObject.getPhoto(), 90));
+        }
+        else {
+            notification.setSmallIcon(icon).setContentTitle(title).setContentText(message).setPriority(priority);
+        }
         ApplicationDemo.getNotificationManager().notify( ++notificationId, notification.build());
     }
+
 
     public void setRecap() {
         recap = "Recapitulatif : ";
@@ -180,6 +192,13 @@ public class FinalisationFragment extends Fragment {
             else
                 recap += " mesurant moins de 30 cm";
         } else part3 = false;
+    }
+
+
+    public static Bitmap RotateBitmap(Bitmap source, float angle) {
+        Matrix matrix = new Matrix();
+        matrix.postRotate(angle);
+        return Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(), matrix, true);
     }
 }
 
