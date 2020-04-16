@@ -80,15 +80,15 @@ public class DescriptionFragment extends Fragment {
             }
         });
 
-        if(FinalisationFragment.notComplete && FinalisationFragment.part1) {
+        if(FinalisationFragment.notComplete && !FinalisationFragment.part1) {
             TextView infos = rootView.findViewById(R.id.infos_generales);
             infos.setTextColor(Color.RED);
         }
-        if(FinalisationFragment.notComplete && FinalisationFragment.part2) {
+        if(FinalisationFragment.notComplete && !FinalisationFragment.part2) {
             TextView infos = rootView.findViewById(R.id.type);
             infos.setTextColor(Color.RED);
         }
-        if(FinalisationFragment.notComplete && FinalisationFragment.part3) {
+        if(FinalisationFragment.notComplete && !FinalisationFragment.part3) {
             TextView infos = rootView.findViewById(R.id.taille);
             infos.setTextColor(Color.RED);
         }
