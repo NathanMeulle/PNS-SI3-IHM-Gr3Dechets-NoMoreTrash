@@ -14,15 +14,13 @@ import com.google.android.material.tabs.TabLayout;
 
 public class SignalementActivity extends AppCompatActivity {
 
-    ViewPager pager;
+    public static ViewPager pager;
     private PagerAdapter mPagerAdapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signalements);
-
 
         //Configure ViewPager
         this.configureViewPagerAndTabs();

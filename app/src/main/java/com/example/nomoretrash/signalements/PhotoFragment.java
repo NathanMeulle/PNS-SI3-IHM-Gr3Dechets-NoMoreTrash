@@ -4,6 +4,8 @@ import android.Manifest;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,6 +24,9 @@ import androidx.fragment.app.Fragment;
 
 import com.example.nomoretrash.R;
 
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+
 public class PhotoFragment extends Fragment {
 
     private SignalementObject signalementObject;
@@ -30,8 +35,9 @@ public class PhotoFragment extends Fragment {
     private static final int PERMISSION_CODE = 1000;
     private static final int IMAGE_CAPTURE_CODE = 1001;
     private ImageView mImageView;
-    Button mPhotoButton;
-    public static Uri image_uri;
+    private Bitmap bitmap;
+    private Button mPhotoButton;
+    private  Uri image_uri;
 
 
     public PhotoFragment() {
@@ -67,6 +73,13 @@ public class PhotoFragment extends Fragment {
             }
         });
 
+        //Affichage de la photo
+        if (this.signalementObject.getPhoto() != null) {
+            mImageView = rootView.findViewById(R.id.photo);
+            mImageView.setImageBitmap(this.signalementObject.getPhoto());
+            mImageView.setRotation(90);
+        }
+
         return rootView;
 
     }
@@ -100,13 +113,17 @@ public class PhotoFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         //super.onActivityResult(requestCode, resultCode, data);
         if(resultCode== -1){
-            mImageView.setImageURI(image_uri);
+            try {
+                InputStream is = getActivity().getContentResolver().openInputStream(image_uri);
+                bitmap = BitmapFactory.decodeStream(is);
+                signalementObject.setPhoto(bitmap);//on enregistre la photo dans l'objet signalement
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            mImageView.setImageBitmap(bitmap);//Mise à jour de la photo affichée
             mImageView.setRotation(90);
         }
 
     }
 
-    public static Uri getImage_uri() {
-        return image_uri;
-    }
 }

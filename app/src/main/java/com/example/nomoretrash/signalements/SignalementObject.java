@@ -1,14 +1,11 @@
 package com.example.nomoretrash.signalements;
 
-import android.media.Image;
-import android.net.Uri;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.widget.ImageView;
+import android.graphics.Bitmap;
+
 
 import androidx.annotation.NonNull;
 
-public class SignalementObject implements Parcelable {
+public class SignalementObject {
 
     private String date;
 
@@ -26,7 +23,7 @@ public class SignalementObject implements Parcelable {
     private boolean PETIT;
 
     private String localisation;
-    private String photo;
+    private Bitmap photo;
     private String autreInfos;
 
     public SignalementObject() {
@@ -44,7 +41,7 @@ public class SignalementObject implements Parcelable {
         PETIT = false;
 
         localisation = "";
-        photo = "";
+        photo = null;
         autreInfos = "";
     }
 
@@ -96,7 +93,7 @@ public class SignalementObject implements Parcelable {
         return localisation;
     }
 
-    public String getPhoto() {
+    public Bitmap getPhoto() {
         return photo;
     }
 
@@ -156,7 +153,7 @@ public class SignalementObject implements Parcelable {
         this.localisation = localisation;
     }
 
-    public void setPhoto(String photo) {
+    public void setPhoto(Bitmap photo) {
         this.photo = photo;
     }
 
@@ -211,70 +208,6 @@ public class SignalementObject implements Parcelable {
         this.PETIT = !this.PETIT;
     }
 
-    /*
-    ########################### Parseur ###########################
-     */
-
-    public SignalementObject(Parcel in) {
-        String[] data = new String[14];
-
-        in.readStringArray(data);
-        this.DECHET_UNIQUE = Boolean.parseBoolean(data[0]);
-        this.DECHARGE_SAUVAGE = Boolean.parseBoolean(data[1]);
-
-        this.VERRE = Boolean.parseBoolean(data[2]);
-        this.CARTON = Boolean.parseBoolean(data[3]);
-        this.PAPIER = Boolean.parseBoolean(data[4]);
-        this.PLASTIQUE = Boolean.parseBoolean(data[5]);
-        this.METAL = Boolean.parseBoolean(data[6]);
-        this.AUTRE = Boolean.parseBoolean(data[7]);
-
-        this.GROS = Boolean.parseBoolean(data[8]);
-        this.PETIT = Boolean.parseBoolean(data[9]);
-
-        this.localisation = data[10];
-        this.photo = data[11];
-        this.autreInfos = data[12];
-        this.date = data[13];
-
-    }
-
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeStringArray(new String[]{String.valueOf(this.DECHET_UNIQUE),
-                String.valueOf(this.DECHARGE_SAUVAGE),
-                String.valueOf(this.VERRE),
-                String.valueOf(this.CARTON),
-                String.valueOf(this.PAPIER),
-                String.valueOf(this.PLASTIQUE),
-                String.valueOf(this.METAL),
-                String.valueOf(this.AUTRE),
-                String.valueOf(this.GROS),
-                String.valueOf(this.PETIT),
-                String.valueOf(this.localisation),
-                String.valueOf(this.photo),
-                String.valueOf(this.autreInfos),
-                date});
-
-    }
-
-    public static final Parcelable.Creator<SignalementObject> CREATOR = new Parcelable.Creator<SignalementObject>() {
-        @Override
-        public SignalementObject createFromParcel(Parcel source) {
-            return new SignalementObject(source);
-        }
-
-        @Override
-        public SignalementObject[] newArray(int size) {
-            return new SignalementObject[size];
-        }
-    };
 
     @NonNull
     @Override

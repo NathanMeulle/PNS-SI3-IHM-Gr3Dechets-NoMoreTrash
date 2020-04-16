@@ -107,7 +107,8 @@ public class FinalisationFragment extends Fragment {
 
 
                 } else {
-                    Toast.makeText(getContext(), "Des champs dans la  page description sont manquants", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), "Des champs dans la  page description sont manquants", Toast.LENGTH_LONG).show(); //Affichage du toast
+                    SignalementActivity.pager.setCurrentItem(0); // retour automatique sur la page description
                 }
             }
         });
@@ -116,9 +117,9 @@ public class FinalisationFragment extends Fragment {
         ((TextView) rootView.findViewById(R.id.recap)).setText(recap);
 
         //Affichage de la photo
-        if (PhotoFragment.getImage_uri() != null) {
+        if (this.signalementObject.getPhoto() != null) {
             mImageView = rootView.findViewById(R.id.photo);
-            mImageView.setImageURI(PhotoFragment.getImage_uri());
+            mImageView.setImageBitmap(this.signalementObject.getPhoto());
             mImageView.setRotation(90);
         }
 
