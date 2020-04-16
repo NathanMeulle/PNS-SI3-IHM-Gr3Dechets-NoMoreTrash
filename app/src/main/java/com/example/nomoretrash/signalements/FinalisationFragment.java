@@ -202,5 +202,12 @@ public class FinalisationFragment extends Fragment {
         matrix.postRotate(angle);
         return Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(), matrix, true);
     }
+
+    public static void reinitialisatePartCompleted() {
+        part1 = false;
+        part2 = false;
+        part3 = false;
+        notComplete = false;
+    }
 }
 

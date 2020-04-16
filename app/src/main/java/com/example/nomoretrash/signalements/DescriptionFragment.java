@@ -43,14 +43,15 @@ public class DescriptionFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.description_fragment, container, false);
-
+        final View rootView = inflater.inflate(R.layout.description_fragment, container, false);
 
         Button boutonAnnuler = rootView.findViewById(R.id.boutonAnnuler);
         boutonAnnuler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 DescriptionFragment.this.getActivity().finish();
+                reinitialisateColorText(rootView);
 
             }
         });
@@ -80,22 +81,38 @@ public class DescriptionFragment extends Fragment {
             }
         });
 
-        if(FinalisationFragment.notComplete && !FinalisationFragment.part1) {
-            TextView infos = rootView.findViewById(R.id.infos_generales);
-            infos.setTextColor(Color.RED);
-        }
-        if(FinalisationFragment.notComplete && !FinalisationFragment.part2) {
-            TextView infos = rootView.findViewById(R.id.type);
-            infos.setTextColor(Color.RED);
-        }
-        if(FinalisationFragment.notComplete && !FinalisationFragment.part3) {
-            TextView infos = rootView.findViewById(R.id.taille);
-            infos.setTextColor(Color.RED);
-        }
+        changeColorsText(rootView);//Met en rouge les champs manquants
 
         return rootView;
     }
 
+    private void reinitialisateColorText(View rootView) {
+        FinalisationFragment.reinitialisatePartCompleted();
+        TextView infos = rootView.findViewById(R.id.infos_generales);
+        TextView type = rootView.findViewById(R.id.type);
+        TextView taille = rootView.findViewById(R.id.taille);
+
+        infos.setTextColor(Color.BLACK);
+        type.setTextColor(Color.BLACK);
+        taille.setTextColor(Color.BLACK);
+    }
+
+    private void changeColorsText(View rootView) {
+        TextView infos = rootView.findViewById(R.id.infos_generales);
+        TextView type = rootView.findViewById(R.id.type);
+        TextView taille = rootView.findViewById(R.id.taille);
+
+        if(FinalisationFragment.notComplete && !FinalisationFragment.part1) {
+            infos.setTextColor(Color.RED);
+        }
+
+        if(FinalisationFragment.notComplete && !FinalisationFragment.part2) {
+            type.setTextColor(Color.RED);
+        }
+        if(FinalisationFragment.notComplete && !FinalisationFragment.part3) {
+            taille.setTextColor(Color.RED);
+        }
+    }
 
 
     private void checkBoxCreation(View rootView) {
