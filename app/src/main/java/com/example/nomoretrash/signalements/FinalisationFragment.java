@@ -41,9 +41,10 @@ public class FinalisationFragment extends Fragment {
 
     private String recap = "";
 
-    private boolean part1 = false;
-    private boolean part2 = false;
-    private boolean part3 = false;
+    public static boolean part1 = false;
+    public static boolean part2 = false;
+    public static boolean  part3 = false;
+    public static boolean notComplete = false;
 
 
     private int notificationId = 0;
@@ -65,10 +66,11 @@ public class FinalisationFragment extends Fragment {
             public void onClick(View v) {
 
                 if (part1 && part2 && part3) {
-                    Toast.makeText(getContext(), "Votre signalement a bien été enregistré !", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), "Signalement enregistré !", Toast.LENGTH_LONG).show();
                     sendNotification();
                 } else {
-                    Toast.makeText(getContext(), "Des champs dans la  page description sont manquants", Toast.LENGTH_LONG).show(); //Affichage du toast
+                    notComplete = true;
+                    Toast.makeText(getContext(), "Champs non remplis", Toast.LENGTH_LONG).show(); //Affichage du toast
                     SignalementActivity.pager.setCurrentItem(0); // retour automatique sur la page description
                 }
             }
