@@ -87,6 +87,14 @@ public class DescriptionFragment extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
+                if(!String.valueOf(s).equals("")) {
+                    checkbox_autre.setChecked(true);
+                    signalementObject.setAUTRE(true);
+                }
+                else {
+                    checkbox_autre.setChecked(false);
+                    signalementObject.setAUTRE(false);
+                }
 
             }
         });

@@ -202,6 +202,10 @@ public class SignalementObject {
         this.longitude = longitude;
     }
 
+    public void setHaveLocalisation(boolean haveLocalisation) {
+        this.haveLocalisation = haveLocalisation;
+    }
+
     /*
     ########################### INVERSEURS ###########################
      */

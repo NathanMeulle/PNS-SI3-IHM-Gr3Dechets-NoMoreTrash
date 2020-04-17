@@ -208,10 +208,10 @@ public class LocalisationFragment extends Fragment {
             marker.setPosition(new GeoPoint(location.getLatitude(), location.getLongitude()));
             marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
             marker.setIcon(getResources().getDrawable(R.drawable.trash));
-            marker.setTitle("Trash");
+            marker.setTitle("Position du dechet");
             map.getOverlays().add(marker);
             map.invalidate();
-            signalementObject.changeHaveLocalisation();
+            signalementObject.setHaveLocalisation(true);
         }else { // sinon on le recupère et on change sa position
             map.getOverlays().remove(marker);
             marker = new Marker(map);

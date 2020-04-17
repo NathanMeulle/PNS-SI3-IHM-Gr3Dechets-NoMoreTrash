@@ -26,8 +26,6 @@ public class SignalementActivity extends AppCompatActivity {
         this.configureViewPagerAndTabs();
 
         //PageAdapter permettant de mettre à jour les fragments
-        mPagerAdapter = new PageAdapter(getSupportFragmentManager());
-        pager.setAdapter(mPagerAdapter);
         pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             int CurrentFragment = 0;
 
@@ -64,11 +62,12 @@ public class SignalementActivity extends AppCompatActivity {
         //Get ViewPager from layout
         pager = (ViewPager)findViewById(R.id.activity_main_viewpager);
         //Set Adapter PageAdapter and glue it together
-        pager.setAdapter(new PageAdapter(getSupportFragmentManager()));
+        mPagerAdapter = new PageAdapter(getSupportFragmentManager());
+        pager.setAdapter(mPagerAdapter);
 
         TabLayout tabs= (TabLayout)findViewById(R.id.activity_main_tabs);
         tabs.setupWithViewPager(pager);
-        tabs.setTabMode(TabLayout.MODE_FIXED);
+        tabs.setTabMode(TabLayout.MODE_AUTO);
     }
 
 
