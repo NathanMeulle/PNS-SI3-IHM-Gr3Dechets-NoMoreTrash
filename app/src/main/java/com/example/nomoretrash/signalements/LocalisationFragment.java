@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
+import android.location.Address;
 import android.location.Criteria;
 import android.location.Geocoder;
 import android.location.Location;
@@ -19,7 +20,6 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -27,34 +27,42 @@ import androidx.fragment.app.Fragment;
 import com.example.nomoretrash.R;
 
 import org.osmdroid.api.IMapController;
-import org.osmdroid.events.MapListener;
-import org.osmdroid.events.ScrollEvent;
-import org.osmdroid.events.ZoomEvent;
+
+import org.osmdroid.events.MapEventsReceiver;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.ItemizedIconOverlay;
 import org.osmdroid.views.overlay.ItemizedOverlayWithFocus;
+import org.osmdroid.views.overlay.MapEventsOverlay;
+import org.osmdroid.views.overlay.Marker;
 import org.osmdroid.views.overlay.OverlayItem;
 import org.osmdroid.views.overlay.ScaleBarOverlay;
 import org.osmdroid.views.overlay.compass.CompassOverlay;
 import org.osmdroid.views.overlay.compass.InternalCompassOrientationProvider;
-import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider;
-import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
 
+
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public class LocalisationFragment extends Fragment {
 
     private MapView map;
     private SignalementObject signalementObject;
-    ImageButton boutonMaPosition;
+    private ImageButton boutonMaPosition;
     private static final int PERMISSION_CODE = 1000;
     private int etat = 0;
-    String coordonnees;
-    Double latitude;
-    Double longitude;
+    private String coordonnees;
+    private Double latitude;
+    private Double longitude;
+    private LocationManager locationManager = null;
+    private LocationListener locationListener;
+    private Double latitudeDechet;
+    private Double longitudeDechet;
+    private Marker marker;
+    private int nbMarker = 0;
 
 
 
@@ -94,50 +102,46 @@ public class LocalisationFragment extends Fragment {
         mCompassOverlay.enableCompass();
         map.getOverlays().add(mCompassOverlay);
 
-        final LocationListener locationListener = new LocationListener() {
+        locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
                 latitude = location.getLatitude();
                 longitude = location.getLongitude();
                 coordonnees = String.format("Latitude : %f - Longitude : %f\n", latitude, longitude);
                 Log.d("GPS", coordonnees);
+                GeoPoint nouvelleLocalisation = new GeoPoint(location);
+                map.getController().animateTo(nouvelleLocalisation);
                 map.getController().setCenter(new GeoPoint(latitude, longitude));
             }
 
             @Override
             public void onStatusChanged(String provider, int status, Bundle extras) {
-                {
-                    if (etat != status)
-                    {
-                        switch (status)
-                        {
-                            case LocationProvider.AVAILABLE:
-                                Toast.makeText(getContext(), provider + " état disponible", Toast.LENGTH_SHORT).show();
-                                break;
-                            case LocationProvider.OUT_OF_SERVICE:
-                                Toast.makeText(getContext(), provider + " état indisponible", Toast.LENGTH_SHORT).show();
-                                break;
-                            case LocationProvider.TEMPORARILY_UNAVAILABLE:
-                                Toast.makeText(getContext(), provider + " état temporairement indisponible", Toast.LENGTH_SHORT).show();
-                                break;
-                            default:
-                                Toast.makeText(getContext(), provider + " état : " + status, Toast.LENGTH_SHORT).show();
-                        }
+                if (etat != status) {
+                    switch (status) {
+                        case LocationProvider.AVAILABLE:
+                            Toast.makeText(getContext(), provider + " état disponible", Toast.LENGTH_SHORT).show();
+                            break;
+                        case LocationProvider.OUT_OF_SERVICE:
+                            Toast.makeText(getContext(), provider + " état indisponible", Toast.LENGTH_SHORT).show();
+                            break;
+                        case LocationProvider.TEMPORARILY_UNAVAILABLE:
+                            Toast.makeText(getContext(), provider + " état temporairement indisponible", Toast.LENGTH_SHORT).show();
+                            break;
+                        default:
+                            Toast.makeText(getContext(), provider + " état : " + status, Toast.LENGTH_SHORT).show();
                     }
-                    etat = status;
                 }
+                etat = status;
             }
 
             @Override
             public void onProviderEnabled(String provider) {
                 Toast.makeText(getContext(), provider + " activé !", Toast.LENGTH_SHORT).show();
-
             }
 
             @Override
             public void onProviderDisabled(String provider) {
                 Toast.makeText(getContext(), provider + " désactivé !", Toast.LENGTH_SHORT).show();
-
             }
         };
 
@@ -157,18 +161,21 @@ public class LocalisationFragment extends Fragment {
                     } else {
                         //permission ok
                     }
-                    initialiserLocalisation(null, "", locationListener);
-                    addItemPosition();
+                    initialiserLocalisation("", locationListener);
+                    addItemMyPosition();//Ajoute ma position
                 }
             }
         });
+
+        // Ajout d'un MapEventsReceiver pour detecter les clics de l'utilisateur
+        onSingleTapUpHelper();
 
 
 
         return rootView;
     }
 
-    private void addItemPosition() {
+    private void addItemMyPosition() {
         // ajout d'un point
         ArrayList<OverlayItem> items = new ArrayList<OverlayItem>();
         OverlayItem home = new OverlayItem("Vous êtes ici", "", new GeoPoint(latitude, longitude));
@@ -190,10 +197,64 @@ public class LocalisationFragment extends Fragment {
 
         mOverlay.setFocusItemsOnTap(true);
         map.getOverlays().add(mOverlay);
+        map.getController().setZoom(18.0);
     }
 
-    private void initialiserLocalisation(LocationManager locationManager, String fournisseur, LocationListener ecouteurGPS)
-    {
+
+
+    public  void addItemTrash(GeoPoint location){
+        if(nbMarker==0) { // si aucun marker n'est créé, on le crée
+            marker = new Marker(map);
+            marker.setPosition(new GeoPoint(location.getLatitude(), location.getLongitude()));
+            marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+            marker.setIcon(getResources().getDrawable(R.drawable.trash));
+            marker.setTitle("Trash");
+            map.getOverlays().add(marker);
+            map.invalidate();
+            signalementObject.changeHaveLocalisation();
+        }else { // sinon on le recupère et on change sa position
+            map.getOverlays().remove(marker);
+            marker = new Marker(map);
+            marker.setPosition(new GeoPoint(location.getLatitude(), location.getLongitude()));
+            marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+            marker.setIcon(getResources().getDrawable(R.drawable.trash));
+            marker.setTitle("Trash");
+            map.getOverlays().add(marker);
+            map.invalidate();
+
+        }
+        nbMarker++;
+    }
+
+
+    public void onSingleTapUpHelper() {
+        MapEventsReceiver mReceive = new MapEventsReceiver() {
+            @Override
+            public boolean singleTapConfirmedHelper(GeoPoint p) {
+                addItemTrash(p);// on ajoute un marker
+                signalementObject.setLatitude(p.getLatitude()); // on enregistre ses coordonnées
+                signalementObject.setLongitude(p.getLongitude());
+                try {
+                    signalementObject.setLocalisation(localisationToString(p.getLatitude(), p.getLongitude()));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    signalementObject.setLocalisation(toStringLocalisation(p.getLatitude(), p.getLongitude()));
+                }
+                return false;
+            }
+
+            @Override
+            public boolean longPressHelper(GeoPoint p) {
+                return false;
+            }
+        };
+
+        MapEventsOverlay OverlayEvents = new MapEventsOverlay(getActivity().getBaseContext(), mReceive);
+        map.getOverlays().add(OverlayEvents);
+
+    }
+
+    private void initialiserLocalisation(String fournisseur, LocationListener ecouteurGPS) {
         if (locationManager == null) {
             locationManager = (LocationManager) getContext().getSystemService(Context.LOCATION_SERVICE);
             Criteria criteres = new Criteria();
@@ -236,6 +297,33 @@ public class LocalisationFragment extends Fragment {
             // on configure la mise à jour automatique : au moins 10 mètres et 15 secondes
             locationManager.requestLocationUpdates(fournisseur, 15000, 10, ecouteurGPS);
         }
+    }
+
+    private void arreterLocalisation() {
+        if(locationManager != null) {
+            locationManager.removeUpdates(locationListener);
+            locationListener = null;
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        arreterLocalisation();
+    }
+
+    public String localisationToString(double latitude, double longitude) throws IOException {
+        Geocoder geocoder;
+        List<Address> addresses;
+        geocoder = new Geocoder(this.getContext(), Locale.getDefault());
+        addresses = geocoder.getFromLocation(latitude, longitude, 1);
+
+        String address = addresses.get(0).getAddressLine(0);
+        return "Localisation : " + address;
+    }
+
+    public String toStringLocalisation(double latitude, double longitude){
+        return "Localisation : " + latitude +", " + longitude ;
     }
 
 }

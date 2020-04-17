@@ -24,6 +24,10 @@ public class SignalementObject {
     private boolean PETIT;
 
     private String localisation;
+    private double latitude;
+    private double longitude;
+    private boolean haveLocalisation;
+
     private Bitmap photo;
     private String autreInfos;
 
@@ -43,6 +47,8 @@ public class SignalementObject {
         PETIT = false;
 
         localisation = "";
+        haveLocalisation = false;
+
         photo = null;
         autreInfos = "";
     }
@@ -110,6 +116,19 @@ public class SignalementObject {
     public String getAutreType() {
         return autreType;
     }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public boolean haveLocalisation() {
+        return this.haveLocalisation;
+    }
+
     /*
     ########################### SETTERS ###########################
      */
@@ -175,6 +194,14 @@ public class SignalementObject {
         this.autreType = autreType;
     }
 
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
     /*
     ########################### INVERSEURS ###########################
      */
@@ -219,6 +246,10 @@ public class SignalementObject {
         this.PETIT = !this.PETIT;
     }
 
+    public void changeHaveLocalisation(){
+        this.haveLocalisation=!this.haveLocalisation;
+    }
+
 
     @NonNull
     @Override
@@ -253,6 +284,9 @@ public class SignalementObject {
                 recap += " mesurant moins de 30 cm";
 
         }
+
+        recap+= "\n"+localisation;
+
         if(!autreInfos.equals(""))
             recap+="\nAutres informations : " + autreInfos;
         else recap+="\n";
@@ -261,4 +295,6 @@ public class SignalementObject {
         return recap;
 
     }
+
+
 }

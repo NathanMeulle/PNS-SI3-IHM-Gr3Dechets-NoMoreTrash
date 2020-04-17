@@ -45,6 +45,7 @@ public class FinalisationFragment extends Fragment {
     public static boolean part1 = false;
     public static boolean part2 = false;
     public static boolean  part3 = false;
+    public static boolean  part4 = false;
     public static boolean notComplete = false;
 
 
@@ -66,7 +67,7 @@ public class FinalisationFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                if (part1 && part2 && part3) {
+                if (part1 && part2 && part3 && part4) {
                     //on récupère les autres infos
                     EditText editText = rootView.findViewById(R.id.info_comp);
                     signalementObject.setAutreInfos(editText.getText().toString());
@@ -150,7 +151,7 @@ public class FinalisationFragment extends Fragment {
         try {
             for(int i = 1 ; i <= 10; i++){
                 Thread.sleep(1000);
-                System.out.println(i+" seconde(s) se sont écoulée");
+                System.out.println(i+" seconde(s) se sont écoulées");
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -191,8 +192,8 @@ public class FinalisationFragment extends Fragment {
             if (signalementObject.isMETAL())
                 recap += " métal,";
             if (signalementObject.isAUTRE())
-                // TODO: 12/04/2020 a modifier en fonction de se qu'écrit l'utilisateur
                 recap += " autre,";
+            // TODO: 12/04/2020 a modifier en fonction de se qu'écrit l'utilisateur
         } else part2 = false;
         if (signalementObject.isGROS() || signalementObject.isPETIT()) {
             part3 = true;
@@ -201,6 +202,12 @@ public class FinalisationFragment extends Fragment {
             else
                 recap += " mesurant moins de 30 cm";
         } else part3 = false;
+
+        if(signalementObject.haveLocalisation()) {
+            part4 = true;
+            recap += "\n"+ signalementObject.getLocalisation();
+        }
+        else recap+= "\nLocalisation non renseignée";
     }
 
 
@@ -214,6 +221,7 @@ public class FinalisationFragment extends Fragment {
         part1 = false;
         part2 = false;
         part3 = false;
+        part4 = false;
         notComplete = false;
     }
 }
