@@ -81,7 +81,7 @@ public class FinalisationFragment extends Fragment {
                     }
                     else {
                         Toast.makeText(getContext(), "Localisation non renseignée", Toast.LENGTH_LONG).show(); //Affichage du toast
-                        SignalementActivity.pager.setCurrentItem(2); // retour automatique sur la page description
+                        SignalementActivity.pager.setCurrentItem(1); // retour automatique sur la page description
                     }
                 }
             }
@@ -174,6 +174,7 @@ public class FinalisationFragment extends Fragment {
 
 
     public void setRecap() {
+        System.out.println("loca : " + signalementObject.haveLocalisation()+"");
         recap = "Recapitulatif : ";
         if (signalementObject.isDECHET_UNIQUE() || signalementObject.isDECHARGE_SAUVAGE()) {
             part1 = true;
@@ -212,7 +213,10 @@ public class FinalisationFragment extends Fragment {
             part4 = true;
             recap += "\n"+ signalementObject.getLocalisation();
         }
-        else recap+= "\nLocalisation non renseignée";
+        else {
+            part4 = false;
+            recap += "\nLocalisation non renseignée";
+        }
     }
 
 

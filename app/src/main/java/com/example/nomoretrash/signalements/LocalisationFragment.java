@@ -293,9 +293,7 @@ public class LocalisationFragment extends Fragment {
                 // on notifie la localisation
                 ecouteurGPS.onLocationChanged(localisation);
             }
-
-            // on configure la mise à jour automatique : au moins 10 mètres et 15 secondes
-            locationManager.requestLocationUpdates(fournisseur, 15000, 10, ecouteurGPS);
+            
         }
     }
 
