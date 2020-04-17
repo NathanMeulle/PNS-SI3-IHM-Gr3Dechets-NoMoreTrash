@@ -71,13 +71,18 @@ public class FinalisationFragment extends Fragment {
                     //on récupère les autres infos
                     EditText editText = rootView.findViewById(R.id.info_comp);
                     signalementObject.setAutreInfos(editText.getText().toString());
-
                     Toast.makeText(getContext(), "Signalement enregistré !", Toast.LENGTH_LONG).show();
                     sendNotification();
                 } else {
                     notComplete = true;
-                    Toast.makeText(getContext(), "Champs non remplis", Toast.LENGTH_LONG).show(); //Affichage du toast
-                    SignalementActivity.pager.setCurrentItem(0); // retour automatique sur la page description
+                    if(!part1 || !part2 || !part3) {
+                        Toast.makeText(getContext(), "Champs non remplis", Toast.LENGTH_LONG).show(); //Affichage du toast
+                        SignalementActivity.pager.setCurrentItem(0); // retour automatique sur la page description
+                    }
+                    else {
+                        Toast.makeText(getContext(), "Localisation non renseignée", Toast.LENGTH_LONG).show(); //Affichage du toast
+                        SignalementActivity.pager.setCurrentItem(2); // retour automatique sur la page description
+                    }
                 }
             }
         });
