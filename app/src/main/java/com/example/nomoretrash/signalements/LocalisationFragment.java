@@ -36,6 +36,9 @@ import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.ItemizedIconOverlay;
 import org.osmdroid.views.overlay.ItemizedOverlayWithFocus;
 import org.osmdroid.views.overlay.OverlayItem;
+import org.osmdroid.views.overlay.ScaleBarOverlay;
+import org.osmdroid.views.overlay.compass.CompassOverlay;
+import org.osmdroid.views.overlay.compass.InternalCompassOrientationProvider;
 import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider;
 import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
 
@@ -48,10 +51,10 @@ public class LocalisationFragment extends Fragment {
     private SignalementObject signalementObject;
     ImageButton boutonMaPosition;
     private static final int PERMISSION_CODE = 1000;
-    private int etat;
-    LocationListener ecouteurGPS;
-    LocationManager locationManager = null;
-    private String fournisseur;
+    private int etat = 0;
+    String coordonnees;
+    Double latitude;
+    Double longitude;
 
 
 
@@ -70,18 +73,105 @@ public class LocalisationFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.localisation_fragment, container, false);
         final IMapController mapController;
 
+        //Création de la map
         map = rootView.findViewById(R.id.map);
         map.setTileSource(TileSourceFactory.MAPNIK);
         map.setBuiltInZoomControls(true);
         map.setMultiTouchControls(true);
 
+        // Ajout du controler et du point 0
         mapController = map.getController();
         mapController.setZoom(18.0);
         GeoPoint startPoint = new GeoPoint(43.181866, 5.703372);
         mapController.setCenter(startPoint);
 
+        //Ajout d'une echelle
+        ScaleBarOverlay myScaleBarOverlay = new ScaleBarOverlay(map);
+        map.getOverlays().add(myScaleBarOverlay);
+
+        //Ajout d'une boussole
+        CompassOverlay mCompassOverlay = new CompassOverlay(getContext(), new InternalCompassOrientationProvider(getContext()), map);
+        mCompassOverlay.enableCompass();
+        map.getOverlays().add(mCompassOverlay);
+
+        final LocationListener locationListener = new LocationListener() {
+            @Override
+            public void onLocationChanged(Location location) {
+                latitude = location.getLatitude();
+                longitude = location.getLongitude();
+                coordonnees = String.format("Latitude : %f - Longitude : %f\n", latitude, longitude);
+                Log.d("GPS", coordonnees);
+                map.getController().setCenter(new GeoPoint(latitude, longitude));
+            }
+
+            @Override
+            public void onStatusChanged(String provider, int status, Bundle extras) {
+                {
+                    if (etat != status)
+                    {
+                        switch (status)
+                        {
+                            case LocationProvider.AVAILABLE:
+                                Toast.makeText(getContext(), provider + " état disponible", Toast.LENGTH_SHORT).show();
+                                break;
+                            case LocationProvider.OUT_OF_SERVICE:
+                                Toast.makeText(getContext(), provider + " état indisponible", Toast.LENGTH_SHORT).show();
+                                break;
+                            case LocationProvider.TEMPORARILY_UNAVAILABLE:
+                                Toast.makeText(getContext(), provider + " état temporairement indisponible", Toast.LENGTH_SHORT).show();
+                                break;
+                            default:
+                                Toast.makeText(getContext(), provider + " état : " + status, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    etat = status;
+                }
+            }
+
+            @Override
+            public void onProviderEnabled(String provider) {
+                Toast.makeText(getContext(), provider + " activé !", Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onProviderDisabled(String provider) {
+                Toast.makeText(getContext(), provider + " désactivé !", Toast.LENGTH_SHORT).show();
+
+            }
+        };
+
+
+
+        //Création du bouton pour recentrer la carte sur soi
+        boutonMaPosition = rootView.findViewById(R.id.boutonMaPosition);
+        boutonMaPosition.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    if (ContextCompat.checkSelfPermission(LocalisationFragment.this.getContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_DENIED) {
+                        //Permission non accordée, on demande de nouveau la permission
+                        String[] permission = {Manifest.permission.ACCESS_FINE_LOCATION};
+                        //POP UP
+                        requestPermissions(permission, PERMISSION_CODE);//On demande l'accès au GPS
+                    } else {
+                        //permission ok
+                    }
+                    initialiserLocalisation(null, "", locationListener);
+                    addItemPosition();
+                }
+            }
+        });
+
+
+
+        return rootView;
+    }
+
+    private void addItemPosition() {
+        // ajout d'un point
         ArrayList<OverlayItem> items = new ArrayList<OverlayItem>();
-        OverlayItem home = new OverlayItem("Maison de Léo", "C'est là où ses parents habitent", new GeoPoint(43.189122, 5.704391));
+        OverlayItem home = new OverlayItem("Vous êtes ici", "", new GeoPoint(latitude, longitude));
         Drawable m = home.getMarker(0);
 
         items.add(home);
@@ -100,25 +190,52 @@ public class LocalisationFragment extends Fragment {
 
         mOverlay.setFocusItemsOnTap(true);
         map.getOverlays().add(mOverlay);
-        boutonMaPosition = rootView.findViewById(R.id.boutonMaPosition);
-        boutonMaPosition.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    if (ContextCompat.checkSelfPermission(LocalisationFragment.this.getContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_DENIED) {
-                        //Permission non accordée, on demande de nouveau la permission
-                        String[] permission = {Manifest.permission.ACCESS_FINE_LOCATION};
-                        //POP UP
-                        requestPermissions(permission, PERMISSION_CODE);
-                    } else {
-                        //permission ok
-                    }
-                    //recentrateMap(mapController);
-                }
-            }
-        });
+    }
 
-        return rootView;
+    private void initialiserLocalisation(LocationManager locationManager, String fournisseur, LocationListener ecouteurGPS)
+    {
+        if (locationManager == null) {
+            locationManager = (LocationManager) getContext().getSystemService(Context.LOCATION_SERVICE);
+            Criteria criteres = new Criteria();
+
+            // la précision  : (ACCURACY_FINE pour une haute précision ou ACCURACY_COARSE pour une moins bonne précision)
+            criteres.setAccuracy(Criteria.ACCURACY_FINE);
+
+            // l'altitude
+            criteres.setAltitudeRequired(true);
+
+            // la direction
+            criteres.setBearingRequired(true);
+
+            // la vitesse
+            criteres.setSpeedRequired(true);
+
+            // la consommation d'énergie demandée
+            criteres.setCostAllowed(true);
+            //criteres.setPowerRequirement(Criteria.POWER_HIGH);
+            criteres.setPowerRequirement(Criteria.POWER_MEDIUM);
+
+            fournisseur = locationManager.getBestProvider(criteres, true);
+            Log.d("GPS", "fournisseur : " + fournisseur);
+        }
+
+        if (fournisseur != null) {
+            // dernière position connue
+            if (ActivityCompat.checkSelfPermission(this.getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                    && ActivityCompat.checkSelfPermission(this.getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                Log.d("GPS", "no permissions !");
+                return;
+            }
+
+            Location localisation = locationManager.getLastKnownLocation(fournisseur);
+            if(localisation != null) {
+                // on notifie la localisation
+                ecouteurGPS.onLocationChanged(localisation);
+            }
+
+            // on configure la mise à jour automatique : au moins 10 mètres et 15 secondes
+            locationManager.requestLocationUpdates(fournisseur, 15000, 10, ecouteurGPS);
+        }
     }
 
 }
