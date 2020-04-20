@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "555572231842",
+    "firebase_url": "https://nomoretrash-gr3-dechet.firebaseio.com",
+    "project_id": "nomoretrash-gr3-dechet",
+    "storage_bucket": "nomoretrash-gr3-dechet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555572231842:android:d90d1f9ef3b4426e7961fb",
+        "android_client_info": {
+          "package_name": "com.example.nomoretrash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "555572231842-9ba7h1vl07tlvine18fb5r6pj0lb56qg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLgwws3nI-GM_nuHd1qdt3gULqEZVtNyc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "555572231842-9ba7h1vl07tlvine18fb5r6pj0lb56qg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
