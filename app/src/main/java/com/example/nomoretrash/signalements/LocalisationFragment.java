@@ -149,23 +149,27 @@ public class LocalisationFragment extends Fragment {
 
         //Création du bouton pour recentrer la carte sur soi
         boutonMaPosition = rootView.findViewById(R.id.boutonMaPosition);
-        boutonMaPosition.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    if (ContextCompat.checkSelfPermission(LocalisationFragment.this.getContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_DENIED) {
-                        //Permission non accordée, on demande de nouveau la permission
-                        String[] permission = {Manifest.permission.ACCESS_FINE_LOCATION};
-                        //POP UP
-                        requestPermissions(permission, PERMISSION_CODE);//On demande l'accès au GPS
-                    } else {
-                        //permission ok
+        try {
+            boutonMaPosition.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        if (ContextCompat.checkSelfPermission(LocalisationFragment.this.getContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_DENIED) {
+                            //Permission non accordée, on demande de nouveau la permission
+                            String[] permission = {Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.WRITE_EXTERNAL_STORAGE};
+                            //POP UP
+                            requestPermissions(permission, PERMISSION_CODE);//On demande l'accès au GPS
+                        } else {
+                            //permission ok
+                        }
+                        initialiserLocalisation("", locationListener);
+                        addItemMyPosition();//Ajoute ma position
                     }
-                    initialiserLocalisation("", locationListener);
-                    addItemMyPosition();//Ajoute ma position
                 }
-            }
-        });
+            });
+        } catch (Exception e ) {
+            Toast.makeText(getContext(),  "Une erreur est survenue...", Toast.LENGTH_SHORT).show();
+        }
 
         // Ajout d'un MapEventsReceiver pour detecter les clics de l'utilisateur
         onSingleTapUpHelper();
