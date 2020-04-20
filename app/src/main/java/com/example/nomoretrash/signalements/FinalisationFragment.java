@@ -26,6 +26,9 @@ import com.example.nomoretrash.MainActivity;
 import com.example.nomoretrash.ApplicationDemo;
 import com.example.nomoretrash.R;
 import com.example.nomoretrash.map.MainMapActivity;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import static com.example.nomoretrash.ApplicationDemo.CHANNEL_ID;
 
@@ -60,6 +63,11 @@ public class FinalisationFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         recap = "";
 
+
+
+
+
+
         final View rootView = inflater.inflate(R.layout.finalisation_fragment, container, false);
 
         Button boutonFinaliser = rootView.findViewById(R.id.boutonFinir);
@@ -71,6 +79,12 @@ public class FinalisationFragment extends Fragment {
                     //on récupère les autres infos
                     EditText editText = rootView.findViewById(R.id.info_comp);
                     signalementObject.setAutreInfos(editText.getText().toString());
+
+                    // Ajout du signalement dans la database
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference myRef = database.getReference();
+                    myRef.setValue(signalementObject.toString());
+
                     Toast.makeText(getContext(), "Signalement enregistré !", Toast.LENGTH_LONG).show();
                     sendNotification();
                 } else {

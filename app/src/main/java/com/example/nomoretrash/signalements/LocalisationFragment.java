@@ -179,7 +179,7 @@ public class LocalisationFragment extends Fragment {
         return rootView;
     }
 
-    private void addItemMyPosition() {
+    private void addItemMyPosition() throws NullPointerException {
         // ajout d'un point
         ArrayList<OverlayItem> items = new ArrayList<OverlayItem>();
         OverlayItem home = new OverlayItem("Vous êtes ici", "", new GeoPoint(latitude, longitude));
