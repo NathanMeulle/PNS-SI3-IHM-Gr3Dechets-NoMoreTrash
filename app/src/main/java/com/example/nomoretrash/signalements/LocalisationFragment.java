@@ -155,7 +155,7 @@ public class LocalisationFragment extends Fragment {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     if (ContextCompat.checkSelfPermission(LocalisationFragment.this.getContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_DENIED) {
                         //Permission non accordée, on demande de nouveau la permission
-                        String[] permission = {Manifest.permission.ACCESS_FINE_LOCATION};
+                        String[] permission = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.WRITE_EXTERNAL_STORAGE};
                         //POP UP
                         requestPermissions(permission, PERMISSION_CODE);//On demande l'accès au GPS
                     } else {
