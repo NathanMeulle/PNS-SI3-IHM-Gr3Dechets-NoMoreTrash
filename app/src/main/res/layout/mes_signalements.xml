@@ -41,6 +41,14 @@
         app:layout_constraintRight_toRightOf="parent"
         android:id="@+id/signalementList"
         />
+
+    <com.facebook.share.widget.ShareButton
+        android:id="@+id/fb_share_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/signalementList"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
     <TextView
         android:id="@android:id/empty"
         android:text = "Aucun signalement"

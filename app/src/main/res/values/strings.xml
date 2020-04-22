@@ -6,6 +6,7 @@
     <string name="bottom_navigation_menu_localisation">Localisation</string>
     <string name="bottom_navigation_menu_photo">Photo</string>
     <string name="bottom_navigation_menu_finalisation">Finalisation</string>
+    <string name="facebook_app_id">Facebook App ID</string>
 
 
 </resources>
