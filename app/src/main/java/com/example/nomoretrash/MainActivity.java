@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -70,7 +71,9 @@ public class MainActivity extends AppCompatActivity {
                         // whenever data at this location is updated.
                         String value = dataSnapshot.getValue(String.class);
                         Log.d("TAG", "Value is: " + value);
-                        intent.putExtra("ma_liste_de_signalements", value);
+                        ArrayList<String> signalementsListOnServer = new ArrayList<>();
+                        signalementsListOnServer.add(value);
+                        intent.putExtra("ma_liste_de_signalements", signalementsListOnServer);
 
                     }
 
@@ -84,6 +87,15 @@ public class MainActivity extends AppCompatActivity {
                 });
 
 
+                startActivity(intent);
+            }
+        });
+
+        final ImageButton buttonAccount = findViewById(R.id.account);
+        buttonAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AccountActivity.class);
                 startActivity(intent);
             }
         });

@@ -23,6 +23,20 @@
         app:layout_constraintLeft_toLeftOf="parent"
         />
 
+    <ImageButton
+        android:layout_width="150px"
+        android:layout_height="150px"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/account"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:src="@drawable/account"
+        android:background="#FFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
     <TextView
         android:id="@+id/text"
         android:layout_width="wrap_content"

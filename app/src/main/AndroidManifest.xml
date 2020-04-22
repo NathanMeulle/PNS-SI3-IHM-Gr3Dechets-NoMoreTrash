@@ -20,6 +20,7 @@
         <activity android:name=".signalements.SignalementActivity"/>
         <activity android:name=".statistiques.StatistiquesActivity"/>
         <activity android:name=".map.MainMapActivity" />
+        <activity android:name=".AccountActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

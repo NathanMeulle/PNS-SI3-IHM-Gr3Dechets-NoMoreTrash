@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "555572231842-mqldmpd9bb993mgrq3amnlucbv29tcp5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nomoretrash",
+            "certificate_hash": "7291c91053d0a7bf43a96c8de71036796e8fd5ac"
+          }
+        },
+        {
           "client_id": "555572231842-9ba7h1vl07tlvine18fb5r6pj0lb56qg.apps.googleusercontent.com",
           "client_type": 3
         }
