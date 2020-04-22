@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.nomoretrash.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MesSignalementsActivity extends AppCompatActivity {
 
@@ -26,12 +27,13 @@ public class MesSignalementsActivity extends AppCompatActivity {
         Intent intent = getIntent();
         if(intent.hasExtra("ma_liste_de_signalements")){
             ArrayList<String> res = intent.getStringArrayListExtra("ma_liste_de_signalements");
+            Collections.reverse(res);
             ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, res);
-            listView.setAdapter(adapter);
-        }
 
-        TextView emptyText = (TextView)findViewById(android.R.id.empty);
-        listView.setEmptyView(emptyText);
+
+        TextView emptyText = findViewById(android.R.id.empty);
+        listView.setEmptyView(emptyText);listView.setAdapter(adapter);
+    }
 
 
 

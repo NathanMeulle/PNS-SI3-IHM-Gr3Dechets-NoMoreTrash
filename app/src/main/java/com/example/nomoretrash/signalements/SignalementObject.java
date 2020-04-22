@@ -293,9 +293,9 @@ public class SignalementObject {
 
         if(!autreInfos.equals(""))
             recap+="\nAutres informations : " + autreInfos;
-        else recap+="\n";
 
-        recap+="Statut : en cours de traitement";
+
+        recap+="\nStatut : en cours de traitement";
         return recap;
 
     }
