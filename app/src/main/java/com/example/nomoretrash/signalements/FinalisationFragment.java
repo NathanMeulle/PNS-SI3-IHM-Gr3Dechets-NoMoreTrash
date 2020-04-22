@@ -232,6 +232,7 @@ public class FinalisationFragment extends Fragment {
         part3 = false;
         part4 = false;
         notComplete = false;
+
     }
 }
 

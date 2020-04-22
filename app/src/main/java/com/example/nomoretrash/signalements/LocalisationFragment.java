@@ -26,6 +26,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.nomoretrash.R;
 
+import org.osmdroid.api.IGeoPoint;
 import org.osmdroid.api.IMapController;
 
 import org.osmdroid.events.MapEventsReceiver;
@@ -63,6 +64,7 @@ public class LocalisationFragment extends Fragment {
     private Double longitudeDechet;
     private Marker marker;
     private int nbMarker = 0;
+    private boolean positionRenseigne = false;
 
 
 
@@ -75,6 +77,10 @@ public class LocalisationFragment extends Fragment {
         return (new LocalisationFragment());
     }
 
+
+    public void setPositionRenseigne(boolean positionRenseigne) {
+        this.positionRenseigne = positionRenseigne;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -90,9 +96,17 @@ public class LocalisationFragment extends Fragment {
         // Ajout du controler et du point 0
         mapController = map.getController();
         mapController.setZoom(18.0);
-        GeoPoint startPoint = new GeoPoint(43.181866, 5.703372);
-        mapController.setCenter(startPoint);
+        GeoPoint startPoint ;
 
+        if( positionRenseigne){
+            startPoint = new GeoPoint(latitudeDechet,longitudeDechet);
+            addItemTrash(startPoint);
+        }
+        else{
+            startPoint = new GeoPoint(43.181866, 5.703372);
+        }
+
+        mapController.setCenter(startPoint);
         //Ajout d'une echelle
         ScaleBarOverlay myScaleBarOverlay = new ScaleBarOverlay(map);
         map.getOverlays().add(myScaleBarOverlay);
@@ -112,6 +126,7 @@ public class LocalisationFragment extends Fragment {
                 GeoPoint nouvelleLocalisation = new GeoPoint(location);
                 map.getController().animateTo(nouvelleLocalisation);
                 map.getController().setCenter(new GeoPoint(latitude, longitude));
+
             }
 
             @Override
@@ -212,6 +227,7 @@ public class LocalisationFragment extends Fragment {
             map.getOverlays().add(marker);
             map.invalidate();
             signalementObject.setHaveLocalisation(true);
+            positionRenseigne = true;
         }else { // sinon on le recupère et on change sa position
             map.getOverlays().remove(marker);
             marker = new Marker(map);
@@ -223,6 +239,8 @@ public class LocalisationFragment extends Fragment {
             map.invalidate();
 
         }
+        latitudeDechet = location.getLatitude();
+        longitudeDechet=location.getLongitude();
         nbMarker++;
     }
 
@@ -255,30 +273,30 @@ public class LocalisationFragment extends Fragment {
     }
 
     private void initialiserLocalisation(String fournisseur, LocationListener ecouteurGPS) {
-        if (locationManager == null) {
-            locationManager = (LocationManager) getContext().getSystemService(Context.LOCATION_SERVICE);
-            Criteria criteres = new Criteria();
 
-            // la précision  : (ACCURACY_FINE pour une haute précision ou ACCURACY_COARSE pour une moins bonne précision)
-            criteres.setAccuracy(Criteria.ACCURACY_FINE);
+        locationManager = (LocationManager) getContext().getSystemService(Context.LOCATION_SERVICE);
+        Criteria criteres = new Criteria();
 
-            // l'altitude
-            criteres.setAltitudeRequired(true);
+        // la précision  : (ACCURACY_FINE pour une haute précision ou ACCURACY_COARSE pour une moins bonne précision)
+        criteres.setAccuracy(Criteria.ACCURACY_FINE);
 
-            // la direction
-            criteres.setBearingRequired(true);
+        // l'altitude
+        criteres.setAltitudeRequired(true);
 
-            // la vitesse
-            criteres.setSpeedRequired(true);
+        // la direction
+        criteres.setBearingRequired(true);
 
-            // la consommation d'énergie demandée
-            criteres.setCostAllowed(true);
-            //criteres.setPowerRequirement(Criteria.POWER_HIGH);
-            criteres.setPowerRequirement(Criteria.POWER_MEDIUM);
+        // la vitesse
+        criteres.setSpeedRequired(true);
 
-            fournisseur = locationManager.getBestProvider(criteres, true);
-            Log.d("GPS", "fournisseur : " + fournisseur);
-        }
+        // la consommation d'énergie demandée
+        criteres.setCostAllowed(true);
+        //criteres.setPowerRequirement(Criteria.POWER_HIGH);
+        criteres.setPowerRequirement(Criteria.POWER_MEDIUM);
+
+        fournisseur = locationManager.getBestProvider(criteres, true);
+        Log.d("GPS", "fournisseur : " + fournisseur);
+
 
         if (fournisseur != null) {
             // dernière position connue
@@ -307,6 +325,7 @@ public class LocalisationFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        setPositionRenseigne(false);
         arreterLocalisation();
     }
 
