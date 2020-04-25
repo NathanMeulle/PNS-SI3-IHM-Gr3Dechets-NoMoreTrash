@@ -8,9 +8,9 @@
 
     <Button
         android:layout_marginTop="0dp"
-        android:layout_marginLeft="00dp"
+        android:layout_marginLeft="10dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/boutonAnnuler"
         android:layout_width="100dp"
         android:layout_height="50dp"
@@ -24,22 +24,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Informations générales"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/boutonAnnuler"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toRightOf="@id/boutonAnnuler"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/type"
+        android:layout_marginTop="40dp"
         />
 
     <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/checkbox_dechet_unique"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/infos_generales"
         app:layout_constraintTop_toBottomOf="@+id/infos_generales"
         />
 
@@ -76,22 +78,25 @@
         android:id="@+id/type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Type"
         android:layout_marginLeft="40dp"
+        android:layout_marginTop="0dp"
+
+        android:text="Type"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_marginTop="20dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/checkbox_decharge_sauvage"
+        app:layout_constraintLeft_toRightOf="@id/infos_generales"
+        app:layout_constraintTop_toTopOf="@id/infos_generales"
+
         />
+
     <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/checkbox_verre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/type"
         app:layout_constraintTop_toBottomOf="@+id/type"
         />
 
@@ -203,8 +208,8 @@
         android:layout_height="wrap_content"
         android:hint="Préciser"
         android:maxLines="1"
-        android:maxLength="20"
-        android:layout_marginLeft="15dp"
+        android:maxLength="17"
+        android:layout_marginLeft="5dp"
         app:layout_constraintLeft_toRightOf="@id/autre"
         app:layout_constraintTop_toTopOf="@id/autre"
         app:layout_constraintBottom_toBottomOf="@id/autre"
@@ -215,22 +220,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Taille"
-        android:layout_marginLeft="40dp"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_marginTop="15dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/checkbox_autre"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="@id/infos_generales"
+        app:layout_constraintTop_toBottomOf="@id/decharge_sauvage"
         />
 
     <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/checkbox_petit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/taille"
         app:layout_constraintTop_toBottomOf="@+id/taille"
         />
 
