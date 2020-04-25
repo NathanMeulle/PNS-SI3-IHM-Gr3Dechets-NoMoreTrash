@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 ds.setUnderlineText(false);
             }
         };
-        ss.setSpan(clickableSpan, 29, 41,  Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ss.setSpan(clickableSpan, 0, 41,  Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         textView.setText(ss);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
 
