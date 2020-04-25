@@ -22,7 +22,8 @@
         <activity android:name=".statistiques.StatistiquesActivity"/>
         <activity android:name=".map.MainMapActivity" />
         <activity android:name=".ContactActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
