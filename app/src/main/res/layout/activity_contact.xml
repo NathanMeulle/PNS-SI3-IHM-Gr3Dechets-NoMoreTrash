@@ -8,6 +8,20 @@
     android:padding="16dp"
     >
 
+    <Button
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="00dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/boutonRetour"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="#00000000"
+        android:drawableLeft="@drawable/retour"
+        android:stateListAnimator="@null"
+        android:text="Retour"/>
+
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
