@@ -86,6 +86,14 @@
             android:backgroundTint="#3FA33F"
             android:text="Mes signalements"
             android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Une question ? Un problème ? Cliquez ici !"
+            android:textColor="#00F"
+            />
     </LinearLayout>
 
 

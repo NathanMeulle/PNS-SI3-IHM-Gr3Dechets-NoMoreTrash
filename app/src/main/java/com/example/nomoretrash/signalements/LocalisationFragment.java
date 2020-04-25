@@ -26,7 +26,6 @@ import androidx.fragment.app.Fragment;
 
 import com.example.nomoretrash.R;
 
-import org.osmdroid.api.IGeoPoint;
 import org.osmdroid.api.IMapController;
 
 import org.osmdroid.events.MapEventsReceiver;
