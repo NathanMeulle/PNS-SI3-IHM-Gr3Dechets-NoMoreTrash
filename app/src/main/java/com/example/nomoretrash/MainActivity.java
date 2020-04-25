@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Section aide
         TextView textView = findViewById(R.id.contact);
 
         String text = "Une question ? Un problème ? Cliquez ici !";
