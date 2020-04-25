@@ -8,6 +8,8 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.nomoretrash.signalements.MesSignalementsActivity;
+
 public class ContactActivity extends AppCompatActivity {
 
     private EditText mEditTextTo;
@@ -28,6 +30,15 @@ public class ContactActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendMail();
+            }
+        });
+
+
+        final Button buttonStat = findViewById(R.id.boutonRetour);
+        buttonStat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ContactActivity.this.finish();
             }
         });
     }
