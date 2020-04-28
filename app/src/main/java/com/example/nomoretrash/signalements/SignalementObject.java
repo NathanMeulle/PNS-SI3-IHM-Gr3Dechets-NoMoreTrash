@@ -306,7 +306,7 @@ public class SignalementObject {
             recap+="\nAutres informations : " + autreInfos;
 
 
-        recap+="\nStatut : en cours de traitement";
+        recap+="\nStatut :" + getStatus();
         return recap;
 
     }
