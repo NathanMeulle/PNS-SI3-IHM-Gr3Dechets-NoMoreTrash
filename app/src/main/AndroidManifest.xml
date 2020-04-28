@@ -20,7 +20,6 @@
         <activity android:name=".signalements.MesSignalementsActivity"/>
         <activity android:name=".signalements.SignalementActivity"/>
         <activity android:name=".statistiques.StatistiquesActivity"/>
-        <activity android:name=".map.MainMapActivity" />
         <activity android:name=".ContactActivity" />
         <activity android:name=".MainActivity"/>
         <activity android:name=".SplashScreen">
