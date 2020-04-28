@@ -5,7 +5,11 @@ import android.graphics.Bitmap;
 
 import androidx.annotation.NonNull;
 
+import com.example.nomoretrash.Status;
+
 public class SignalementObject {
+
+    private Status status;
 
     private String date;
 
@@ -51,6 +55,7 @@ public class SignalementObject {
 
         photo = null;
         autreInfos = "";
+        status = Status.EN_COURS;
     }
 
     /*
@@ -129,6 +134,9 @@ public class SignalementObject {
         return this.haveLocalisation;
     }
 
+    public Status getStatus() {
+        return status;
+    }
     /*
     ########################### SETTERS ###########################
      */
@@ -206,6 +214,9 @@ public class SignalementObject {
         this.haveLocalisation = haveLocalisation;
     }
 
+    public void setStatus(Status status) {
+        this.status = status;
+    }
     /*
     ########################### INVERSEURS ###########################
      */
