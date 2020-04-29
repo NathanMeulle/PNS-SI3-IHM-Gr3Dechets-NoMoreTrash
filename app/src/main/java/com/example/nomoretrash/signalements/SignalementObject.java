@@ -36,7 +36,7 @@ public class SignalementObject {
     private String autreInfos;
 
     public SignalementObject() {
-        DECHET_UNIQUE = false;
+        DECHET_UNIQUE = true;
         DECHARGE_SAUVAGE = false;
 
         VERRE = false;
@@ -48,7 +48,7 @@ public class SignalementObject {
         autreType="";
 
         GROS = false;
-        PETIT = false;
+        PETIT = true;
 
         localisation = "";
         haveLocalisation = false;

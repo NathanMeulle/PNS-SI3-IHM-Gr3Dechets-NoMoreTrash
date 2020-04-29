@@ -53,8 +53,8 @@
 
     <Button
         android:layout_marginBottom="20dp"
+        app:layout_constraintLeft_toRightOf="@id/boutonCalendrier"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/boutonFinir"
         android:layout_alignParentBottom="true"
@@ -72,9 +72,9 @@
         android:background="#4CAF50"
         android:layout_marginBottom="10dp"
         android:text="Ajouter au Calendrier"
-        app:layout_constraintBottom_toTopOf="@id/boutonFinir"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/boutonFinir"
+        app:layout_constraintRight_toLeftOf="@id/boutonFinir"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
