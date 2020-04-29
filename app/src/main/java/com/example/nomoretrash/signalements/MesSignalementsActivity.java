@@ -31,7 +31,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class MesSignalementsActivity extends AppCompatActivity {
+public class MesSignalementsActivity extends AppCompatActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +77,25 @@ public class MesSignalementsActivity extends AppCompatActivity {
             });
 
         }
+
+        Button share = findViewById(R.id.Share);
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sendIntent = new Intent();
+                Intent intent = getIntent();
+                int nbDechet = intent.getStringArrayListExtra("ma_liste_de_signalements").size();
+
+                String textShare = "J'ai pu signaler " + nbDechet + " déchet" + ((nbDechet>1)?"s ":" ") +"depuis le " + "grâce à l'application noMoreTrash !";
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, textShare);
+                sendIntent.setType("text/plain");
+
+                Intent shareIntent = Intent.createChooser(sendIntent, null);
+                startActivity(shareIntent);
+            }
+        });
+
 
         //Bouton Retour
         final Button buttonStat = findViewById(R.id.boutonRetour);

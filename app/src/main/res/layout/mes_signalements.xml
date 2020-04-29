@@ -64,6 +64,15 @@
         android:textColor="@color/com_facebook_blue"
         app:layout_constraintRight_toRightOf="parent"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Share"
+        android:text="Share"
+        app:layout_constraintBottom_toTopOf="@id/fb_share_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
     <TextView
         android:id="@android:id/empty"
         android:text = "Aucun signalement"
