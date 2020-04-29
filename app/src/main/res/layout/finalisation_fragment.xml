@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/finalisation_fragment"
@@ -36,19 +37,19 @@
         android:id="@+id/info_comp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:hint="Information complémentaire : ..."
-        android:maxLines="8"
-        android:lines="8"
-        android:gravity="top|left"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintTop_toBottomOf="@id/photo"
         android:layout_marginTop="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/boutonFinir"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/border"
-        />
+        android:gravity="top|left"
+        android:hint="Information complémentaire : ..."
+        android:inputType="textMultiLine"
+        android:lines="8"
+        android:maxLines="8"
+        app:layout_constraintBottom_toTopOf="@+id/boutonFinir"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/photo"
+        app:layout_constraintVertical_bias="0.432" />
 
     <Button
         android:layout_marginBottom="20dp"
@@ -63,7 +64,17 @@
         android:layout_width="150dp"
         />
 
-
+    <Button
+        android:id="@+id/boutonCalendrier"
+        android:layout_width="150dp"
+        android:layout_height="68dp"
+        android:layout_alignParentBottom="true"
+        android:background="#4CAF50"
+        android:layout_marginBottom="10dp"
+        android:text="Ajouter au Calendrier"
+        app:layout_constraintBottom_toTopOf="@id/boutonFinir"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -63,6 +63,17 @@
         android:text="Valider"
         android:layout_width="150dp"
         />
+    <Button
+        android:id="@+id/boutonCalendrier"
+        android:layout_width="150dp"
+        android:layout_height="68dp"
+        android:layout_alignParentBottom="true"
+        android:background="#4CAF50"
+        android:layout_marginBottom="10dp"
+        android:text="Ajouter au Calendrier"
+        app:layout_constraintBottom_toTopOf="@id/boutonFinir"
+        app:layout_constraintLeft_toLeftOf="@id/boutonFinir"
+        app:layout_constraintRight_toRightOf="@id/boutonFinir" />
 
 
 
