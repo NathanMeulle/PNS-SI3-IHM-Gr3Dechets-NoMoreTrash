@@ -3,10 +3,7 @@ package com.example.nomoretrash.signalements;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
-import android.renderscript.ScriptGroup;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -16,20 +13,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.ResourcesCompat;
 
 import com.example.nomoretrash.R;
+
 import com.example.nomoretrash.SignalementsObjectsList;
-import com.facebook.FacebookDialog;
-import com.facebook.share.ShareApi;
 import com.facebook.share.model.ShareHashtag;
-import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.model.SharePhoto;
 import com.facebook.share.model.SharePhotoContent;
 import com.facebook.share.widget.ShareButton;
 
 
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 
@@ -130,16 +131,16 @@ public class DescriptionFragment extends Fragment {
 
 
     private void checkBoxCreation(View rootView) {
-        final CheckBox checkBox_dechet_unique = rootView.findViewById(R.id.checkbox_dechet_unique);
-        final CheckBox checkbox_decharge_sauvage = rootView.findViewById(R.id.checkbox_decharge_sauvage);
+        final RadioButton checkBox_dechet_unique = rootView.findViewById(R.id.radio_dechetUnique);
+        final RadioButton checkbox_decharge_sauvage = rootView.findViewById(R.id.radio_dechargeSauvage);
         CheckBox checkbox_verre = rootView.findViewById(R.id.checkbox_verre);
         CheckBox checkbox_carton = rootView.findViewById(R.id.checkbox_carton);
         CheckBox checkbox_papier = rootView.findViewById(R.id.checkbox_papier);
         CheckBox checkbox_plastique = rootView.findViewById(R.id.checkbox_plastique);
         CheckBox checkbox_metal = rootView.findViewById(R.id.checkbox_metal);
         CheckBox checkbox_autre = rootView.findViewById(R.id.checkbox_autre);
-        final CheckBox checkbox_petit = rootView.findViewById(R.id.checkbox_petit);
-        final CheckBox checkbox_gros = rootView.findViewById(R.id.checkbox_gros);
+        final RadioButton  checkbox_petit = rootView.findViewById(R.id.radio_petit);
+        final RadioButton  checkbox_gros = rootView.findViewById(R.id.radio_grand);
 
 
         checkBox_dechet_unique.setOnClickListener(new View.OnClickListener() {

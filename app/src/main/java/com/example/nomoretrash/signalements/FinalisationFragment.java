@@ -117,7 +117,7 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
             }
         });
 
-        
+
 
 
         ((TextView) rootView.findViewById(R.id.recap)).setText(recap);
