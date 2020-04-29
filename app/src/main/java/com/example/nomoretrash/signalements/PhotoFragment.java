@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -26,6 +27,7 @@ import com.example.nomoretrash.R;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.zip.Inflater;
 
 public class PhotoFragment extends Fragment {
 
@@ -38,6 +40,7 @@ public class PhotoFragment extends Fragment {
     private Bitmap bitmap;
     private Button mPhotoButton;
     private  Uri image_uri;
+    View rootView;
 
 
     public PhotoFragment() {
@@ -51,7 +54,7 @@ public class PhotoFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        final View rootView = inflater.inflate(R.layout.photo_fragment, container, false);
+         rootView = inflater.inflate(R.layout.photo_fragment, container, false);
 
         mImageView = rootView.findViewById(R.id.photo);
         mPhotoButton = rootView.findViewById(R.id.boutonPhoto);
@@ -126,4 +129,12 @@ public class PhotoFragment extends Fragment {
 
     }
 
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        rootView = View.inflate(getContext(), R.layout.photo_fragment, (ViewGroup) rootView);
+        SignalementActivity.pager.setCurrentItem(0);
+        SignalementActivity.pager.setCurrentItem(2);
+
+    }
 }

@@ -25,6 +25,7 @@ import androidx.fragment.app.Fragment;
 import com.example.nomoretrash.MainActivity;
 import com.example.nomoretrash.ApplicationDemo;
 import com.example.nomoretrash.R;
+import com.example.nomoretrash.Status;
 import com.example.nomoretrash.map.MainMapActivity;
 
 import static com.example.nomoretrash.ApplicationDemo.CHANNEL_ID;
@@ -132,7 +133,9 @@ public class FinalisationFragment extends Fragment {
                 String notifConfirmation = "Il sera traité dans les plus brefs délais.";
                 String titleChecked = "Déchet nettoyé";
                 String notifChecked = "Le déchet signalé a été nettoyé, Merci !";
+                signalementObject.setStatus(Status.EN_COURS);
                 sendNotificationOnChannel(R.drawable.chargement, titleConfirmation, notifConfirmation, saveChannelId, NotificationCompat.PRIORITY_DEFAULT, saveContext, signalementObject.getPhoto());
+                signalementObject.setStatus(Status.TRAITE);
                 sendNotificationOnChannel(R.drawable.validation, titleChecked, notifChecked, saveChannelId, NotificationCompat.PRIORITY_HIGH, saveContext, null);
             }
         };
@@ -174,7 +177,6 @@ public class FinalisationFragment extends Fragment {
 
 
     public void setRecap() {
-        System.out.println("loca : " + signalementObject.haveLocalisation()+"");
         recap = "Recapitulatif : ";
         if (signalementObject.isDECHET_UNIQUE() || signalementObject.isDECHARGE_SAUVAGE()) {
             part1 = true;

@@ -41,7 +41,6 @@ public class SignalementActivity extends AppCompatActivity {
 
             @Override
             public void onPageScrollStateChanged(int state) {
-
             }
         });
 
