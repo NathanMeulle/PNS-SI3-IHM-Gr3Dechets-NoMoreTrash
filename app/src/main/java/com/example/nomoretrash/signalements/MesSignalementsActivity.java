@@ -10,6 +10,7 @@ import android.renderscript.ScriptGroup;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -79,7 +80,7 @@ public class MesSignalementsActivity extends AppCompatActivity implements Signal
 
         }
 
-        Button share = findViewById(R.id.Share);
+        ImageButton share = findViewById(R.id.Share);
         share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
