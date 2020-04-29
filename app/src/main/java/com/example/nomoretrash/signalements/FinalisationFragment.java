@@ -1,14 +1,22 @@
 package com.example.nomoretrash.signalements;
 
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.widget.CalendarView;
+import android.net.Uri;
 import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.graphics.drawable.Icon;
+import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.provider.CalendarContract;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +27,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 
@@ -29,6 +38,9 @@ import com.example.nomoretrash.SignalementsObjectsList;
 import com.example.nomoretrash.Status;
 import com.example.nomoretrash.map.MainMapActivity;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import static com.example.nomoretrash.ApplicationDemo.CHANNEL_ID;
 
 public class FinalisationFragment extends Fragment implements SignalementsObjectsList {
@@ -68,6 +80,10 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
         setRecap();
 
         Button boutonFinaliser = rootView.findViewById(R.id.boutonFinir);
+
+        Button boutonCalendrier = rootView.findViewById(R.id.boutonCalendrier);
+
+
         boutonFinaliser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,6 +109,25 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
             }
         });
 
+
+        boutonCalendrier.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // on peut ajouter le signalement au calendrier si tt est rempli
+                if(part1 && part2 && part3 && part4){
+                    addToCalendar();
+                    Toast.makeText(getContext(),"Signalement ajouté dans votre Calendrier",Toast.LENGTH_LONG).show();
+                }
+                else{
+                    Toast.makeText(getContext(),"Complétez les informations pour que vous puissiez enregister dans le calendrier", Toast.LENGTH_LONG).show();
+                    SignalementActivity.pager.setCurrentItem(0); // retour automatique sur la page description
+
+                }
+            }
+        });
+
+
         ((TextView) rootView.findViewById(R.id.recap)).setText(recap);
         displayPhoto(rootView);
 
@@ -109,6 +144,28 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
             mImageView = rootView.findViewById(R.id.photo);
             mImageView.setImageBitmap(this.signalementObject.getPhoto());
             mImageView.setRotation(90);
+        }
+    }
+    public void addToCalendar(){
+
+        try {
+            ContentResolver cr = getActivity().getContentResolver();
+            ContentValues values = new ContentValues();
+            values.put(CalendarContract.Events.DTSTART, signalementObject.getDate());
+            values.put(CalendarContract.Events.TITLE, "Signalement d'un déchet");
+            values.put(CalendarContract.Events.DESCRIPTION,signalementObject.toString() );
+            values.put(CalendarContract.Events.EVENT_LOCATION,signalementObject.getLocalisation());
+            values.put(CalendarContract.Events.HAS_ALARM,1);
+            values.put(CalendarContract.Events.CALENDAR_ID, 1);
+            values.put(CalendarContract.Events.EVENT_TIMEZONE, Calendar.getInstance().getTimeZone().getID());
+            System.out.println(Calendar.getInstance().getTimeZone().getID());
+            if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
+                return;
+            }
+            Uri uri = cr.insert(CalendarContract.Events.CONTENT_URI, values);
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
