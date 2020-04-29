@@ -6,12 +6,6 @@
     android:id="@+id/finalisation_fragment"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <uses-permission android:name="android.permission.READ_CALENDAR"
-        tools:ignore="MissingConstraints" />
-    <uses-permission android:name="android.permission.WRITE_CALENDAR"
-        tools:ignore="MissingConstraints" />
-
-
     <TextView
         android:id="@+id/recap"
         android:layout_width="wrap_content"
@@ -75,11 +69,10 @@
         android:layout_width="150dp"
         android:layout_height="68dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="100dp"
         android:background="#4CAF50"
+        android:layout_marginBottom="10dp"
         android:text="Ajouter au Calendrier"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintBottom_toTopOf="@id/boutonFinir"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
