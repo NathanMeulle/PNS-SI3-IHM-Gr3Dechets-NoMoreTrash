@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/Background"
+    android:id="@+id/container"
+    >
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="112dp"
+        android:layout_height="108dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/no_more_trash_logo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="No More Trash !"
+        android:textColor="#000"
+        android:textSize="40sp"
+        app:layout_constraintLeft_toRightOf="@id/logo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/text"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        >
+
+        <Button
+            android:id="@+id/boutonStatistiques"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:backgroundTint="#3FA33F"
+            android:text="Statistiques"
+            android:textColor="#FFF"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/boutonSignalement"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:textSize="40sp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="#FFF"
+            android:textStyle="bold"
+            android:backgroundTint="#3FA33F"
+            android:text="Signaler un déchet"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/boutonMesSignalements"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:textColor="#FFF"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:backgroundTint="#3FA33F"
+            android:text="Mes signalements"
+            android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/contact"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Une question ? Un problème ? Cliquez ici !"
+            android:textColor="#00F"
+            android:textSize="30sp"
+            />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
