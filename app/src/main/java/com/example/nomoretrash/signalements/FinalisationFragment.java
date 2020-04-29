@@ -139,8 +139,9 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
                 String notifChecked = "Le déchet signalé a été nettoyé, Merci !";
                 signalementObject.setStatus(Status.EN_COURS);
                 sendNotificationOnChannel(R.drawable.chargement, titleConfirmation, notifConfirmation, saveChannelId, NotificationCompat.PRIORITY_DEFAULT, saveContext, signalementObject.getPhoto());
-                signalementObject.setStatus(Status.TRAITE);
+                signalementObject.setStatus(Status.PRIS_EN_CHARGE);
                 sendNotificationOnChannel(R.drawable.validation, titleChecked, notifChecked, saveChannelId, NotificationCompat.PRIORITY_HIGH, saveContext, null);
+                signalementObject.setStatus(Status.TRAITE);
             }
         };
 

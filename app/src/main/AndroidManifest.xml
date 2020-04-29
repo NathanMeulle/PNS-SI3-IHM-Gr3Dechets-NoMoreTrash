@@ -18,8 +18,7 @@
         android:theme="@style/AppTheme">
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
         <activity android:name=".signalements.MesSignalementsActivity"/>
-        <activity android:name=".signalements.SignalementActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity android:name=".signalements.SignalementActivity"/>
         <activity android:name=".statistiques.StatistiquesActivity"/>
         <activity android:name=".ContactActivity" />
         <activity android:name=".MainActivity"/>
