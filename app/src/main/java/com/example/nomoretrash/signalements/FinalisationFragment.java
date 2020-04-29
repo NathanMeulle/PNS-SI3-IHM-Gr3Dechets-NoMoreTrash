@@ -25,12 +25,13 @@ import androidx.fragment.app.Fragment;
 import com.example.nomoretrash.MainActivity;
 import com.example.nomoretrash.ApplicationDemo;
 import com.example.nomoretrash.R;
+import com.example.nomoretrash.SignalementsObjectsList;
 import com.example.nomoretrash.Status;
 import com.example.nomoretrash.map.MainMapActivity;
 
 import static com.example.nomoretrash.ApplicationDemo.CHANNEL_ID;
 
-public class FinalisationFragment extends Fragment {
+public class FinalisationFragment extends Fragment implements SignalementsObjectsList {
 
     private SignalementObject signalementObject;
     ImageView mImageView;
@@ -50,6 +51,8 @@ public class FinalisationFragment extends Fragment {
     public static boolean notComplete = false;
 
 
+
+
     private int notificationId = 0;
 
     public static FinalisationFragment newInstance() {
@@ -62,6 +65,7 @@ public class FinalisationFragment extends Fragment {
         recap = "";
 
         final View rootView = inflater.inflate(R.layout.finalisation_fragment, container, false);
+        setRecap();
 
         Button boutonFinaliser = rootView.findViewById(R.id.boutonFinir);
         boutonFinaliser.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +76,7 @@ public class FinalisationFragment extends Fragment {
                     //on récupère les autres infos
                     EditText editText = rootView.findViewById(R.id.info_comp);
                     signalementObject.setAutreInfos(editText.getText().toString());
+                    SignalementsObjectsList.signalementsObjetsArray.add(signalementObject);// Ajout de l'objet dans l'interface
                     Toast.makeText(getContext(), "Signalement enregistré !", Toast.LENGTH_LONG).show();
                     sendNotification();
                 } else {
@@ -88,7 +93,6 @@ public class FinalisationFragment extends Fragment {
             }
         });
 
-        setRecap();
         ((TextView) rootView.findViewById(R.id.recap)).setText(recap);
         displayPhoto(rootView);
 
