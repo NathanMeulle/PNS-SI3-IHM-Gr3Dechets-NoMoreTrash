@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -68,6 +69,24 @@ public class MainActivity extends AppCompatActivity implements SignalementsObjec
             }
         });
 
+        ImageButton help = findViewById(R.id.aide);
+        help.setColorFilter( 0x00ff00);
+        help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ContactActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton compte = findViewById(R.id.account);
+        compte.setColorFilter( 0x00ff00);
+        compte.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         //Section aide
         TextView textView = findViewById(R.id.contact);
 
