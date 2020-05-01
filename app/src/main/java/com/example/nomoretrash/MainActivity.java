@@ -2,21 +2,12 @@ package com.example.nomoretrash;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.TextPaint;
-import android.text.method.LinkMovementMethod;
-import android.text.style.ClickableSpan;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -26,7 +17,6 @@ import com.example.nomoretrash.signalements.SignalementObject;
 import com.example.nomoretrash.statistiques.StatistiquesActivity;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity implements SignalementsObjectsList {
@@ -70,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements SignalementsObjec
         });
 
         ImageButton help = findViewById(R.id.aide);
-        help.setColorFilter( 0x00ff00);
+        help.setColorFilter(0x00ff00);
         help.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,36 +70,13 @@ public class MainActivity extends AppCompatActivity implements SignalementsObjec
         });
 
         ImageButton compte = findViewById(R.id.account);
-        compte.setColorFilter( 0x00ff00);
+        compte.setColorFilter(0x00ff00);
         compte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
-        //Section aide
-        TextView textView = findViewById(R.id.contact);
-
-        String text = "Une question ? Un problème ? Cliquez ici !";
-        SpannableString ss = new SpannableString(text);
-        ClickableSpan clickableSpan = new ClickableSpan() {
-            @Override
-            public void onClick(@NonNull View widget) {
-                Intent intent = new Intent(MainActivity.this, ContactActivity.class);
-                startActivity(intent);
-            }
-
-            @Override
-            public void updateDrawState(@NonNull TextPaint ds) {
-                super.updateDrawState(ds);
-                ds.setColor(Color.BLUE);
-                ds.setUnderlineText(false);
-            }
-        };
-        ss.setSpan(clickableSpan, 0, 41, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        textView.setText(ss);
-        textView.setMovementMethod(LinkMovementMethod.getInstance());
-
 
     }
 
@@ -130,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements SignalementsObjec
 
     public ArrayList<String> setRecap(ArrayList<SignalementObject> signalementObjectArray) {
         ArrayList<String> res = new ArrayList<>();
-        for(SignalementObject signalementObject : signalementObjectArray) {
+        for (SignalementObject signalementObject : signalementObjectArray) {
             String recap = "Recapitulatif : ";
             if (signalementObject.isDECHET_UNIQUE() || signalementObject.isDECHARGE_SAUVAGE()) {
                 if (signalementObject.isDECHET_UNIQUE())
@@ -166,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements SignalementsObjec
                         }
                     }
                 }
-                recap+="\nStatut :" + signalementObject.getStatus();
+                recap += "\nStatut :" + signalementObject.getStatus();
             }
             res.add(recap);
         }

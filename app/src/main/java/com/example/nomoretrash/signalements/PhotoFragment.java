@@ -40,7 +40,6 @@ public class PhotoFragment extends Fragment {
     private Bitmap bitmap;
     private Button mPhotoButton;
     private  Uri image_uri;
-    View rootView;
 
 
     public PhotoFragment() {
@@ -54,7 +53,7 @@ public class PhotoFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-         rootView = inflater.inflate(R.layout.photo_fragment, container, false);
+        View rootView = inflater.inflate(R.layout.photo_fragment, container, false);
 
         mImageView = rootView.findViewById(R.id.photo);
         mPhotoButton = rootView.findViewById(R.id.boutonPhoto);
@@ -129,12 +128,6 @@ public class PhotoFragment extends Fragment {
 
     }
 
-    @Override
-    public void onConfigurationChanged(@NonNull Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        rootView = View.inflate(getContext(), R.layout.photo_fragment, (ViewGroup) rootView);
-        SignalementActivity.pager.setCurrentItem(0);
-        SignalementActivity.pager.setCurrentItem(2);
 
-    }
+
 }

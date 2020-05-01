@@ -1,4 +1,11 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.sonarqube'
+
+sonarqube {
+    properties {
+        property "sonar.projectName", "IHM-NoMoreTrash"
+    }
+}
 
 android {
     compileSdkVersion 29
