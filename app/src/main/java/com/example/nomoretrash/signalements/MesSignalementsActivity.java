@@ -1,5 +1,6 @@
 package com.example.nomoretrash.signalements;
 
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,13 +12,14 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.nomoretrash.Adapter;
 import com.example.nomoretrash.R;
 import com.example.nomoretrash.SignalementsObjectsList;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class MesSignalementsActivity extends AppCompatActivity implements SignalementsObjectsList {
+public class MesSignalementsActivity extends ListActivity implements SignalementsObjectsList {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +34,15 @@ public class MesSignalementsActivity extends AppCompatActivity implements Signal
         if (intent.hasExtra("ma_liste_de_signalements")) {
             ArrayList<String> res = intent.getStringArrayListExtra("ma_liste_de_signalements");
             Collections.reverse(res);
-            ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, res);
+            String[] values = res.toArray(new String[res.size()]);
+
+            Adapter adapter = new Adapter(getApplicationContext(), values);
+
 
 
             TextView emptyText = findViewById(android.R.id.empty);
             listView.setEmptyView(emptyText);
-            listView.setAdapter(adapter);
+            setListAdapter(adapter);
 
 
             ImageButton share = findViewById(R.id.Share);

@@ -1,6 +1,7 @@
 package com.example.nomoretrash;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,6 +18,7 @@ import com.example.nomoretrash.signalements.SignalementObject;
 import com.example.nomoretrash.statistiques.StatistiquesActivity;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class MainActivity extends AppCompatActivity implements SignalementsObjectsList {
@@ -52,15 +54,7 @@ public class MainActivity extends AppCompatActivity implements SignalementsObjec
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String[] values = new String[] { "Device",
-                        "Géo localisation", "Accéléromètre",
-                        "Navigateur internet", "Dialogues", "Album photos",
-                        "Connexion réseau", "Gestion des fichiers",
-                        "Carnet de contacts" };
 
-                Adapter adapter = new ArrayAdapter<String>(this,
-                        android.R.layout.liste_signalement_recap, values);
-                setListAdapter(adapter);
 
                 Intent intent = new Intent(MainActivity.this, MesSignalementsActivity.class);
                 intent.putExtra("ma_liste_de_signalements", setRecap(SignalementsObjectsList.signalementsObjetsArray));
