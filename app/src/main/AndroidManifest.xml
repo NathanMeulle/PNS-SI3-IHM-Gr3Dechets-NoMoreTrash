@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.nomoretrash">
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <uses-permission-sdk-23 android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 
@@ -18,11 +24,13 @@
         android:roundIcon="@mipmap/no_more_trash_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".signalements.MesSignalementsActivity"/>
-        <activity android:name=".signalements.SignalementActivity"/>
-        <activity android:name=".statistiques.StatistiquesActivity"/>
+        <activity
+            android:name=".account.ConnexionActivity"/>
+        <activity android:name=".signalements.MesSignalementsActivity" />
+        <activity android:name=".signalements.SignalementActivity" />
+        <activity android:name=".statistiques.StatistiquesActivity" />
         <activity android:name=".ContactActivity" />
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

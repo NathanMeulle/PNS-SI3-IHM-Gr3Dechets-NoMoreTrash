@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.nomoretrash.account.ConnexionActivity;
 import com.example.nomoretrash.signalements.MesSignalementsActivity;
 import com.example.nomoretrash.signalements.SignalementActivity;
 import com.example.nomoretrash.signalements.SignalementObject;
@@ -58,8 +59,7 @@ public class MainActivity extends AppCompatActivity implements SignalementsObjec
                         "Connexion réseau", "Gestion des fichiers",
                         "Carnet de contacts" };
 
-                Adapter adapter = new ArrayAdapter<String>(this,
-                        android.R.layout.liste_signalement_recap, values);
+                Adapter adapter = new ArrayAdapter<String>(this, android.R.layout.liste_signalement_recap, values);
                 setListAdapter(adapter);
 
                 Intent intent = new Intent(MainActivity.this, MesSignalementsActivity.class);
@@ -83,7 +83,8 @@ public class MainActivity extends AppCompatActivity implements SignalementsObjec
         compte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //todo : créer l'activité associée
+                Intent intent = new Intent(MainActivity.this, ConnexionActivity.class);
+                startActivity(intent);
 
             }
         });
