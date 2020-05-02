@@ -7,16 +7,4 @@
     <string name="bottom_navigation_menu_photo">Photo</string>
     <string name="bottom_navigation_menu_finalisation">Finalisation</string>
 
-    <string-array name="object_contact">
-        <item>Problème avec le signalement</item>
-        <item>Problème avec mon historique</item>
-        <item>Problème avec mes statistiques</item>
-        <item>Autre problème</item>
-        <item>Suggestion</item>
-        <item>Autre</item>
-
-
-
-    </string-array>
-
 </resources>

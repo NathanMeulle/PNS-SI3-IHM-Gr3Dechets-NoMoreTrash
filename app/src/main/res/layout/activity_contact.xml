@@ -47,8 +47,9 @@
         android:id="@+id/edit_text_subject"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="@array/object_contact"
-
+        android:inputType="textEmailSubject"
+        android:textSize="22sp"
+        android:layout_marginBottom="10dp"
         />
 
     <TextView

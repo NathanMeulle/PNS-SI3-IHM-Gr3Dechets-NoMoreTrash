@@ -12,6 +12,32 @@
     android:id="@+id/container"
     >
 
+    <ImageButton
+        android:background="#ffffff"
+        android:id="@+id/account"
+        android:minHeight="60dp"
+        android:scaleType="fitCenter"
+        android:minWidth="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_action_name"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="50dp"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <ImageButton
+        android:background="#ffffff"
+        android:id="@+id/aide"
+        android:minHeight="60dp"
+        android:minWidth="60dp"
+        android:scaleType="fitCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/help"
+        android:layout_marginRight="50dp"
+        app:layout_constraintTop_toBottomOf="@id/account"
+        app:layout_constraintRight_toRightOf="parent"/>
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

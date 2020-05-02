@@ -2,6 +2,7 @@ package com.example.nomoretrash;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -12,13 +13,16 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class ContactActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private TextView mEditTextTo;
-    private Spinner mSpinnerSubject;
     private EditText mEditTextMessage;
     String subject;
+    Spinner mSpinnerSubject;
 
 
     @Override
@@ -29,10 +33,18 @@ public class ContactActivity extends AppCompatActivity implements AdapterView.On
         mSpinnerSubject = findViewById(R.id.edit_text_subject);
         mEditTextMessage = findViewById(R.id.edit_text_message);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.object_contact, R.layout.activity_contact);
-        adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
-        mSpinnerSubject.setAdapter(adapter);
         mSpinnerSubject.setOnItemSelectedListener(this);
+        mSpinnerSubject = findViewById(R.id.edit_text_subject);
+        List<String> list = new ArrayList<>();
+        list.add("Problème de signalement");
+        list.add("Problème avec mon historique");
+        list.add("Suggestion");
+        list.add("Autre");
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, list);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mSpinnerSubject.setAdapter(dataAdapter);
+
 
         Button buttonSend = findViewById(R.id.button_send);
         buttonSend.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +62,10 @@ public class ContactActivity extends AppCompatActivity implements AdapterView.On
                 ContactActivity.this.finish();
             }
         });
+
+        if (savedInstanceState != null) {
+            mSpinnerSubject.setSelection(savedInstanceState.getInt("mSpinnerSubject", 0));
+        }
     }
 
     private void sendMail() {
@@ -63,6 +79,8 @@ public class ContactActivity extends AppCompatActivity implements AdapterView.On
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);
         intent.putExtra(Intent.EXTRA_TEXT, message);
 
+        Log.d("email ", "A : " + recipients[0] + ", objet : " + subject + ", message : " + message);
+
         intent.setType("message/rfc822");
         startActivity(Intent.createChooser(intent, "Choisissez votre application email"));
     }
@@ -71,11 +89,19 @@ public class ContactActivity extends AppCompatActivity implements AdapterView.On
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         CharSequence charSequence = (CharSequence) parent.getItemAtPosition(position);
-        System.out.println("Item : " + charSequence.toString());
+        subject = charSequence.toString();
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("mSpinnerSubject", mSpinnerSubject.getSelectedItemPosition());
+        // do this for each or your Spinner
+        // You might consider using Bundle.putStringArray() instead
+    }
+
 }

@@ -44,11 +44,13 @@
         android:text="Objet :"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-    <EditText
+    <Spinner
         android:id="@+id/edit_text_subject"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailSubject" />
+        android:inputType="textEmailSubject"
+        android:textSize="22sp"
+        />
 
     <TextView
         android:layout_width="match_parent"
