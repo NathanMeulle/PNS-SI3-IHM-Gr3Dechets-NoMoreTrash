@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.nomoretrash.ApplicationDemo;
@@ -37,6 +38,7 @@ import static com.example.nomoretrash.ApplicationDemo.CHANNEL_ID;
 
 public class FinalisationFragment extends Fragment implements SignalementsObjectsList {
 
+    private static final int PERMISSION_CODE = 1000;
     private SignalementObject signalementObject;
     ImageView mImageView;
 
@@ -107,7 +109,6 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
                 // on peut ajouter le signalement au calendrier si tt est rempli
                 if(part1 && part2 && part3 && part4){
                     addToCalendar();
-                    Toast.makeText(getContext(),"Signalement ajouté dans votre Calendrier",Toast.LENGTH_LONG).show();
                 }
                 else{
                     Toast.makeText(getContext(),"Complétez les informations pour que vous puissiez enregister dans le calendrier", Toast.LENGTH_LONG).show();
@@ -118,12 +119,8 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
         });
 
 
-
-
         ((TextView) rootView.findViewById(R.id.recap)).setText(recap);
         displayPhoto(rootView);
-
-
 
         return rootView;
     }
@@ -145,18 +142,22 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
             ContentValues values = new ContentValues();
             values.put(CalendarContract.Events.DTSTART, signalementObject.getDate());
             values.put(CalendarContract.Events.TITLE, "Signalement d'un déchet");
-            values.put(CalendarContract.Events.DESCRIPTION,signalementObject.toString() );
-            values.put(CalendarContract.Events.EVENT_LOCATION,signalementObject.getLocalisation());
-            values.put(CalendarContract.Events.HAS_ALARM,1);
+            values.put(CalendarContract.Events.DESCRIPTION, signalementObject.toString());
+            values.put(CalendarContract.Events.EVENT_LOCATION, signalementObject.getLocalisation());
+            values.put(CalendarContract.Events.HAS_ALARM, 1);
             values.put(CalendarContract.Events.CALENDAR_ID, 1);
             values.put(CalendarContract.Events.EVENT_TIMEZONE, Calendar.getInstance().getTimeZone().getID());
             System.out.println(Calendar.getInstance().getTimeZone().getID());
-            if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
-                return;
+            if (ContextCompat.checkSelfPermission(FinalisationFragment.this.getContext(), Manifest.permission.WRITE_CALENDAR) == PackageManager.PERMISSION_DENIED) {
+                //Permission non accordée, on demande de nouveau la permission
+                String[] permission = {Manifest.permission.WRITE_CALENDAR, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+                //POP UP
+                requestPermissions(permission, PERMISSION_CODE);//On demande l'accès au calendrier
+            } else {
+                Uri uri = cr.insert(CalendarContract.Events.CONTENT_URI, values);
+                Toast.makeText(getContext(),"Signalement ajouté dans votre Calendrier",Toast.LENGTH_LONG).show();
             }
-            Uri uri = cr.insert(CalendarContract.Events.CONTENT_URI, values);
-
-        } catch (Exception e) {
+        }catch (Exception e) {
             e.printStackTrace();
         }
     }

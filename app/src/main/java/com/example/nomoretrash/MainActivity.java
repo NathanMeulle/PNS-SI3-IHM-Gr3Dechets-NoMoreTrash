@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.nomoretrash.account.ConnexionActivity;
 import com.example.nomoretrash.signalements.MesSignalementsActivity;
 import com.example.nomoretrash.signalements.SignalementActivity;
 import com.example.nomoretrash.signalements.SignalementObject;
@@ -55,7 +56,6 @@ public class MainActivity extends AppCompatActivity implements SignalementsObjec
             @Override
             public void onClick(View v) {
 
-
                 Intent intent = new Intent(MainActivity.this, MesSignalementsActivity.class);
                 intent.putExtra("ma_liste_de_signalements", setRecap(SignalementsObjectsList.signalementsObjetsArray));
                 startActivity(intent);
@@ -77,7 +77,8 @@ public class MainActivity extends AppCompatActivity implements SignalementsObjec
         compte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //todo : créer l'activité associée
+                Intent intent = new Intent(MainActivity.this, ConnexionActivity.class);
+                startActivity(intent);
 
             }
         });
