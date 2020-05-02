@@ -24,24 +24,7 @@
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/example/nomoretrash/ContactActivity.java">
           <value>
-            <set>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwF4XtyZjtOWLtSu" />
-                <option name="line" value="23" />
-                <option name="message" value="Remove the &quot;mSpinnerSubject&quot; field and declare it as a local variable in the relevant methods." />
-                <option name="ruleKey" value="squid:S1450" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwF4XtyZjtOWLtSt" />
-                <option name="line" value="20" />
-                <option name="message" value="This class has 9 parents which is greater than 5 authorized." />
-                <option name="ruleKey" value="squid:MaximumInheritanceDepth" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-            </set>
+            <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/example/nomoretrash/MainActivity.java">
@@ -49,99 +32,43 @@
             <set>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwGHXtyZjtOWLtS3" />
-                <option name="line" value="24" />
-                <option name="message" value="Rename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'." />
-                <option name="ruleKey" value="squid:S00115" />
-                <option name="severity" value="CRITICAL" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwGHXtyZjtOWLtS5" />
-                <option name="line" value="86" />
-                <option name="message" value="Add a default case to this switch." />
-                <option name="ruleKey" value="squid:SwitchLastCaseIsDefaultCheck" />
-                <option name="severity" value="CRITICAL" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwGHXtyZjtOWLtS6" />
-                <option name="line" value="98" />
-                <option name="message" value="Refactor this method to reduce its Cognitive Complexity from 53 to the 15 allowed." />
-                <option name="ruleKey" value="squid:S3776" />
-                <option name="severity" value="CRITICAL" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwGHXtyZjtOWLtS8" />
-                <option name="line" value="48" />
-                <option name="message" value="This block of commented-out lines of code should be removed." />
-                <option name="ruleKey" value="squid:CommentedOutCodeLine" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwGHXtyZjtOWLtSy" />
-                <option name="line" value="87" />
-                <option name="message" value="Extract this nested code block into a method." />
-                <option name="ruleKey" value="squid:S1199" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
                 <option name="key" value="AXHPPwGHXtyZjtOWLtSx" />
-                <option name="line" value="0" />
+                <option name="line" value="1" />
                 <option name="message" value="1 duplicated blocks of code must be removed." />
                 <option name="ruleKey" value="common-java:DuplicatedBlocks" />
                 <option name="severity" value="MAJOR" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwGHXtyZjtOWLtS1" />
-                <option name="line" value="98" />
-                <option name="message" value="The type of the &quot;signalementObjectArray&quot; object should be an interface such as &quot;List&quot; rather than the implementation &quot;ArrayList&quot;." />
-                <option name="ruleKey" value="squid:S1319" />
-                <option name="severity" value="MINOR" />
+                <option name="key" value="AXHPPwGHXtyZjtOWLtS2" />
+                <option name="line" value="21" />
+                <option name="message" value="This class has 9 parents which is greater than 5 authorized." />
+                <option name="ruleKey" value="squid:MaximumInheritanceDepth" />
+                <option name="severity" value="MAJOR" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
                 <option name="key" value="AXHPPwGHXtyZjtOWLtS4" />
-                <option name="line" value="76" />
+                <option name="line" value="74" />
                 <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
                 <option name="ruleKey" value="squid:S1186" />
                 <option name="severity" value="CRITICAL" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwGHXtyZjtOWLtS0" />
-                <option name="line" value="98" />
-                <option name="message" value="The return type of this method should be an interface such as &quot;List&quot; rather than the implementation &quot;ArrayList&quot;." />
-                <option name="ruleKey" value="squid:S1319" />
-                <option name="severity" value="MINOR" />
+                <option name="key" value="AXHPPwGHXtyZjtOWLtS3" />
+                <option name="line" value="23" />
+                <option name="message" value="Rename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'." />
+                <option name="ruleKey" value="squid:S00115" />
+                <option name="severity" value="CRITICAL" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
                 <option name="key" value="AXHPPwGHXtyZjtOWLtS7" />
-                <option name="line" value="122" />
+                <option name="line" value="116" />
                 <option name="message" value="Complete the task associated to this TODO comment." />
                 <option name="ruleKey" value="squid:S1135" />
                 <option name="severity" value="INFO" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwGHXtyZjtOWLtSz" />
-                <option name="line" value="86" />
-                <option name="message" value="Replace this &quot;switch&quot; statement by &quot;if&quot; statements to increase readability." />
-                <option name="ruleKey" value="squid:S1301" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwGHXtyZjtOWLtS2" />
-                <option name="line" value="22" />
-                <option name="message" value="This class has 9 parents which is greater than 5 authorized." />
-                <option name="ruleKey" value="squid:MaximumInheritanceDepth" />
-                <option name="severity" value="MAJOR" />
               </SonarIssue>
             </set>
           </value>
@@ -151,24 +78,8 @@
             <set>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwFrXtyZjtOWLtSq" />
-                <option name="line" value="16" />
-                <option name="message" value="Don't override a deprecated method or explicitly mark it as &quot;@Deprecated&quot;." />
-                <option name="ruleKey" value="squid:CallToDeprecatedMethod" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwFrXtyZjtOWLtSs" />
-                <option name="line" value="59" />
-                <option name="message" value="Add the &quot;@Override&quot; annotation above this method signature" />
-                <option name="ruleKey" value="squid:S1161" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
                 <option name="key" value="AXHPPwFrXtyZjtOWLtSr" />
-                <option name="line" value="17" />
+                <option name="line" value="18" />
                 <option name="message" value="Remove this use of &quot;FragmentPagerAdapter&quot;; it is deprecated." />
                 <option name="ruleKey" value="squid:CallToDeprecatedMethod" />
                 <option name="severity" value="MINOR" />
@@ -208,32 +119,7 @@
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/example/nomoretrash/SplashScreen.java">
           <value>
-            <set>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwFlXtyZjtOWLtSo" />
-                <option name="line" value="16" />
-                <option name="message" value="Rename this field &quot;SPLASH_SCREEN_TIME&quot; to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S3008" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwFlXtyZjtOWLtSn" />
-                <option name="line" value="7" />
-                <option name="message" value="Remove this unused import 'android.view.View'." />
-                <option name="ruleKey" value="squid:UselessImportCheck" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwFlXtyZjtOWLtSp" />
-                <option name="line" value="23" />
-                <option name="message" value="Remove this unnecessary cast to &quot;ImageView&quot;." />
-                <option name="ruleKey" value="squid:S1905" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-            </set>
+            <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/example/nomoretrash/map/MainMapActivity.java">
@@ -316,160 +202,7 @@
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/example/nomoretrash/signalements/DescriptionFragment.java">
           <value>
-            <set>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEgXtyZjtOWLtSQ" />
-                <option name="line" value="67" />
-                <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
-                <option name="ruleKey" value="squid:S1186" />
-                <option name="severity" value="CRITICAL" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEgXtyZjtOWLtSC" />
-                <option name="line" value="63" />
-                <option name="message" value="Rename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00117" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEgXtyZjtOWLtSB" />
-                <option name="line" value="227" />
-                <option name="message" value="This line will not be executed conditionally; only the first line of this 2-line block will be. The rest will execute unconditionally." />
-                <option name="ruleKey" value="squid:S2681" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEgXtyZjtOWLtSA" />
-                <option name="line" value="216" />
-                <option name="message" value="This line will not be executed conditionally; only the first line of this 2-line block will be. The rest will execute unconditionally." />
-                <option name="ruleKey" value="squid:S2681" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEgXtyZjtOWLtSD" />
-                <option name="line" value="64" />
-                <option name="message" value="Rename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00117" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEgXtyZjtOWLtSE" />
-                <option name="line" value="134" />
-                <option name="message" value="Rename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00117" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEgXtyZjtOWLtSF" />
-                <option name="line" value="135" />
-                <option name="message" value="Rename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00117" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEgXtyZjtOWLtSO" />
-                <option name="line" value="33" />
-                <option name="message" value="Remove this assignment of &quot;signalementObject&quot;." />
-                <option name="ruleKey" value="squid:S3010" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEgXtyZjtOWLtSM" />
-                <option name="line" value="142" />
-                <option name="message" value="Rename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00117" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEgXtyZjtOWLtSL" />
-                <option name="line" value="141" />
-                <option name="message" value="Rename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00117" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEgXtyZjtOWLtSN" />
-                <option name="line" value="143" />
-                <option name="message" value="Rename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00117" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEgXtyZjtOWLtSK" />
-                <option name="line" value="140" />
-                <option name="message" value="Rename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00117" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEgXtyZjtOWLtSG" />
-                <option name="line" value="136" />
-                <option name="message" value="Rename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00117" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEgXtyZjtOWLtSH" />
-                <option name="line" value="137" />
-                <option name="message" value="Rename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00117" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEgXtyZjtOWLtR-" />
-                <option name="line" value="27" />
-                <option name="message" value="Make this &quot;public static signalementObject&quot; field final" />
-                <option name="ruleKey" value="squid:S1444" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEgXtyZjtOWLtR_" />
-                <option name="line" value="27" />
-                <option name="message" value="Make signalementObject a static final constant or non-public and provide accessors if needed." />
-                <option name="ruleKey" value="squid:ClassVariableVisibilityCheck" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEgXtyZjtOWLtSI" />
-                <option name="line" value="138" />
-                <option name="message" value="Rename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00117" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEgXtyZjtOWLtSP" />
-                <option name="line" value="36" />
-                <option name="message" value="Make sure that Week Year &quot;YYYY&quot; is expected here instead of Year &quot;yyyy&quot;." />
-                <option name="ruleKey" value="squid:S3986" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEgXtyZjtOWLtSJ" />
-                <option name="line" value="139" />
-                <option name="message" value="Rename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00117" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-            </set>
+            <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/example/nomoretrash/signalements/FinalisationFragment.java">
@@ -477,66 +210,10 @@
             <set>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRY" />
-                <option name="line" value="241" />
-                <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
-                <option name="ruleKey" value="squid:S2696" />
-                <option name="severity" value="CRITICAL" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtQ_" />
-                <option name="line" value="51" />
-                <option name="message" value="Make this &quot;public static part1&quot; field final" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRC" />
+                <option name="line" value="54" />
+                <option name="message" value="Make this &quot;public static part4&quot; field final" />
                 <option name="ruleKey" value="squid:S1444" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtQ-" />
-                <option name="line" value="0" />
-                <option name="message" value="1 duplicated blocks of code must be removed." />
-                <option name="ruleKey" value="common-java:DuplicatedBlocks" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRW" />
-                <option name="line" value="233" />
-                <option name="message" value="Refactor this method to reduce its Cognitive Complexity from 29 to the 15 allowed." />
-                <option name="ruleKey" value="squid:S3776" />
-                <option name="severity" value="CRITICAL" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRG" />
-                <option name="line" value="53" />
-                <option name="message" value="Make part3 a static final constant or non-public and provide accessors if needed." />
-                <option name="ruleKey" value="squid:ClassVariableVisibilityCheck" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRN" />
-                <option name="line" value="88" />
-                <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
-                <option name="ruleKey" value="squid:S2696" />
-                <option name="severity" value="CRITICAL" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCjXtyZjtOWLtRd" />
-                <option name="line" value="266" />
-                <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
-                <option name="ruleKey" value="squid:S2696" />
-                <option name="severity" value="CRITICAL" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCjXtyZjtOWLtRh" />
-                <option name="line" value="157" />
-                <option name="message" value="Remove this unused &quot;uri&quot; local variable." />
-                <option name="ruleKey" value="squid:S1481" />
                 <option name="severity" value="MINOR" />
               </SonarIssue>
               <SonarIssue>
@@ -549,26 +226,66 @@
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRZ" />
-                <option name="line" value="245" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRO" />
+                <option name="line" value="157" />
+                <option name="message" value="Remove this useless assignment to local variable &quot;uri&quot;." />
+                <option name="ruleKey" value="squid:S1854" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCjXtyZjtOWLtRh" />
+                <option name="line" value="157" />
+                <option name="message" value="Remove this unused &quot;uri&quot; local variable." />
+                <option name="ruleKey" value="squid:S1481" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCjXtyZjtOWLtRc" />
+                <option name="line" value="264" />
                 <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
                 <option name="ruleKey" value="squid:S2696" />
                 <option name="severity" value="CRITICAL" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRC" />
-                <option name="line" value="54" />
-                <option name="message" value="Make this &quot;public static part4&quot; field final" />
-                <option name="ruleKey" value="squid:S1444" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRN" />
+                <option name="line" value="88" />
+                <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
+                <option name="ruleKey" value="squid:S2696" />
+                <option name="severity" value="CRITICAL" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCjXtyZjtOWLtRe" />
+                <option name="line" value="272" />
+                <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
+                <option name="ruleKey" value="squid:S2696" />
+                <option name="severity" value="CRITICAL" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtQ-" />
+                <option name="line" value="1" />
+                <option name="message" value="1 duplicated blocks of code must be removed." />
+                <option name="ruleKey" value="common-java:DuplicatedBlocks" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRJ" />
+                <option name="line" value="160" />
+                <option name="message" value="Use a logger to log this exception." />
+                <option name="ruleKey" value="squid:S1148" />
                 <option name="severity" value="MINOR" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRK" />
-                <option name="line" value="172" />
-                <option name="message" value="Use a logger to log this exception." />
-                <option name="ruleKey" value="squid:S1148" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRI" />
+                <option name="line" value="55" />
+                <option name="message" value="Make notComplete a static final constant or non-public and provide accessors if needed." />
+                <option name="ruleKey" value="squid:ClassVariableVisibilityCheck" />
                 <option name="severity" value="MINOR" />
               </SonarIssue>
               <SonarIssue>
@@ -581,48 +298,96 @@
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRR" />
-                <option name="line" value="171" />
-                <option name="message" value="Either re-interrupt this method or rethrow the &quot;InterruptedException&quot;." />
-                <option name="ruleKey" value="squid:S2142" />
-                <option name="severity" value="MAJOR" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRa" />
+                <option name="line" value="261" />
+                <option name="message" value="Complete the task associated to this TODO comment." />
+                <option name="ruleKey" value="squid:S1135" />
+                <option name="severity" value="INFO" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRS" />
-                <option name="line" value="182" />
-                <option name="message" value="Add the &quot;@Override&quot; annotation above this method signature" />
-                <option name="ruleKey" value="squid:S1161" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCjXtyZjtOWLtRg" />
-                <option name="line" value="279" />
-                <option name="message" value="Rename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00100" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRJ" />
-                <option name="line" value="160" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRL" />
+                <option name="line" value="207" />
                 <option name="message" value="Use a logger to log this exception." />
                 <option name="ruleKey" value="squid:S1148" />
                 <option name="severity" value="MINOR" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRU" />
-                <option name="line" value="218" />
-                <option name="message" value="Either re-interrupt this method or rethrow the &quot;InterruptedException&quot;." />
-                <option name="ruleKey" value="squid:S2142" />
-                <option name="severity" value="MAJOR" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRb" />
+                <option name="line" value="262" />
+                <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
+                <option name="ruleKey" value="squid:S2696" />
+                <option name="severity" value="CRITICAL" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRZ" />
+                <option name="line" value="248" />
+                <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
+                <option name="ruleKey" value="squid:S2696" />
+                <option name="severity" value="CRITICAL" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCjXtyZjtOWLtRf" />
+                <option name="line" value="276" />
+                <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
+                <option name="ruleKey" value="squid:S2696" />
+                <option name="severity" value="CRITICAL" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRF" />
+                <option name="line" value="52" />
+                <option name="message" value="Make part2 a static final constant or non-public and provide accessors if needed." />
+                <option name="ruleKey" value="squid:ClassVariableVisibilityCheck" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRA" />
+                <option name="line" value="52" />
+                <option name="message" value="Make this &quot;public static part2&quot; field final" />
+                <option name="ruleKey" value="squid:S1444" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRX" />
+                <option name="line" value="239" />
+                <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
+                <option name="ruleKey" value="squid:S2696" />
+                <option name="severity" value="CRITICAL" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRB" />
+                <option name="line" value="53" />
+                <option name="message" value="Make this &quot;public static part3&quot; field final" />
+                <option name="ruleKey" value="squid:S1444" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRG" />
+                <option name="line" value="53" />
+                <option name="message" value="Make part3 a static final constant or non-public and provide accessors if needed." />
+                <option name="ruleKey" value="squid:ClassVariableVisibilityCheck" />
+                <option name="severity" value="MINOR" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
                 <option name="key" value="AXHPPwCiXtyZjtOWLtRM" />
-                <option name="line" value="219" />
+                <option name="line" value="221" />
+                <option name="message" value="Use a logger to log this exception." />
+                <option name="ruleKey" value="squid:S1148" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRK" />
+                <option name="line" value="172" />
                 <option name="message" value="Use a logger to log this exception." />
                 <option name="ruleKey" value="squid:S1148" />
                 <option name="severity" value="MINOR" />
@@ -637,106 +402,34 @@
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRB" />
-                <option name="line" value="53" />
-                <option name="message" value="Make this &quot;public static part3&quot; field final" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtQ_" />
+                <option name="line" value="51" />
+                <option name="message" value="Make this &quot;public static part1&quot; field final" />
                 <option name="ruleKey" value="squid:S1444" />
                 <option name="severity" value="MINOR" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
                 <option name="key" value="AXHPPwCjXtyZjtOWLtRi" />
-                <option name="line" value="204" />
+                <option name="line" value="205" />
                 <option name="message" value="This block of commented-out lines of code should be removed." />
                 <option name="ruleKey" value="squid:CommentedOutCodeLine" />
                 <option name="severity" value="MAJOR" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRX" />
-                <option name="line" value="236" />
+                <option name="key" value="AXHPPwCjXtyZjtOWLtRd" />
+                <option name="line" value="269" />
                 <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
                 <option name="ruleKey" value="squid:S2696" />
                 <option name="severity" value="CRITICAL" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRI" />
-                <option name="line" value="55" />
-                <option name="message" value="Make notComplete a static final constant or non-public and provide accessors if needed." />
-                <option name="ruleKey" value="squid:ClassVariableVisibilityCheck" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCjXtyZjtOWLtRc" />
-                <option name="line" value="261" />
-                <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
-                <option name="ruleKey" value="squid:S2696" />
-                <option name="severity" value="CRITICAL" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRb" />
-                <option name="line" value="259" />
-                <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
-                <option name="ruleKey" value="squid:S2696" />
-                <option name="severity" value="CRITICAL" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRA" />
-                <option name="line" value="52" />
-                <option name="message" value="Make this &quot;public static part2&quot; field final" />
-                <option name="ruleKey" value="squid:S1444" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCjXtyZjtOWLtRf" />
-                <option name="line" value="273" />
-                <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
-                <option name="ruleKey" value="squid:S2696" />
-                <option name="severity" value="CRITICAL" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRT" />
-                <option name="line" value="205" />
-                <option name="message" value="Either re-interrupt this method or rethrow the &quot;InterruptedException&quot;." />
-                <option name="ruleKey" value="squid:S2142" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRL" />
-                <option name="line" value="206" />
-                <option name="message" value="Use a logger to log this exception." />
-                <option name="ruleKey" value="squid:S1148" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRO" />
-                <option name="line" value="157" />
-                <option name="message" value="Remove this useless assignment to local variable &quot;uri&quot;." />
-                <option name="ruleKey" value="squid:S1854" />
-                <option name="severity" value="MAJOR" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
                 <option name="key" value="AXHPPwCiXtyZjtOWLtRV" />
-                <option name="line" value="216" />
+                <option name="line" value="218" />
                 <option name="message" value="Replace this use of System.out or System.err by a logger." />
                 <option name="ruleKey" value="squid:S106" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRQ" />
-                <option name="line" value="168" />
-                <option name="message" value="Add the &quot;@Override&quot; annotation above this method signature" />
-                <option name="ruleKey" value="squid:S1161" />
                 <option name="severity" value="MAJOR" />
               </SonarIssue>
               <SonarIssue>
@@ -749,27 +442,11 @@
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCjXtyZjtOWLtRe" />
-                <option name="line" value="269" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRY" />
+                <option name="line" value="244" />
                 <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
                 <option name="ruleKey" value="squid:S2696" />
                 <option name="severity" value="CRITICAL" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRa" />
-                <option name="line" value="258" />
-                <option name="message" value="Complete the task associated to this TODO comment." />
-                <option name="ruleKey" value="squid:S1135" />
-                <option name="severity" value="INFO" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRF" />
-                <option name="line" value="52" />
-                <option name="message" value="Make part2 a static final constant or non-public and provide accessors if needed." />
-                <option name="ruleKey" value="squid:ClassVariableVisibilityCheck" />
-                <option name="severity" value="MINOR" />
               </SonarIssue>
             </set>
           </value>
@@ -779,130 +456,98 @@
             <set>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwESXtyZjtOWLtRy" />
-                <option name="line" value="123" />
-                <option name="message" value="%n should be used in place of \n to produce the platform-specific line separator." />
-                <option name="ruleKey" value="squid:S3457" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwESXtyZjtOWLtRx" />
-                <option name="line" value="54" />
-                <option name="message" value="Remove the &quot;boutonMaPosition&quot; field and declare it as a local variable in the relevant methods." />
-                <option name="ruleKey" value="squid:S1450" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwESXtyZjtOWLtR2" />
-                <option name="line" value="196" />
-                <option name="message" value="Remove this useless assignment to local variable &quot;m&quot;." />
-                <option name="ruleKey" value="squid:S1854" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwESXtyZjtOWLtR5" />
-                <option name="line" value="224" />
-                <option name="message" value="Remove this use of &quot;getDrawable&quot;; it is deprecated." />
-                <option name="ruleKey" value="squid:CallToDeprecatedMethod" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwESXtyZjtOWLtR9" />
-                <option name="line" value="293" />
-                <option name="message" value="This block of commented-out lines of code should be removed." />
-                <option name="ruleKey" value="squid:CommentedOutCodeLine" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwESXtyZjtOWLtR8" />
-                <option name="line" value="196" />
-                <option name="message" value="Remove this unused &quot;m&quot; local variable." />
-                <option name="ruleKey" value="squid:S1481" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwESXtyZjtOWLtR7" />
-                <option name="line" value="269" />
-                <option name="message" value="Remove this use of &quot;MapEventsOverlay&quot;; it is deprecated." />
-                <option name="ruleKey" value="squid:CallToDeprecatedMethod" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwESXtyZjtOWLtRu" />
-                <option name="line" value="296" />
-                <option name="message" value="Introduce a new variable instead of reusing the parameter &quot;fournisseur&quot;." />
-                <option name="ruleKey" value="squid:S1226" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwESXtyZjtOWLtR1" />
-                <option name="line" value="141" />
-                <option name="message" value="Remove this use of &quot;TEMPORARILY_UNAVAILABLE&quot;; it is deprecated." />
-                <option name="ruleKey" value="squid:CallToDeprecatedMethod" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwESXtyZjtOWLtRz" />
-                <option name="line" value="135" />
-                <option name="message" value="Remove this use of &quot;AVAILABLE&quot;; it is deprecated." />
-                <option name="ruleKey" value="squid:CallToDeprecatedMethod" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
                 <option name="key" value="AXHPPwESXtyZjtOWLtR3" />
-                <option name="line" value="194" />
+                <option name="line" value="186" />
                 <option name="message" value="Replace the type specification in this constructor call with the diamond operator (&quot;&lt;&gt;&quot;)." />
                 <option name="ruleKey" value="squid:S2293" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwESXtyZjtOWLtR4" />
-                <option name="line" value="199" />
-                <option name="message" value="Replace the type specification in this constructor call with the diamond operator (&quot;&lt;&gt;&quot;)." />
-                <option name="ruleKey" value="squid:S2293" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwESXtyZjtOWLtR6" />
-                <option name="line" value="235" />
-                <option name="message" value="Remove this use of &quot;getDrawable&quot;; it is deprecated." />
-                <option name="ruleKey" value="squid:CallToDeprecatedMethod" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwESXtyZjtOWLtR0" />
-                <option name="line" value="138" />
-                <option name="message" value="Remove this use of &quot;OUT_OF_SERVICE&quot;; it is deprecated." />
-                <option name="ruleKey" value="squid:CallToDeprecatedMethod" />
                 <option name="severity" value="MINOR" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
                 <option name="key" value="AXHPPwESXtyZjtOWLtRw" />
-                <option name="line" value="257" />
+                <option name="line" value="248" />
                 <option name="message" value="Use a logger to log this exception." />
                 <option name="ruleKey" value="squid:S1148" />
                 <option name="severity" value="MINOR" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwESXtyZjtOWLtR9" />
+                <option name="line" value="284" />
+                <option name="message" value="This block of commented-out lines of code should be removed." />
+                <option name="ruleKey" value="squid:CommentedOutCodeLine" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwESXtyZjtOWLtRy" />
+                <option name="line" value="118" />
+                <option name="message" value="%n should be used in place of \n to produce the platform-specific line separator." />
+                <option name="ruleKey" value="squid:S3457" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
                 <option name="key" value="AXHPPwESXtyZjtOWLtRv" />
-                <option name="line" value="269" />
+                <option name="line" value="260" />
                 <option name="message" value="Rename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
                 <option name="ruleKey" value="squid:S00117" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwESXtyZjtOWLtR7" />
+                <option name="line" value="260" />
+                <option name="message" value="Remove this use of &quot;MapEventsOverlay&quot;; it is deprecated." />
+                <option name="ruleKey" value="squid:CallToDeprecatedMethod" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwESXtyZjtOWLtR5" />
+                <option name="line" value="215" />
+                <option name="message" value="Remove this use of &quot;getDrawable&quot;; it is deprecated." />
+                <option name="ruleKey" value="squid:CallToDeprecatedMethod" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwESXtyZjtOWLtR8" />
+                <option name="line" value="188" />
+                <option name="message" value="Remove this unused &quot;m&quot; local variable." />
+                <option name="ruleKey" value="squid:S1481" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwESXtyZjtOWLtR2" />
+                <option name="line" value="188" />
+                <option name="message" value="Remove this useless assignment to local variable &quot;m&quot;." />
+                <option name="ruleKey" value="squid:S1854" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwESXtyZjtOWLtR6" />
+                <option name="line" value="226" />
+                <option name="message" value="Remove this use of &quot;getDrawable&quot;; it is deprecated." />
+                <option name="ruleKey" value="squid:CallToDeprecatedMethod" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwESXtyZjtOWLtRu" />
+                <option name="line" value="287" />
+                <option name="message" value="Introduce a new variable instead of reusing the parameter &quot;fournisseur&quot;." />
+                <option name="ruleKey" value="squid:S1226" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwESXtyZjtOWLtRx" />
+                <option name="line" value="51" />
+                <option name="message" value="Remove the &quot;boutonMaPosition&quot; field and declare it as a local variable in the relevant methods." />
+                <option name="ruleKey" value="squid:S1450" />
                 <option name="severity" value="MINOR" />
               </SonarIssue>
             </set>
@@ -914,18 +559,10 @@
               <SonarIssue>
                 <option name="isNew" value="false" />
                 <option name="key" value="AXHPPwELXtyZjtOWLtRt" />
-                <option name="line" value="24" />
+                <option name="line" value="20" />
                 <option name="message" value="This class has 9 parents which is greater than 5 authorized." />
                 <option name="ruleKey" value="squid:MaximumInheritanceDepth" />
                 <option name="severity" value="MAJOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwELXtyZjtOWLtRs" />
-                <option name="line" value="36" />
-                <option name="message" value="Define a constant instead of duplicating this literal &quot;ma_liste_de_signalements&quot; 3 times." />
-                <option name="ruleKey" value="squid:S1192" />
-                <option name="severity" value="CRITICAL" />
               </SonarIssue>
             </set>
           </value>
@@ -935,75 +572,35 @@
             <set>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEsXtyZjtOWLtSW" />
-                <option name="line" value="41" />
-                <option name="message" value="Remove the &quot;mPhotoButton&quot; field and declare it as a local variable in the relevant methods." />
-                <option name="ruleKey" value="squid:S1450" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEsXtyZjtOWLtSS" />
-                <option name="line" value="102" />
-                <option name="message" value="Replace this &quot;switch&quot; statement by &quot;if&quot; statements to increase readability." />
-                <option name="ruleKey" value="squid:S1301" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEsXtyZjtOWLtSU" />
-                <option name="line" value="7" />
-                <option name="message" value="Remove this unused import 'android.content.res.Configuration'." />
-                <option name="ruleKey" value="squid:UselessImportCheck" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEsXtyZjtOWLtSX" />
-                <option name="line" value="42" />
-                <option name="message" value="Rename this field &quot;image_uri&quot; to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00116" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEsXtyZjtOWLtSY" />
-                <option name="line" value="102" />
-                <option name="message" value="Add a default case to this switch." />
-                <option name="ruleKey" value="squid:SwitchLastCaseIsDefaultCheck" />
-                <option name="severity" value="CRITICAL" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEsXtyZjtOWLtST" />
-                <option name="line" value="30" />
-                <option name="message" value="Remove this unused import 'java.util.zip.Inflater'." />
-                <option name="ruleKey" value="squid:UselessImportCheck" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwEsXtyZjtOWLtSR" />
-                <option name="line" value="103" />
-                <option name="message" value="Extract this nested code block into a method." />
-                <option name="ruleKey" value="squid:S1199" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
                 <option name="key" value="AXHPPwEsXtyZjtOWLtSV" />
-                <option name="line" value="123" />
+                <option name="line" value="132" />
                 <option name="message" value="Use a logger to log this exception." />
                 <option name="ruleKey" value="squid:S1148" />
                 <option name="severity" value="MINOR" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwEsXtyZjtOWLtSX" />
+                <option name="line" value="41" />
+                <option name="message" value="Rename this field &quot;image_uri&quot; to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
+                <option name="ruleKey" value="squid:S00116" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
                 <option name="key" value="AXHPPwEsXtyZjtOWLtSZ" />
-                <option name="line" value="116" />
+                <option name="line" value="125" />
                 <option name="message" value="This block of commented-out lines of code should be removed." />
                 <option name="ruleKey" value="squid:CommentedOutCodeLine" />
                 <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwEsXtyZjtOWLtSW" />
+                <option name="line" value="40" />
+                <option name="message" value="Remove the &quot;mPhotoButton&quot; field and declare it as a local variable in the relevant methods." />
+                <option name="ruleKey" value="squid:S1450" />
+                <option name="severity" value="MINOR" />
               </SonarIssue>
             </set>
           </value>
@@ -1013,75 +610,75 @@
             <set>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwDzXtyZjtOWLtRm" />
-                <option name="line" value="33" />
-                <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
-                <option name="ruleKey" value="squid:S1186" />
-                <option name="severity" value="CRITICAL" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwDzXtyZjtOWLtRk" />
-                <option name="line" value="17" />
-                <option name="message" value="Make pager a static final constant or non-public and provide accessors if needed." />
-                <option name="ruleKey" value="squid:ClassVariableVisibilityCheck" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwD0XtyZjtOWLtRq" />
-                <option name="line" value="62" />
-                <option name="message" value="Remove this unnecessary cast to &quot;ViewPager&quot;." />
-                <option name="ruleKey" value="squid:S1905" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwD0XtyZjtOWLtRp" />
-                <option name="line" value="62" />
-                <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
-                <option name="ruleKey" value="squid:S2696" />
-                <option name="severity" value="CRITICAL" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
                 <option name="key" value="AXHPPwDzXtyZjtOWLtRo" />
-                <option name="line" value="30" />
+                <option name="line" value="28" />
                 <option name="message" value="Rename this field &quot;CurrentFragment&quot; to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
                 <option name="ruleKey" value="squid:S00116" />
                 <option name="severity" value="MINOR" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwD0XtyZjtOWLtRr" />
-                <option name="line" value="67" />
-                <option name="message" value="Remove this unnecessary cast to &quot;TabLayout&quot;." />
-                <option name="ruleKey" value="squid:S1905" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
                 <option name="key" value="AXHPPwDzXtyZjtOWLtRj" />
-                <option name="line" value="17" />
+                <option name="line" value="15" />
                 <option name="message" value="Make this &quot;public static pager&quot; field final" />
                 <option name="ruleKey" value="squid:S1444" />
                 <option name="severity" value="MINOR" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwDzXtyZjtOWLtRl" />
+                <option name="key" value="AXHPPwDzXtyZjtOWLtRk" />
                 <option name="line" value="15" />
-                <option name="message" value="This class has 9 parents which is greater than 5 authorized." />
-                <option name="ruleKey" value="squid:MaximumInheritanceDepth" />
-                <option name="severity" value="MAJOR" />
+                <option name="message" value="Make pager a static final constant or non-public and provide accessors if needed." />
+                <option name="ruleKey" value="squid:ClassVariableVisibilityCheck" />
+                <option name="severity" value="MINOR" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
                 <option name="key" value="AXHPPwDzXtyZjtOWLtRn" />
-                <option name="line" value="43" />
+                <option name="line" value="41" />
                 <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
                 <option name="ruleKey" value="squid:S1186" />
                 <option name="severity" value="CRITICAL" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwD0XtyZjtOWLtRp" />
+                <option name="line" value="60" />
+                <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
+                <option name="ruleKey" value="squid:S2696" />
+                <option name="severity" value="CRITICAL" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwD0XtyZjtOWLtRq" />
+                <option name="line" value="60" />
+                <option name="message" value="Remove this unnecessary cast to &quot;ViewPager&quot;." />
+                <option name="ruleKey" value="squid:S1905" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwD0XtyZjtOWLtRr" />
+                <option name="line" value="65" />
+                <option name="message" value="Remove this unnecessary cast to &quot;TabLayout&quot;." />
+                <option name="ruleKey" value="squid:S1905" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwDzXtyZjtOWLtRm" />
+                <option name="line" value="31" />
+                <option name="message" value="Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation." />
+                <option name="ruleKey" value="squid:S1186" />
+                <option name="severity" value="CRITICAL" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwDzXtyZjtOWLtRl" />
+                <option name="line" value="13" />
+                <option name="message" value="This class has 9 parents which is greater than 5 authorized." />
+                <option name="ruleKey" value="squid:MaximumInheritanceDepth" />
+                <option name="severity" value="MAJOR" />
               </SonarIssue>
             </set>
           </value>
@@ -1091,226 +688,90 @@
             <set>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPv-CXtyZjtOWLtQx" />
-                <option name="line" value="22" />
-                <option name="message" value="Rename this field &quot;PLASTIQUE&quot; to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00116" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPv-CXtyZjtOWLtQy" />
-                <option name="line" value="23" />
-                <option name="message" value="Rename this field &quot;METAL&quot; to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00116" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPv-CXtyZjtOWLtQw" />
-                <option name="line" value="21" />
-                <option name="message" value="Rename this field &quot;PAPIER&quot; to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00116" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPv-CXtyZjtOWLtQv" />
-                <option name="line" value="20" />
-                <option name="message" value="Rename this field &quot;CARTON&quot; to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00116" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPv-DXtyZjtOWLtQ4" />
-                <option name="line" value="145" />
-                <option name="message" value="Rename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00100" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPv-DXtyZjtOWLtQ5" />
-                <option name="line" value="149" />
-                <option name="message" value="Rename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00100" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
                 <option name="key" value="AXHPPv-CXtyZjtOWLtQu" />
-                <option name="line" value="19" />
+                <option name="line" value="18" />
                 <option name="message" value="Rename this field &quot;VERRE&quot; to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
                 <option name="ruleKey" value="squid:S00116" />
                 <option name="severity" value="MINOR" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPv-BXtyZjtOWLtQq" />
-                <option name="line" value="177" />
-                <option name="message" value="Rename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00117" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPv-BXtyZjtOWLtQr" />
-                <option name="line" value="181" />
-                <option name="message" value="Rename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00117" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPv-BXtyZjtOWLtQl" />
-                <option name="line" value="157" />
-                <option name="message" value="Rename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00117" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPv-CXtyZjtOWLtQ0" />
-                <option name="line" value="27" />
-                <option name="message" value="Rename this field &quot;GROS&quot; to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00116" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPv-BXtyZjtOWLtQk" />
-                <option name="line" value="153" />
-                <option name="message" value="Rename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00117" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPv-BXtyZjtOWLtQn" />
-                <option name="line" value="165" />
-                <option name="message" value="Rename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00117" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPv-DXtyZjtOWLtQ3" />
-                <option name="line" value="69" />
-                <option name="message" value="Rename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00100" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPv9-XtyZjtOWLtQi" />
-                <option name="line" value="145" />
-                <option name="message" value="Rename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00117" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPv-DXtyZjtOWLtQ6" />
-                <option name="line" value="224" />
-                <option name="message" value="Rename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00100" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
                 <option name="key" value="AXHPPv-DXtyZjtOWLtQ1" />
-                <option name="line" value="28" />
+                <option name="line" value="27" />
                 <option name="message" value="Rename this field &quot;PETIT&quot; to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
                 <option name="ruleKey" value="squid:S00116" />
                 <option name="severity" value="MINOR" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPv-BXtyZjtOWLtQp" />
-                <option name="line" value="173" />
-                <option name="message" value="Rename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00117" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPv-DXtyZjtOWLtQ9" />
-                <option name="line" value="292" />
-                <option name="message" value="Complete the task associated to this TODO comment." />
-                <option name="ruleKey" value="squid:S1135" />
-                <option name="severity" value="INFO" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPv-DXtyZjtOWLtQ8" />
-                <option name="line" value="271" />
-                <option name="message" value="Refactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed." />
-                <option name="ruleKey" value="squid:S3776" />
-                <option name="severity" value="CRITICAL" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPv-BXtyZjtOWLtQo" />
-                <option name="line" value="169" />
-                <option name="message" value="Rename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00117" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPv-DXtyZjtOWLtQ2" />
-                <option name="line" value="65" />
-                <option name="message" value="Rename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00100" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPv-BXtyZjtOWLtQj" />
-                <option name="line" value="149" />
-                <option name="message" value="Rename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00117" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPv-BXtyZjtOWLtQs" />
-                <option name="line" value="16" />
-                <option name="message" value="Rename this field &quot;DECHET_UNIQUE&quot; to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00116" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
                 <option name="key" value="AXHPPv-BXtyZjtOWLtQt" />
-                <option name="line" value="17" />
+                <option name="line" value="16" />
                 <option name="message" value="Rename this field &quot;DECHARGE_SAUVAGE&quot; to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
                 <option name="ruleKey" value="squid:S00116" />
                 <option name="severity" value="MINOR" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
+                <option name="key" value="AXHPPv-CXtyZjtOWLtQv" />
+                <option name="line" value="19" />
+                <option name="message" value="Rename this field &quot;CARTON&quot; to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
+                <option name="ruleKey" value="squid:S00116" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
                 <option name="key" value="AXHPPv-CXtyZjtOWLtQz" />
-                <option name="line" value="24" />
+                <option name="line" value="23" />
                 <option name="message" value="Rename this field &quot;AUTRE&quot; to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
                 <option name="ruleKey" value="squid:S00116" />
                 <option name="severity" value="MINOR" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPv-DXtyZjtOWLtQ7" />
-                <option name="line" value="228" />
-                <option name="message" value="Rename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00100" />
+                <option name="key" value="AXHPPv-DXtyZjtOWLtQ9" />
+                <option name="line" value="291" />
+                <option name="message" value="Complete the task associated to this TODO comment." />
+                <option name="ruleKey" value="squid:S1135" />
+                <option name="severity" value="INFO" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPv-CXtyZjtOWLtQx" />
+                <option name="line" value="21" />
+                <option name="message" value="Rename this field &quot;PLASTIQUE&quot; to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
+                <option name="ruleKey" value="squid:S00116" />
                 <option name="severity" value="MINOR" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPv-BXtyZjtOWLtQm" />
-                <option name="line" value="161" />
-                <option name="message" value="Rename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
-                <option name="ruleKey" value="squid:S00117" />
+                <option name="key" value="AXHPPv-CXtyZjtOWLtQw" />
+                <option name="line" value="20" />
+                <option name="message" value="Rename this field &quot;PAPIER&quot; to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
+                <option name="ruleKey" value="squid:S00116" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPv-CXtyZjtOWLtQ0" />
+                <option name="line" value="26" />
+                <option name="message" value="Rename this field &quot;GROS&quot; to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
+                <option name="ruleKey" value="squid:S00116" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPv-CXtyZjtOWLtQy" />
+                <option name="line" value="22" />
+                <option name="message" value="Rename this field &quot;METAL&quot; to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
+                <option name="ruleKey" value="squid:S00116" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPv-BXtyZjtOWLtQs" />
+                <option name="line" value="15" />
+                <option name="message" value="Rename this field &quot;DECHET_UNIQUE&quot; to match the regular expression '^[a-z][a-zA-Z0-9]*$'." />
+                <option name="ruleKey" value="squid:S00116" />
                 <option name="severity" value="MINOR" />
               </SonarIssue>
             </set>
@@ -1351,6 +812,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/sonar-scanner.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/a.dummy">
           <value>
             <set />
           </value>

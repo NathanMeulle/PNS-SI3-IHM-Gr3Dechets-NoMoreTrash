@@ -10,7 +10,6 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
 import com.example.nomoretrash.signalements.MesSignalementsActivity;
 import com.example.nomoretrash.signalements.SignalementActivity;
 import com.example.nomoretrash.signalements.SignalementObject;
@@ -21,7 +20,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements SignalementsObjectsList {
 
-    public static final int ActivitySignalementRequestCode = 2;
+    public static final int ACTIVITY_SIGNALEMENT_REQUEST_CODE = 2;
     private ArrayList<String> signalementsList;
 
     @Override
@@ -44,8 +43,7 @@ public class MainActivity extends AppCompatActivity implements SignalementsObjec
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SignalementActivity.class);
-                startActivityForResult(intent, ActivitySignalementRequestCode);
-                //startActivity(intent);
+                startActivityForResult(intent, ACTIVITY_SIGNALEMENT_REQUEST_CODE);
             }
         });
 
@@ -74,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements SignalementsObjec
         compte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //todo : créer l'activité associée
 
             }
         });
@@ -83,22 +82,17 @@ public class MainActivity extends AppCompatActivity implements SignalementsObjec
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode) {
-            case (ActivitySignalementRequestCode): {
-                if (resultCode == Activity.RESULT_OK) {
-                    String returnValue = data.getStringExtra("mon_signalement");
-                    signalementsList.add(returnValue);
-                    Log.d("recap_signalement : ", returnValue);
-                }
-                break;
-            }
+        if (requestCode == ACTIVITY_SIGNALEMENT_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            String returnValue = data.getStringExtra("mon_signalement");
+            signalementsList.add(returnValue);
+            Log.d("recap_signalement : ", returnValue);
         }
     }
 
     public ArrayList<String> setRecap(ArrayList<SignalementObject> signalementObjectArray) {
         ArrayList<String> res = new ArrayList<>();
         for (SignalementObject signalementObject : signalementObjectArray) {
-            String recap = "Recapitulatif : ";
+            String recap = "Signalement du " + signalementObject.getDate() + ". \nRécapitulatif : ";
             if (signalementObject.isDECHET_UNIQUE() || signalementObject.isDECHARGE_SAUVAGE()) {
                 if (signalementObject.isDECHET_UNIQUE())
                     recap += "dechet unique";

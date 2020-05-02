@@ -13,7 +13,6 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-
 import androidx.fragment.app.Fragment;
 
 import com.example.nomoretrash.R;
@@ -33,7 +32,7 @@ public class DescriptionFragment extends Fragment {
         signalementObject = new SignalementObject();
         //Ajout de la date de création du signalement
         Date date = new Date();
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/YYYY HH:mm");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         String result = formatter.format(date);
         signalementObject.setDate(result);
     }
@@ -60,9 +59,9 @@ public class DescriptionFragment extends Fragment {
         checkBoxCreation(rootView);
 
         //Pour cocher automatiquement "autre" si l'editText est completé
-        final CheckBox checkbox_autre = rootView.findViewById(R.id.checkbox_autre);
-        final EditText text_autre = rootView.findViewById(R.id.preciser);
-        text_autre.addTextChangedListener(new TextWatcher() {
+        final CheckBox checkboxAutre = rootView.findViewById(R.id.checkbox_autre);
+        final EditText textAutre = rootView.findViewById(R.id.preciser);
+        textAutre.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -71,13 +70,13 @@ public class DescriptionFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(!String.valueOf(s).equals("")) {
-                    checkbox_autre.setChecked(true);
+                    checkboxAutre.setChecked(true);
                     signalementObject.changeAUTRE();
 
                 }
 
                 else {
-                    checkbox_autre.setChecked(false);
+                    checkboxAutre.setChecked(false);
                     signalementObject.changeAUTRE();
 
                 }
@@ -86,11 +85,11 @@ public class DescriptionFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
                 if(!String.valueOf(s).equals("")) {
-                    checkbox_autre.setChecked(true);
+                    checkboxAutre.setChecked(true);
                     signalementObject.setAUTRE(true);
                 }
                 else {
-                    checkbox_autre.setChecked(false);
+                    checkboxAutre.setChecked(false);
                     signalementObject.setAUTRE(false);
                 }
 
@@ -131,100 +130,94 @@ public class DescriptionFragment extends Fragment {
 
 
     private void checkBoxCreation(View rootView) {
-        final RadioButton checkBox_dechet_unique = rootView.findViewById(R.id.radio_dechetUnique);
-        final RadioButton checkbox_decharge_sauvage = rootView.findViewById(R.id.radio_dechargeSauvage);
-        CheckBox checkbox_verre = rootView.findViewById(R.id.checkbox_verre);
-        CheckBox checkbox_carton = rootView.findViewById(R.id.checkbox_carton);
-        CheckBox checkbox_papier = rootView.findViewById(R.id.checkbox_papier);
-        CheckBox checkbox_plastique = rootView.findViewById(R.id.checkbox_plastique);
-        CheckBox checkbox_metal = rootView.findViewById(R.id.checkbox_metal);
-        CheckBox checkbox_autre = rootView.findViewById(R.id.checkbox_autre);
-        final RadioButton  checkbox_petit = rootView.findViewById(R.id.radio_petit);
-        final RadioButton  checkbox_gros = rootView.findViewById(R.id.radio_grand);
+        final RadioButton checkboxDechetUnique = rootView.findViewById(R.id.radio_dechetUnique);
+        final RadioButton checkboxDechargeSauvage = rootView.findViewById(R.id.radio_dechargeSauvage);
+        CheckBox checkboxVerre = rootView.findViewById(R.id.checkbox_verre);
+        CheckBox checkboxCarton = rootView.findViewById(R.id.checkbox_carton);
+        CheckBox checkboxPapier = rootView.findViewById(R.id.checkbox_papier);
+        CheckBox checkboxPlastique = rootView.findViewById(R.id.checkbox_plastique);
+        CheckBox checkboxMetal = rootView.findViewById(R.id.checkbox_metal);
+        CheckBox checkboxAutre = rootView.findViewById(R.id.checkbox_autre);
+        final RadioButton  checkboxPetit = rootView.findViewById(R.id.radio_petit);
+        final RadioButton  checkboxGros = rootView.findViewById(R.id.radio_grand);
 
 
-        checkBox_dechet_unique.setOnClickListener(new View.OnClickListener() {
+        checkboxDechetUnique.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 signalementObject.changeDECHET_UNIQUE();
                 if (signalementObject.isDECHET_UNIQUE() && signalementObject.isDECHARGE_SAUVAGE()) {
                     signalementObject.changeDECHARGE_SAUVAGE();
-                    checkbox_decharge_sauvage.setChecked(false);
+                    checkboxDechargeSauvage.setChecked(false);
                 }
             }
         });
 
-        checkbox_decharge_sauvage.setOnClickListener(new View.OnClickListener() {
+        checkboxDechargeSauvage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 signalementObject.changeDECHARGE_SAUVAGE();
                 if (signalementObject.isDECHET_UNIQUE() && signalementObject.isDECHARGE_SAUVAGE()) {
                     signalementObject.changeDECHET_UNIQUE();
-                    checkBox_dechet_unique.setChecked(false);
+                    checkboxDechetUnique.setChecked(false);
                 }
             }
         });
 
-        checkbox_verre.setOnClickListener(new View.OnClickListener() {
+        checkboxVerre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 signalementObject.changeVERRE();
             }
         });
 
-        checkbox_carton.setOnClickListener(new View.OnClickListener() {
+        checkboxCarton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 signalementObject.changeCARTON();
             }
         });
 
-        checkbox_papier.setOnClickListener(new View.OnClickListener() {
+        checkboxPapier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 signalementObject.changePAPIER();
             }
         });
 
-        checkbox_plastique.setOnClickListener(new View.OnClickListener() {
+        checkboxPlastique.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 signalementObject.changePLASTIQUE();
             }
         });
 
-        checkbox_metal.setOnClickListener(new View.OnClickListener() {
+        checkboxMetal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 signalementObject.changeMETAL();
             }
         });
 
-        checkbox_autre.setOnClickListener(new View.OnClickListener() {
+        checkboxAutre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 signalementObject.changeAUTRE();
             }
         });
 
-        checkbox_gros.setOnClickListener(new View.OnClickListener() {
+        checkboxGros.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 signalementObject.changeGROS();
-                if (signalementObject.isGROS() && signalementObject.isPETIT())
-                    signalementObject.changePETIT();
-                    checkbox_petit.setChecked(false);
             }
         });
 
-        checkbox_petit.setOnClickListener(new View.OnClickListener() {
+        checkboxPetit.setOnClickListener(new View.OnClickListener() {
             @Override
 
             public void onClick(View view) {
                 signalementObject.changePETIT();
-                if (signalementObject.isGROS() && signalementObject.isPETIT())
-                    signalementObject.changeGROS();
-                    checkbox_gros.setChecked(false);
             }
         });
     }

@@ -8,9 +8,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.nomoretrash.MainActivity;
 import com.example.nomoretrash.R;
-import com.example.nomoretrash.statistiques.StatistiquesActivity;
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;

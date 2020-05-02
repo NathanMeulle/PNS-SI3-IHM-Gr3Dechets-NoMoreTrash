@@ -11,7 +11,6 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.location.LocationProvider;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -27,7 +26,6 @@ import androidx.fragment.app.Fragment;
 import com.example.nomoretrash.R;
 
 import org.osmdroid.api.IMapController;
-
 import org.osmdroid.events.MapEventsReceiver;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
@@ -40,7 +38,6 @@ import org.osmdroid.views.overlay.OverlayItem;
 import org.osmdroid.views.overlay.ScaleBarOverlay;
 import org.osmdroid.views.overlay.compass.CompassOverlay;
 import org.osmdroid.views.overlay.compass.InternalCompassOrientationProvider;
-
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -64,7 +61,6 @@ public class LocalisationFragment extends Fragment {
     private Marker marker;
     private int nbMarker = 0;
     private boolean positionRenseigne = false;
-
 
 
     public LocalisationFragment() {
@@ -95,13 +91,12 @@ public class LocalisationFragment extends Fragment {
         // Ajout du controler et du point 0
         mapController = map.getController();
         mapController.setZoom(18.0);
-        GeoPoint startPoint ;
+        GeoPoint startPoint;
 
-        if( positionRenseigne){
-            startPoint = new GeoPoint(latitudeDechet,longitudeDechet);
+        if (positionRenseigne) {
+            startPoint = new GeoPoint(latitudeDechet, longitudeDechet);
             addItemTrash(startPoint);
-        }
-        else{
+        } else {
             startPoint = new GeoPoint(43.181866, 5.703372);
         }
 
@@ -160,30 +155,27 @@ public class LocalisationFragment extends Fragment {
         };
 
 
-
         //Création du bouton pour recentrer la carte sur soi
         boutonMaPosition = rootView.findViewById(R.id.boutonMaPosition);
         boutonMaPosition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    if (ContextCompat.checkSelfPermission(LocalisationFragment.this.getContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_DENIED) {
-                        //Permission non accordée, on demande de nouveau la permission
-                        String[] permission = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.WRITE_EXTERNAL_STORAGE};
-                        //POP UP
-                        requestPermissions(permission, PERMISSION_CODE);//On demande l'accès au GPS
-                    } else {
-                        //permission ok
-                    }
-                    initialiserLocalisation("", locationListener);
+                if (ContextCompat.checkSelfPermission(LocalisationFragment.this.getContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_DENIED) {
+                    //Permission non accordée, on demande de nouveau la permission
+                    String[] permission = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+                    //POP UP
+                    requestPermissions(permission, PERMISSION_CODE);//On demande l'accès au GPS
+                } else {
+                    //permission ok
+                    initialiserLocalisation(locationListener);
                     addItemMyPosition();//Ajoute ma position
                 }
+
             }
         });
 
         // Ajout d'un MapEventsReceiver pour detecter les clics de l'utilisateur
         onSingleTapUpHelper();
-
 
 
         return rootView;
@@ -215,9 +207,8 @@ public class LocalisationFragment extends Fragment {
     }
 
 
-
-    public  void addItemTrash(GeoPoint location){
-        if(nbMarker==0) { // si aucun marker n'est créé, on le crée
+    public void addItemTrash(GeoPoint location) {
+        if (nbMarker == 0) { // si aucun marker n'est créé, on le crée
             marker = new Marker(map);
             marker.setPosition(new GeoPoint(location.getLatitude(), location.getLongitude()));
             marker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
@@ -227,7 +218,7 @@ public class LocalisationFragment extends Fragment {
             map.invalidate();
             signalementObject.setHaveLocalisation(true);
             positionRenseigne = true;
-        }else { // sinon on le recupère et on change sa position
+        } else { // sinon on le recupère et on change sa position
             map.getOverlays().remove(marker);
             marker = new Marker(map);
             marker.setPosition(new GeoPoint(location.getLatitude(), location.getLongitude()));
@@ -239,7 +230,7 @@ public class LocalisationFragment extends Fragment {
 
         }
         latitudeDechet = location.getLatitude();
-        longitudeDechet=location.getLongitude();
+        longitudeDechet = location.getLongitude();
         nbMarker++;
     }
 
@@ -271,7 +262,7 @@ public class LocalisationFragment extends Fragment {
 
     }
 
-    private void initialiserLocalisation(String fournisseur, LocationListener ecouteurGPS) {
+    private void initialiserLocalisation(LocationListener ecouteurGPS) {
 
         locationManager = (LocationManager) getContext().getSystemService(Context.LOCATION_SERVICE);
         Criteria criteres = new Criteria();
@@ -293,7 +284,7 @@ public class LocalisationFragment extends Fragment {
         //criteres.setPowerRequirement(Criteria.POWER_HIGH);
         criteres.setPowerRequirement(Criteria.POWER_MEDIUM);
 
-        fournisseur = locationManager.getBestProvider(criteres, true);
+        String fournisseur = locationManager.getBestProvider(criteres, true);
         Log.d("GPS", "fournisseur : " + fournisseur);
 
 
@@ -306,16 +297,16 @@ public class LocalisationFragment extends Fragment {
             }
 
             Location localisation = locationManager.getLastKnownLocation(fournisseur);
-            if(localisation != null) {
+            if (localisation != null) {
                 // on notifie la localisation
                 ecouteurGPS.onLocationChanged(localisation);
             }
-            
+
         }
     }
 
     private void arreterLocalisation() {
-        if(locationManager != null) {
+        if (locationManager != null) {
             locationManager.removeUpdates(locationListener);
             locationListener = null;
         }
@@ -338,8 +329,8 @@ public class LocalisationFragment extends Fragment {
         return "Localisation : " + address;
     }
 
-    public String toStringLocalisation(double latitude, double longitude){
-        return "Localisation : " + latitude +", " + longitude ;
+    public String toStringLocalisation(double latitude, double longitude) {
+        return "Localisation : " + latitude + ", " + longitude;
     }
 
 }

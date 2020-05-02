@@ -2,15 +2,15 @@ package com.example.nomoretrash.signalements;
 
 
 import android.Manifest;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.ContentValues;
-import android.content.Intent;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.view.LayoutInflater;
@@ -170,6 +170,7 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
+                    Thread.currentThread().interrupt();
                 }
                 Intent resultIntent = new Intent();
                 resultIntent.putExtra("mon_signalement", DescriptionFragment.getSignalementObject().toString());
@@ -204,6 +205,7 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
             //thread2.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
+            Thread.currentThread().interrupt();
         }
     }
 
@@ -217,11 +219,12 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
+            Thread.currentThread().interrupt();
         }
         NotificationCompat.Builder notification = new NotificationCompat.Builder(context, channelId);
         if(photo!=null){
              notification.setSmallIcon(icon).setContentTitle(title).setContentText(message).setPriority(priority)
-                    .setLargeIcon(RotateBitmap(signalementObject.getPhoto(), 90));
+                    .setLargeIcon(rotateBitmap(signalementObject.getPhoto(), 90));
         }
         else {
             notification.setSmallIcon(icon).setContentTitle(title).setContentText(message).setPriority(priority);
@@ -276,7 +279,7 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
     }
 
 
-    public static Bitmap RotateBitmap(Bitmap source, float angle) {
+    public static Bitmap rotateBitmap(Bitmap source, float angle) {
         Matrix matrix = new Matrix();
         matrix.postRotate(angle);
         return Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(), matrix, true);

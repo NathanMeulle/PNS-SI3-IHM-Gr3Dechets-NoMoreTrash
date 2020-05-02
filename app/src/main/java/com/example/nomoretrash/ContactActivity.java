@@ -40,7 +40,7 @@ public class ContactActivity extends AppCompatActivity implements AdapterView.On
         list.add("Problème avec mon historique");
         list.add("Suggestion");
         list.add("Autre");
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, list);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mSpinnerSubject.setAdapter(dataAdapter);
@@ -94,6 +94,7 @@ public class ContactActivity extends AppCompatActivity implements AdapterView.On
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+        //nothing
     }
 
     @Override

@@ -2,7 +2,6 @@ package com.example.nomoretrash.signalements;
 
 import android.graphics.Bitmap;
 
-
 import androidx.annotation.NonNull;
 
 import com.example.nomoretrash.Status;

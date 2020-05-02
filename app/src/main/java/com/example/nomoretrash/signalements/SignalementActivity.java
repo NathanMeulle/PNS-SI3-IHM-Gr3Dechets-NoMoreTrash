@@ -2,8 +2,6 @@ package com.example.nomoretrash.signalements;
 
 import android.os.Bundle;
 
-
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
@@ -49,25 +47,25 @@ public class SignalementActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {//méthode pour changer la fonction du bouton retour
-        int item =  pager.getCurrentItem();
-        if(item==0)
+        int item = pager.getCurrentItem();
+        if (item == 0)
             this.finish(); // si on sur description on revient sur l'écran d'accueil
         else
-            pager.setCurrentItem(item-1); //on revient sur la page précedente
+            pager.setCurrentItem(item - 1); //on revient sur la page précedente
 
     }
 
-    private void configureViewPagerAndTabs(){
+    private void configureViewPagerAndTabs() {
         //Get ViewPager from layout
-        pager = (ViewPager)findViewById(R.id.activity_main_viewpager);
+        pager = (ViewPager) findViewById(R.id.activity_main_viewpager);
         //Set Adapter PageAdapter and glue it together
         mPagerAdapter = new PageAdapter(getSupportFragmentManager());
         pager.setAdapter(mPagerAdapter);
 
-        TabLayout tabs= (TabLayout)findViewById(R.id.activity_main_tabs);
+        TabLayout tabs = (TabLayout) findViewById(R.id.activity_main_tabs);
         tabs.setupWithViewPager(pager);
         tabs.setTabMode(TabLayout.MODE_AUTO);
     }
 
 
-    }
+}

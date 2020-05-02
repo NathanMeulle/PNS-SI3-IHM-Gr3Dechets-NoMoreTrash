@@ -13,6 +13,7 @@ public class PageAdapter extends FragmentPagerAdapter {
 
 
     //Default Constructor
+    @Deprecated
     public PageAdapter(FragmentManager mgr) {
         super(mgr);
     }
@@ -56,6 +57,7 @@ public class PageAdapter extends FragmentPagerAdapter {
         }
     }
 
+    @Override
     public int getItemPosition(Object object) {
         return POSITION_NONE;
     }

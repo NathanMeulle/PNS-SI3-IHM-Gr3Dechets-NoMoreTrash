@@ -4,7 +4,6 @@ import android.Manifest;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -25,9 +24,9 @@ import androidx.fragment.app.Fragment;
 
 import com.example.nomoretrash.R;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.util.zip.Inflater;
 
 public class PhotoFragment extends Fragment {
 
@@ -40,6 +39,8 @@ public class PhotoFragment extends Fragment {
     private Bitmap bitmap;
     private Button mPhotoButton;
     private  Uri image_uri;
+    byte[] byteArray;
+
 
 
     public PhotoFragment() {
@@ -80,6 +81,14 @@ public class PhotoFragment extends Fragment {
             mImageView = rootView.findViewById(R.id.photo);
             mImageView.setImageBitmap(this.signalementObject.getPhoto());
             mImageView.setRotation(90);
+        }
+        //en cas de changement d'orientation
+        if (savedInstanceState != null) {
+            byte[] array = savedInstanceState.getByteArray("photo");
+            if(array!=null) {
+                bitmap = BitmapFactory.decodeByteArray(array, 0, array.length);
+                mImageView.setImageBitmap(bitmap);
+            }
         }
 
         return rootView;
@@ -124,8 +133,18 @@ public class PhotoFragment extends Fragment {
             }
             mImageView.setImageBitmap(bitmap);//Mise à jour de la photo affichée
             mImageView.setRotation(90);
+            // Sauvegarde de l'image sous forme de tableau de byte pour changement d'orientation
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            byteArray = stream.toByteArray();
         }
 
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putByteArray("photo", byteArray);
     }
 
 
