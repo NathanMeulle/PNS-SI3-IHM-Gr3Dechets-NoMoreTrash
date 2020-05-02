@@ -28,7 +28,7 @@ public class MesSignalementsActivity extends ListActivity implements Signalement
 
 
         //Liste de signalements
-        ListView listView = findViewById(R.id.signalementList);
+        ListView listView = getListView();
 
         Intent intent = getIntent();
         if (intent.hasExtra("ma_liste_de_signalements")) {
@@ -37,6 +37,7 @@ public class MesSignalementsActivity extends ListActivity implements Signalement
             String[] values = res.toArray(new String[res.size()]);
 
             Adapter adapter = new Adapter(getApplicationContext(), values);
+            adapter.setText(res.toString());
 
 
 

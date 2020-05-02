@@ -34,14 +34,16 @@ public class Adapter extends ArrayAdapter<String> {
 
         TextView textView = (TextView) rowView.findViewById(R.id.text);
         ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
-
         textView.setText(getItem(position));
+        if(convertView==null){
+            imageView.setImageResource(tab_images_pour_la_liste[position]);
+            textView.setText(text);
+        }
 
-        imageView.setImageResource(tab_images_pour_la_liste[position]);
-        textView.setText(text);
-
-        rowView = (View)convertView;
-
+        else{
+            rowView = (View)convertView;
+        }
+        System.out.println(text);
         return rowView;
     }
 
