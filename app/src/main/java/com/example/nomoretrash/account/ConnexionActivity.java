@@ -50,6 +50,15 @@ public class ConnexionActivity extends AppCompatActivity {
                 }
             }
         });
+
+        Button retour = findViewById(R.id.boutonRetour);
+        retour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
     }
 
     private boolean validateEmail() {

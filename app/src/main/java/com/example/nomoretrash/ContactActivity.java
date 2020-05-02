@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -35,15 +36,7 @@ public class ContactActivity extends AppCompatActivity implements AdapterView.On
 
         mSpinnerSubject.setOnItemSelectedListener(this);
         mSpinnerSubject = findViewById(R.id.edit_text_subject);
-        List<String> list = new ArrayList<>();
-        list.add("Problème de signalement");
-        list.add("Problème avec mon historique");
-        list.add("Suggestion");
-        list.add("Autre");
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1, list);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        mSpinnerSubject.setAdapter(dataAdapter);
+        initiateSpinner();
 
 
         Button buttonSend = findViewById(R.id.button_send);
@@ -55,17 +48,29 @@ public class ContactActivity extends AppCompatActivity implements AdapterView.On
         });
 
 
-        final Button buttonStat = findViewById(R.id.boutonRetour);
-        buttonStat.setOnClickListener(new View.OnClickListener() {
+        Button retour = findViewById(R.id.boutonRetour);
+        retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ContactActivity.this.finish();
+                finish();
             }
         });
 
         if (savedInstanceState != null) {
             mSpinnerSubject.setSelection(savedInstanceState.getInt("mSpinnerSubject", 0));
         }
+    }
+
+    private void initiateSpinner() {
+        List<String> list = new ArrayList<>();
+        list.add("Problème de signalement");
+        list.add("Problème avec mon historique");
+        list.add("Suggestion");
+        list.add("Autre");
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1, list);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mSpinnerSubject.setAdapter(dataAdapter);
     }
 
     private void sendMail() {
@@ -101,8 +106,6 @@ public class ContactActivity extends AppCompatActivity implements AdapterView.On
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt("mSpinnerSubject", mSpinnerSubject.getSelectedItemPosition());
-        // do this for each or your Spinner
-        // You might consider using Bundle.putStringArray() instead
     }
 
 }

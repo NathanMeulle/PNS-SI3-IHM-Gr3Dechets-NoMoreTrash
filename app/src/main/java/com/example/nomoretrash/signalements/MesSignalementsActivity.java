@@ -3,7 +3,10 @@ package com.example.nomoretrash.signalements;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -21,6 +24,8 @@ import java.util.Collections;
 
 public class MesSignalementsActivity extends ListActivity implements SignalementsObjectsList {
 
+    ListView listView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,22 +33,11 @@ public class MesSignalementsActivity extends ListActivity implements Signalement
 
 
         //Liste de signalements
-        ListView listView = getListView();
+        listView = getListView();
 
         Intent intent = getIntent();
         if (intent.hasExtra("ma_liste_de_signalements")) {
-            ArrayList<String> res = intent.getStringArrayListExtra("ma_liste_de_signalements");
-            Collections.reverse(res);
-            String[] values = res.toArray(new String[res.size()]);
-
-            Adapter adapter = new Adapter(getApplicationContext(), values);
-            adapter.setText(res.toString());
-
-
-
-            TextView emptyText = findViewById(android.R.id.empty);
-            listView.setEmptyView(emptyText);
-            setListAdapter(adapter);
+            updateSignalementList(listView, intent);
 
 
             ImageButton share = findViewById(R.id.Share);
@@ -52,14 +46,7 @@ public class MesSignalementsActivity extends ListActivity implements Signalement
                 public void onClick(View v) {
                     Intent sendIntent = new Intent();
                     Intent intent = getIntent();
-                    int nbDechet = intent.getStringArrayListExtra("ma_liste_de_signalements").size();
-                    String textShare = "J'ai pu signaler " + nbDechet + " déchet" + ((nbDechet > 1) ? "s " : " ");
-                    if (nbDechet != 0) {
-                        String date = SignalementsObjectsList.signalementsObjetsArray.get(0).getDate();
-                        textShare = textShare + "depuis le " + date + " grâce à l'application noMoreTrash ! Télécharge la vite sur le Google Play store pour sauver notre planête !";
-                    } else {
-                        textShare = textShare + " il faudrait donc que j'utilise l'application noMoreTrash plus souvent ! Viens vite la télécharger pour m'aider !";
-                    }
+                    String textShare = createMessage(intent);
                     sendIntent.setAction(Intent.ACTION_SEND);
                     sendIntent.putExtra(Intent.EXTRA_TEXT, textShare);
                     sendIntent.setType("text/plain");
@@ -79,6 +66,30 @@ public class MesSignalementsActivity extends ListActivity implements Signalement
                 }
             });
         }
+    }
+
+    private void updateSignalementList(ListView listView, Intent intent) {
+        ArrayList<String> res = intent.getStringArrayListExtra("ma_liste_de_signalements");
+        Collections.reverse(res);
+        String[] values = res.toArray(new String[res.size()]);
+
+        Adapter adapter = new Adapter(getApplicationContext(), values);
+
+        TextView emptyText = findViewById(android.R.id.empty);
+        listView.setEmptyView(emptyText);
+        setListAdapter(adapter);
+    }
+
+    private String createMessage(Intent intent) {
+        int nbDechet = intent.getStringArrayListExtra("ma_liste_de_signalements").size();
+        String textShare = "J'ai pu signaler " + nbDechet + " déchet" + ((nbDechet > 1) ? "s " : " ");
+        if (nbDechet != 0) {
+            String date = SignalementsObjectsList.signalementsObjetsArray.get(0).getDate();
+            textShare = textShare + "depuis le " + date + " grâce à l'application noMoreTrash ! Télécharge la vite sur le Google Play store pour sauver notre planête !";
+        } else {
+            textShare = textShare + " il faudrait donc que j'utilise l'application noMoreTrash plus souvent ! Viens vite la télécharger pour m'aider !";
+        }
+        return textShare;
     }
 
 }
