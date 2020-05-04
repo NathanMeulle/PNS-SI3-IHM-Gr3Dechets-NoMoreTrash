@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 
 import androidx.annotation.NonNull;
 
-import com.example.nomoretrash.Status;
+import com.example.nomoretrash.signalements.mes_signalements.Status;
 
 public class SignalementObject {
 

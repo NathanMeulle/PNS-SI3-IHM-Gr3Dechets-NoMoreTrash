@@ -1,4 +1,4 @@
-package com.example.nomoretrash.account;
+package com.example.nomoretrash.settings;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nomoretrash.MainActivity;
 import com.example.nomoretrash.R;
-import com.example.nomoretrash.statistiques.StatistiquesActivity;
 
 import java.util.regex.Pattern;
 

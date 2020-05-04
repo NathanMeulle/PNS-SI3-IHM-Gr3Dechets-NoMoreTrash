@@ -1,4 +1,4 @@
-package com.example.nomoretrash.signalements;
+package com.example.nomoretrash.signalements.signaler;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -16,6 +16,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.example.nomoretrash.R;
+import com.example.nomoretrash.signalements.SignalementObject;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

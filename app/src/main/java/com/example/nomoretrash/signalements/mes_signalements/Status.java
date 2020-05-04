@@ -1,4 +1,4 @@
-package com.example.nomoretrash;
+package com.example.nomoretrash.signalements.mes_signalements;
 
 import androidx.annotation.NonNull;
 

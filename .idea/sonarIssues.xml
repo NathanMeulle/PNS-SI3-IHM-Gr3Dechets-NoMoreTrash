@@ -194,6 +194,26 @@
             </set>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/nomoretrash/settings/ContactActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/nomoretrash/settings/InfoActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/nomoretrash/settings/SettingsActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/nomoretrash/settings/settingsActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/example/nomoretrash/signalements/DescriptionFragment.java">
           <value>
             <set />
@@ -204,6 +224,54 @@
             <set>
               <SonarIssue>
                 <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRG" />
+                <option name="line" value="55" />
+                <option name="message" value="Make part3 a static final constant or non-public and provide accessors if needed." />
+                <option name="ruleKey" value="squid:ClassVariableVisibilityCheck" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRX" />
+                <option name="line" value="241" />
+                <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
+                <option name="ruleKey" value="squid:S2696" />
+                <option name="severity" value="CRITICAL" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtQ_" />
+                <option name="line" value="53" />
+                <option name="message" value="Make this &quot;public static part1&quot; field final" />
+                <option name="ruleKey" value="squid:S1444" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCjXtyZjtOWLtRf" />
+                <option name="line" value="278" />
+                <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
+                <option name="ruleKey" value="squid:S2696" />
+                <option name="severity" value="CRITICAL" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCjXtyZjtOWLtRi" />
+                <option name="line" value="207" />
+                <option name="message" value="This block of commented-out lines of code should be removed." />
+                <option name="ruleKey" value="squid:CommentedOutCodeLine" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRb" />
+                <option name="line" value="264" />
+                <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
+                <option name="ruleKey" value="squid:S2696" />
+                <option name="severity" value="CRITICAL" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
                 <option name="key" value="AXHPPwCiXtyZjtOWLtRN" />
                 <option name="line" value="90" />
                 <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
@@ -212,11 +280,43 @@
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRY" />
-                <option name="line" value="246" />
+                <option name="key" value="AXHPPwCjXtyZjtOWLtRc" />
+                <option name="line" value="266" />
                 <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
                 <option name="ruleKey" value="squid:S2696" />
                 <option name="severity" value="CRITICAL" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRL" />
+                <option name="line" value="209" />
+                <option name="message" value="Use a logger to log this exception." />
+                <option name="ruleKey" value="squid:S1148" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRC" />
+                <option name="line" value="56" />
+                <option name="message" value="Make this &quot;public static part4&quot; field final" />
+                <option name="ruleKey" value="squid:S1444" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCjXtyZjtOWLtRe" />
+                <option name="line" value="274" />
+                <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
+                <option name="ruleKey" value="squid:S2696" />
+                <option name="severity" value="CRITICAL" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRH" />
+                <option name="line" value="56" />
+                <option name="message" value="Make part4 a static final constant or non-public and provide accessors if needed." />
+                <option name="ruleKey" value="squid:ClassVariableVisibilityCheck" />
+                <option name="severity" value="MINOR" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
@@ -228,19 +328,35 @@
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCjXtyZjtOWLtRh" />
-                <option name="line" value="158" />
-                <option name="message" value="Remove this unused &quot;uri&quot; local variable." />
-                <option name="ruleKey" value="squid:S1481" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRK" />
+                <option name="line" value="174" />
+                <option name="message" value="Use a logger to log this exception." />
+                <option name="ruleKey" value="squid:S1148" />
                 <option name="severity" value="MINOR" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCjXtyZjtOWLtRe" />
-                <option name="line" value="274" />
-                <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
-                <option name="ruleKey" value="squid:S2696" />
-                <option name="severity" value="CRITICAL" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRD" />
+                <option name="line" value="57" />
+                <option name="message" value="Make this &quot;public static notComplete&quot; field final" />
+                <option name="ruleKey" value="squid:S1444" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRP" />
+                <option name="line" value="151" />
+                <option name="message" value="Replace this use of System.out or System.err by a logger." />
+                <option name="ruleKey" value="squid:S106" />
+                <option name="severity" value="MAJOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRa" />
+                <option name="line" value="263" />
+                <option name="message" value="Complete the task associated to this TODO comment." />
+                <option name="ruleKey" value="squid:S1135" />
+                <option name="severity" value="INFO" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
@@ -260,6 +376,14 @@
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRI" />
+                <option name="line" value="57" />
+                <option name="message" value="Make notComplete a static final constant or non-public and provide accessors if needed." />
+                <option name="ruleKey" value="squid:ClassVariableVisibilityCheck" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
                 <option name="key" value="AXHPPwCiXtyZjtOWLtRB" />
                 <option name="line" value="55" />
                 <option name="message" value="Make this &quot;public static part3&quot; field final" />
@@ -268,27 +392,11 @@
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRG" />
-                <option name="line" value="55" />
-                <option name="message" value="Make part3 a static final constant or non-public and provide accessors if needed." />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRE" />
+                <option name="line" value="53" />
+                <option name="message" value="Make part1 a static final constant or non-public and provide accessors if needed." />
                 <option name="ruleKey" value="squid:ClassVariableVisibilityCheck" />
                 <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRZ" />
-                <option name="line" value="250" />
-                <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
-                <option name="ruleKey" value="squid:S2696" />
-                <option name="severity" value="CRITICAL" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRb" />
-                <option name="line" value="264" />
-                <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
-                <option name="ruleKey" value="squid:S2696" />
-                <option name="severity" value="CRITICAL" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
@@ -300,75 +408,19 @@
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCjXtyZjtOWLtRf" />
-                <option name="line" value="278" />
+                <option name="key" value="AXHPPwCjXtyZjtOWLtRh" />
+                <option name="line" value="158" />
+                <option name="message" value="Remove this unused &quot;uri&quot; local variable." />
+                <option name="ruleKey" value="squid:S1481" />
+                <option name="severity" value="MINOR" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRZ" />
+                <option name="line" value="250" />
                 <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
                 <option name="ruleKey" value="squid:S2696" />
                 <option name="severity" value="CRITICAL" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRX" />
-                <option name="line" value="241" />
-                <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
-                <option name="ruleKey" value="squid:S2696" />
-                <option name="severity" value="CRITICAL" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRH" />
-                <option name="line" value="56" />
-                <option name="message" value="Make part4 a static final constant or non-public and provide accessors if needed." />
-                <option name="ruleKey" value="squid:ClassVariableVisibilityCheck" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRC" />
-                <option name="line" value="56" />
-                <option name="message" value="Make this &quot;public static part4&quot; field final" />
-                <option name="ruleKey" value="squid:S1444" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCjXtyZjtOWLtRc" />
-                <option name="line" value="266" />
-                <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
-                <option name="ruleKey" value="squid:S2696" />
-                <option name="severity" value="CRITICAL" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRK" />
-                <option name="line" value="174" />
-                <option name="message" value="Use a logger to log this exception." />
-                <option name="ruleKey" value="squid:S1148" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRI" />
-                <option name="line" value="57" />
-                <option name="message" value="Make notComplete a static final constant or non-public and provide accessors if needed." />
-                <option name="ruleKey" value="squid:ClassVariableVisibilityCheck" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRD" />
-                <option name="line" value="57" />
-                <option name="message" value="Make this &quot;public static notComplete&quot; field final" />
-                <option name="ruleKey" value="squid:S1444" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRL" />
-                <option name="line" value="209" />
-                <option name="message" value="Use a logger to log this exception." />
-                <option name="ruleKey" value="squid:S1148" />
-                <option name="severity" value="MINOR" />
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
@@ -396,51 +448,19 @@
               </SonarIssue>
               <SonarIssue>
                 <option name="isNew" value="false" />
+                <option name="key" value="AXHPPwCiXtyZjtOWLtRY" />
+                <option name="line" value="246" />
+                <option name="message" value="Make the enclosing method &quot;static&quot; or remove this set." />
+                <option name="ruleKey" value="squid:S2696" />
+                <option name="severity" value="CRITICAL" />
+              </SonarIssue>
+              <SonarIssue>
+                <option name="isNew" value="false" />
                 <option name="key" value="AXHPPwCiXtyZjtOWLtRV" />
                 <option name="line" value="220" />
                 <option name="message" value="Replace this use of System.out or System.err by a logger." />
                 <option name="ruleKey" value="squid:S106" />
                 <option name="severity" value="MAJOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCjXtyZjtOWLtRi" />
-                <option name="line" value="207" />
-                <option name="message" value="This block of commented-out lines of code should be removed." />
-                <option name="ruleKey" value="squid:CommentedOutCodeLine" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRa" />
-                <option name="line" value="263" />
-                <option name="message" value="Complete the task associated to this TODO comment." />
-                <option name="ruleKey" value="squid:S1135" />
-                <option name="severity" value="INFO" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRP" />
-                <option name="line" value="151" />
-                <option name="message" value="Replace this use of System.out or System.err by a logger." />
-                <option name="ruleKey" value="squid:S106" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtRE" />
-                <option name="line" value="53" />
-                <option name="message" value="Make part1 a static final constant or non-public and provide accessors if needed." />
-                <option name="ruleKey" value="squid:ClassVariableVisibilityCheck" />
-                <option name="severity" value="MINOR" />
-              </SonarIssue>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwCiXtyZjtOWLtQ_" />
-                <option name="line" value="53" />
-                <option name="message" value="Make this &quot;public static part1&quot; field final" />
-                <option name="ruleKey" value="squid:S1444" />
-                <option name="severity" value="MINOR" />
               </SonarIssue>
             </set>
           </value>
@@ -548,6 +568,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/example/nomoretrash/signalements/MesSignalementsActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/nomoretrash/signalements/PageAdapter.java">
           <value>
             <set />
           </value>
@@ -762,6 +787,21 @@
             </set>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/nomoretrash/signalements/mes_signalements/Adapter.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/nomoretrash/signalements/mes_signalements/MesSignalementsActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/example/nomoretrash/signalements/signaler/FinalisationFragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/example/nomoretrash/statistiques/StatistiquesActivity.java">
           <value>
             <set>
@@ -781,6 +821,31 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/anim/slide_in_left.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/anim/slide_in_right.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/anim/slide_out_left.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/anim/slide_out_right.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/font/title_font.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout-land/activity_connexion.xml">
           <value>
             <set />
@@ -791,7 +856,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout-land/activity_info.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout-land/activity_settings.xml">
           <value>
             <set />
           </value>
@@ -812,6 +887,26 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/layout/activity_contact.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/activity_info.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/activity_main_map.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/activity_settings.xml">
           <value>
             <set />
           </value>

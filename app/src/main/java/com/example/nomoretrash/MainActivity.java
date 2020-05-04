@@ -1,25 +1,25 @@
 package com.example.nomoretrash;
 
 import android.app.Activity;
-import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.nomoretrash.account.ConnexionActivity;
-import com.example.nomoretrash.signalements.MesSignalementsActivity;
+import com.example.nomoretrash.settings.ConnexionActivity;
+import com.example.nomoretrash.settings.ContactActivity;
+import com.example.nomoretrash.settings.SettingsActivity;
+import com.example.nomoretrash.signalements.mes_signalements.MesSignalementsActivity;
 import com.example.nomoretrash.signalements.SignalementActivity;
 import com.example.nomoretrash.signalements.SignalementObject;
+import com.example.nomoretrash.signalements.mes_signalements.SignalementsObjectsList;
 import com.example.nomoretrash.statistiques.StatistiquesActivity;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 
 public class MainActivity extends AppCompatActivity implements SignalementsObjectsList {
@@ -62,23 +62,13 @@ public class MainActivity extends AppCompatActivity implements SignalementsObjec
             }
         });
 
-        ImageButton help = findViewById(R.id.aide);
-        help.setColorFilter(0x00ff00);
-        help.setOnClickListener(new View.OnClickListener() {
+        ImageButton settings = findViewById(R.id.settings);
+        settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ContactActivity.class);
+                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
                 startActivity(intent);
-            }
-        });
-
-        ImageButton compte = findViewById(R.id.account);
-        compte.setColorFilter(0x00ff00);
-        compte.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ConnexionActivity.class);
-                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 
             }
         });

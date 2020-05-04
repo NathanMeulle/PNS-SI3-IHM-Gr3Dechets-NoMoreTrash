@@ -1,4 +1,4 @@
-package com.example.nomoretrash.signalements;
+package com.example.nomoretrash.signalements.signaler;
 
 import android.Manifest;
 import android.content.ContentValues;
@@ -23,6 +23,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.nomoretrash.R;
+import com.example.nomoretrash.signalements.SignalementObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;

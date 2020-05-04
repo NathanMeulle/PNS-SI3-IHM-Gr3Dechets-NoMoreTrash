@@ -1,4 +1,4 @@
-package com.example.nomoretrash.signalements;
+package com.example.nomoretrash.signalements.signaler;
 
 
 import android.Manifest;
@@ -22,15 +22,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.nomoretrash.ApplicationDemo;
 import com.example.nomoretrash.R;
-import com.example.nomoretrash.SignalementsObjectsList;
-import com.example.nomoretrash.Status;
+import com.example.nomoretrash.signalements.mes_signalements.SignalementsObjectsList;
+import com.example.nomoretrash.signalements.mes_signalements.Status;
+import com.example.nomoretrash.signalements.SignalementActivity;
+import com.example.nomoretrash.signalements.SignalementObject;
 
 import java.util.Calendar;
 

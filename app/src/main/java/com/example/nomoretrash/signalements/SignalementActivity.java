@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.nomoretrash.PageAdapter;
 import com.example.nomoretrash.R;
 import com.google.android.material.tabs.TabLayout;
 

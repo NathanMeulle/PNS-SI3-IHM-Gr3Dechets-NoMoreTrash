@@ -1,13 +1,13 @@
-package com.example.nomoretrash;
+package com.example.nomoretrash.signalements;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.nomoretrash.signalements.DescriptionFragment;
-import com.example.nomoretrash.signalements.FinalisationFragment;
-import com.example.nomoretrash.signalements.LocalisationFragment;
-import com.example.nomoretrash.signalements.PhotoFragment;
+import com.example.nomoretrash.signalements.signaler.DescriptionFragment;
+import com.example.nomoretrash.signalements.signaler.FinalisationFragment;
+import com.example.nomoretrash.signalements.signaler.LocalisationFragment;
+import com.example.nomoretrash.signalements.signaler.PhotoFragment;
 
 public class PageAdapter extends FragmentPagerAdapter {
 

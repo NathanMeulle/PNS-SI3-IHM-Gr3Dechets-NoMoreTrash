@@ -1,4 +1,4 @@
-package com.example.nomoretrash;
+package com.example.nomoretrash.signalements.mes_signalements;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.example.nomoretrash.R;
 
 import java.lang.reflect.Array;
 
