@@ -1,6 +1,8 @@
 # IHM-Gr3Dechets-NoMoreTrash
 ## IHM project
 Project to create an application for reporting waste.
+![our logo](https://github.com/RomainLamere/IHM-Gr3Dechets-NoMoreTrash/blob/master/app/src/main/res/drawable/logo.png)
+
 
 
 ## Présentation
