@@ -42,5 +42,32 @@
         app:layout_constraintBottom_toTopOf="@+id/boutonRetour"
         android:gravity="center_vertical|center_horizontal"/>
 
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/activity_statistic_viewpager"
+        android:layout_below="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@+id/diagCirculaire">
+    </androidx.viewpager.widget.ViewPager>
+
+    <Button
+        android:id="@+id/diagBaton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/diagCirculaire"
+        android:text="Diagramme baton"
+        />
+    <Button
+        android:id="@+id/diagCirculaire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/diagBaton"
+        android:text="Diagramme circulaire"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
