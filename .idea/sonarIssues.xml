@@ -804,16 +804,7 @@
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/example/nomoretrash/statistiques/StatistiquesActivity.java">
           <value>
-            <set>
-              <SonarIssue>
-                <option name="isNew" value="false" />
-                <option name="key" value="AXHPPwFDXtyZjtOWLtSj" />
-                <option name="line" value="11" />
-                <option name="message" value="This class has 9 parents which is greater than 5 authorized." />
-                <option name="ruleKey" value="squid:MaximumInheritanceDepth" />
-                <option name="severity" value="MAJOR" />
-              </SonarIssue>
-            </set>
+            <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/anim/rotate.xml">

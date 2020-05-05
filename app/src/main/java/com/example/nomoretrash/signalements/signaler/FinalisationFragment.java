@@ -28,10 +28,10 @@ import androidx.fragment.app.Fragment;
 
 import com.example.nomoretrash.ApplicationDemo;
 import com.example.nomoretrash.R;
-import com.example.nomoretrash.signalements.mes_signalements.SignalementsObjectsList;
-import com.example.nomoretrash.signalements.mes_signalements.Status;
 import com.example.nomoretrash.signalements.SignalementActivity;
 import com.example.nomoretrash.signalements.SignalementObject;
+import com.example.nomoretrash.signalements.mes_signalements.SignalementsObjectsList;
+import com.example.nomoretrash.signalements.mes_signalements.Status;
 
 import java.util.Calendar;
 

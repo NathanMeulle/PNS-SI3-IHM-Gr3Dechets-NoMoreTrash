@@ -10,12 +10,10 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.nomoretrash.settings.ConnexionActivity;
-import com.example.nomoretrash.settings.ContactActivity;
 import com.example.nomoretrash.settings.SettingsActivity;
-import com.example.nomoretrash.signalements.mes_signalements.MesSignalementsActivity;
 import com.example.nomoretrash.signalements.SignalementActivity;
 import com.example.nomoretrash.signalements.SignalementObject;
+import com.example.nomoretrash.signalements.mes_signalements.MesSignalementsActivity;
 import com.example.nomoretrash.signalements.mes_signalements.SignalementsObjectsList;
 import com.example.nomoretrash.statistiques.StatistiquesActivity;
 
@@ -38,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements SignalementsObjec
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, StatistiquesActivity.class);
+                intent.putExtra("ma_liste_de_signalements", setRecap(SignalementsObjectsList.signalementsObjetsArray));
                 startActivity(intent);
             }
         });

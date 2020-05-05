@@ -8,12 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
 import com.example.nomoretrash.R;
-
-import java.lang.reflect.Array;
 
 public class Adapter extends ArrayAdapter<String> {
 
