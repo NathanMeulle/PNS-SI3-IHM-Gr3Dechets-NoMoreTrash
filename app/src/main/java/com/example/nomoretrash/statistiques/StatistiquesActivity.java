@@ -8,9 +8,13 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nomoretrash.R;
+import com.example.nomoretrash.statistiques.diagram.DiagramBaton;
+import com.example.nomoretrash.statistiques.diagram.DiagramCircle;
+import com.example.nomoretrash.statistiques.diagram.DiagramFragment;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Arrays;
+import java.util.List;
 
 public class StatistiquesActivity extends AppCompatActivity {
 
@@ -21,8 +25,8 @@ public class StatistiquesActivity extends AppCompatActivity {
     private int nbMetal;
     private int nbAutre;
 
-    private static final int Baton = 1;
-    private static final int Circulaire = 2;
+    private static final int BATON = 1;
+    private static final int CIRCULAIRE = 2;
 
 
 
@@ -31,8 +35,9 @@ public class StatistiquesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.statistiques);
 
-        final Button buttonStat = findViewById(R.id.boutonRetour);
-        buttonStat.setOnClickListener(new View.OnClickListener() {
+
+        final Button button = findViewById(R.id.boutonRetour);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 StatistiquesActivity.this.finish();
@@ -41,11 +46,15 @@ public class StatistiquesActivity extends AppCompatActivity {
         });
 
         Intent intent = getIntent();
+
         if (intent.hasExtra("ma_liste_de_signalements")) {
             ArrayList<String> res = intent.getStringArrayListExtra("ma_liste_de_signalements");
-            HashMap hashmap = setStat(res);
+
+            setStat(res);
+
             try {
-                createDiagram(1,hashmap);
+                createDiagram(CIRCULAIRE);
+
             } catch (Throwable throwable) {
                 throwable.printStackTrace();
             }
@@ -54,52 +63,56 @@ public class StatistiquesActivity extends AppCompatActivity {
 
     }
 
-    private HashMap setStat(ArrayList<String> res) {
+    private void setStat(ArrayList<String> res) {
         nbVerre = 0;
         nbCarton = 0;
         nbPapier = 0;
         nbPlastique = 0;
         nbMetal = 0;
         nbAutre = 0;
-        HashMap hashMap = new HashMap();
-
         for (String str : res) {
-            if (str.contains("verre")) {
+            if (str.contains("verre"))
                 nbVerre++;
-            }
-            if (str.contains("carton")) {
+            if (str.contains("carton"))
                 nbCarton++;
-            }
-            if (str.contains("papier")) {
+            if (str.contains("papier"))
                 nbPapier++;
-            }
-            if (str.contains("plastique")) {
+            if (str.contains("plastique"))
                 nbPlastique++;
-            }
-            if (str.contains("métal")) {
+            if (str.contains("métal"))
                 nbMetal++;
-            }
-            if (str.contains("autre")) {
+            if (str.contains("autre"))
                 nbAutre++;
+        }
+        float[] ydata = {nbVerre, nbCarton, nbPapier, nbPlastique, nbMetal, nbAutre};
+        String[] xdata = { "Verre", "Carton", "Papier", "Plastique", "Metal", "Autre" };
+        List<String> xSol = new ArrayList<>();
+        List<Float> ySol = new ArrayList<>();
+
+        for(int i =0; i<6; i++){
+            if(ydata[i]!=0){
+                xSol.add(xdata[i]);
+                ySol.add(ydata[i]);
             }
         }
-        hashMap.put("verre",nbVerre);
-        hashMap.put("carton",nbCarton);
-        hashMap.put("papier",nbPapier);
-        hashMap.put("plastique",nbPlastique);
-        hashMap.put("metal",nbMetal);
-        hashMap.put("autre",nbAutre);
+        DiagramFragment.xData = xSol.toArray(new String[xSol.size()]);
+        final float[] ySolArray = new float[ySol.size()];
+        int index = 0;
+        for (final Float value: ySol) {
+            ySolArray[index++] = value;
+        }
 
-        return hashMap;
-
-
+        DiagramFragment.yData = ySolArray;
     }
 
-    static Diagram createDiagram(int type, HashMap hm) throws Throwable {
+    static DiagramFragment createDiagram(int type) throws Throwable {
         switch (type){
-            case Baton: return new diagramBaton(hm);
-            case Circulaire: return new diagramCirculaire(hm);
-            default: throw new Throwable("pas fait");
+            case BATON: return new DiagramBaton();
+            case CIRCULAIRE:
+                DiagramCircle fragment = new DiagramCircle();
+                return fragment;
+
+            default: throw new Throwable("erreur type incorrect");
         }
     }
 }
