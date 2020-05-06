@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
@@ -52,25 +53,27 @@ public class DiagramBaton extends DiagramFragment {
 
     private void setUpDiagramBaton(View v) {
         ArrayList barEntryList = new ArrayList();
-        ArrayList type = new ArrayList();
+        String legende="";
+        ArrayList<String> labels = new ArrayList<>();
 
         for (int i = 0; i < getyData().length; i++) {
             barEntryList.add(new BarEntry(i, getyData()[i]));
-            type.add(getxData()[i]);
-        }
 
-        String legende="";
-        for(int j=0; j<getxData().length; j++){
-            if(getyData()[j]>0){
-                legende+=getxData()[j]+ " ";
-
+            if(getyData()[i]>0){
+                legende+=getxData()[i]+ " ";
+                labels.add(getxData()[i]);
             }
         }
 
+
+
+
         BarDataSet dataSet = new BarDataSet(barEntryList, legende);
 
-        BarData barData = new BarData(dataSet);
         dataSet.setColors(MY_COLORS);
+
+
+        BarData barData = new BarData(dataSet);
         BarChart barChart = v.findViewById(R.id.barchart1);
 
 
@@ -79,8 +82,11 @@ public class DiagramBaton extends DiagramFragment {
         barChart.setData(barData);
         barChart.getDescription().setEnabled(false);
         barChart.setHighlightPerTapEnabled(true);
-        barChart.getData().setDrawValues(false);
+        barChart.getData().setDrawValues(true);
+        barChart.getData().setValueTextSize(18);
         barChart.animateY(1000);
+        barChart.getXAxis().setEnabled(false);
+        barChart.getLegend().setTextSize(20-getyData().length);
         barChart.invalidate();
 
 
