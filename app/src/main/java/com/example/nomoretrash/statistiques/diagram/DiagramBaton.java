@@ -50,33 +50,38 @@ public class DiagramBaton extends DiagramFragment {
         return v;
     }
 
-    private void setUpDiagramBaton(View v){
+    private void setUpDiagramBaton(View v) {
         ArrayList barEntryList = new ArrayList();
         ArrayList type = new ArrayList();
-        for(int j=0 ; j< getxData().length; j++) {
 
-            for (int i = 0; i < getyData().length; i++) {
-                barEntryList.add(new BarEntry(i, getyData()[i]));
-                type.add(getxData()[i]);
-            }
-
-            BarDataSet dataSet = new BarDataSet(barEntryList, getxData()[j]);
-
-            BarData barData = new BarData(dataSet);
-            dataSet.setColors(MY_COLORS);
-            BarChart barChart = v.findViewById(R.id.barchart1);
-
-
-            barChart.setNoDataText("Pas encore de statistiques, effectuez d'autres signalements pour en avoir !");
-            barChart.setNoDataTextColor(Color.BLACK);
-            barChart.setData(barData);
-            barChart.getDescription().setEnabled(false);
-            barChart.setHighlightPerTapEnabled(true);
-            barChart.getData().setDrawValues(false);
-            barChart.animateY(1000);
-            barChart.invalidate();
-
+        for (int i = 0; i < getyData().length; i++) {
+            barEntryList.add(new BarEntry(i, getyData()[i]));
+            type.add(getxData()[i]);
         }
+
+        String legende="";
+        for(int j=0; j<getxData().length; j++){
+            if(getyData()[j]>0){
+                legende+=getxData()[j]+ " ";
+
+            }
+        }
+
+        BarDataSet dataSet = new BarDataSet(barEntryList, legende);
+
+        BarData barData = new BarData(dataSet);
+        dataSet.setColors(MY_COLORS);
+        BarChart barChart = v.findViewById(R.id.barchart1);
+
+
+        barChart.setNoDataText("Pas encore de statistiques, effectuez d'autres signalements pour en avoir !");
+        barChart.setNoDataTextColor(Color.BLACK);
+        barChart.setData(barData);
+        barChart.getDescription().setEnabled(false);
+        barChart.setHighlightPerTapEnabled(true);
+        barChart.getData().setDrawValues(false);
+        barChart.animateY(1000);
+        barChart.invalidate();
 
 
     }
