@@ -36,7 +36,7 @@ public class DiagramCircle extends DiagramFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_diagram_circle, container, false);
 
-        if (getyData() != null && getyData().length>1) {
+        if (getyData() != null) {
             setUpDiagramCircle(v);
         }
         else {
@@ -70,8 +70,9 @@ public class DiagramCircle extends DiagramFragment {
         pieChart.setRotationEnabled(false);
         pieChart.setHighlightPerTapEnabled(true);
         pieChart.getData().setDrawValues(false);
+        pieChart.setEntryLabelColor(Color.rgb(0,0,0));
         pieChart.setEntryLabelTextSize(18);
-        pieChart.getLegend().setTextSize(15);
+        pieChart.getLegend().setTextSize(21-getyData().length);
         pieChart.animateY(1000);
 
 
