@@ -71,6 +71,7 @@ public class DiagramCircle extends DiagramFragment {
         pieChart.setHighlightPerTapEnabled(true);
         pieChart.getData().setDrawValues(false);
         pieChart.setEntryLabelTextSize(18);
+        pieChart.getLegend().setTextSize(15);
         pieChart.animateY(1000);
 
 
