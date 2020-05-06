@@ -12,11 +12,12 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/boutonAnnuler"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
         android:background="#00000000"
         android:drawableLeft="@drawable/retour"
         android:stateListAnimator="@null"
+        android:textSize="30dp"
         android:text="Retour"/>
 
     <TextView
@@ -42,23 +43,23 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/infos_generales"
         >
+
         <RadioButton
             android:id="@+id/radio_dechetUnique"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="Déchet unique"
             android:textColor="#000000"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp" />
+
         <RadioButton
             android:id="@+id/radio_dechargeSauvage"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Décharge sauvage"
             android:textColor="#000000"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp" />
     </RadioGroup>
 
 
