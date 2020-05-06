@@ -53,7 +53,7 @@ public class StatistiquesActivity extends AppCompatActivity {
             System.out.println("rantanplan" +res);
 
             try {
-                createDiagram(CIRCULAIRE);
+                createDiagram(BATON);
 
             } catch (Throwable throwable) {
                 throwable.printStackTrace();
@@ -107,7 +107,7 @@ public class StatistiquesActivity extends AppCompatActivity {
 
     static DiagramFragment createDiagram(int type) throws Throwable {
         switch (type){
-            case BATON: return new DiagramBaton();
+            case BATON: return DiagramBaton.newInstance();
             case CIRCULAIRE:
                 return DiagramCircle.newInstance();
 

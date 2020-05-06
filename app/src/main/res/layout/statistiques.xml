@@ -33,7 +33,7 @@
 
     <fragment
         android:id="@+id/fragment_b"
-        android:name="com.example.nomoretrash.statistiques.diagram.DiagramCircle"
+        android:name="com.example.nomoretrash.statistiques.diagram.DiagramBaton"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintTop_toBottomOf="@id/textView"
