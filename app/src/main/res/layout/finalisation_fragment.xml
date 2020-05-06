@@ -13,7 +13,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        android:layout_marginLeft="10dp"
         android:text="Ceci correspond au texte récapitulatif du signalement"
         />
 

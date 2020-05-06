@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.example.nomoretrash.R;
 import com.example.nomoretrash.statistiques.diagram.DiagramBaton;
@@ -35,11 +36,40 @@ public class StatistiquesActivity extends AppCompatActivity {
         setContentView(R.layout.statistiques);
 
 
-        final Button button = findViewById(R.id.boutonRetour);
-        button.setOnClickListener(new View.OnClickListener() {
+        final Button buttonRetour = findViewById(R.id.boutonRetour);
+        buttonRetour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 StatistiquesActivity.this.finish();
+
+            }
+        });
+
+        final Button buttonCercle = findViewById(R.id.boutonCercle);
+        buttonCercle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    createDiagram(CIRCULAIRE);
+
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                }
+                getSupportFragmentManager().beginTransaction().replace((R.id.fragment_stat), new DiagramCircle()).commit();
+            }
+        });
+
+        final Button buttonBaton = findViewById(R.id.boutonBaton);
+        buttonBaton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    createDiagram(BATON);
+
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                }
+                getSupportFragmentManager().beginTransaction().replace((R.id.fragment_stat), new DiagramBaton()).commit();
 
             }
         });
