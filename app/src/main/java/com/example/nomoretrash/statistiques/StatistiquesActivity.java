@@ -13,7 +13,6 @@ import com.example.nomoretrash.statistiques.diagram.DiagramCircle;
 import com.example.nomoretrash.statistiques.diagram.DiagramFragment;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class StatistiquesActivity extends AppCompatActivity {
@@ -51,6 +50,7 @@ public class StatistiquesActivity extends AppCompatActivity {
             ArrayList<String> res = intent.getStringArrayListExtra("ma_liste_de_signalements");
 
             setStat(res);
+            System.out.println("rantanplan" +res);
 
             try {
                 createDiagram(CIRCULAIRE);
@@ -109,10 +109,10 @@ public class StatistiquesActivity extends AppCompatActivity {
         switch (type){
             case BATON: return new DiagramBaton();
             case CIRCULAIRE:
-                DiagramCircle fragment = new DiagramCircle();
-                return fragment;
+                return DiagramCircle.newInstance();
 
             default: throw new Throwable("erreur type incorrect");
         }
     }
+
 }
