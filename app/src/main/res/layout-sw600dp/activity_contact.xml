@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    >
+
+    <Button
+        android:id="@+id/boutonRetour"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:layout_marginLeft="00dp"
+        android:layout_marginTop="0dp"
+        android:background="#00000000"
+        android:drawableLeft="@drawable/retour"
+        android:stateListAnimator="@null"
+        android:text="Retour"
+        android:textSize="40sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Destinataire :"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <TextView
+        android:id="@+id/edit_text_to"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="nomoretrash3@gmail.com"
+        android:textSize="22sp"
+         />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Objet :"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <Spinner
+        android:id="@+id/edit_text_subject"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:inputType="textEmailSubject"
+        android:textSize="22sp"
+        android:layout_marginBottom="10dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Message :"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <EditText
+        android:id="@+id/edit_text_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start|top"
+        android:lines="10" />
+
+    <Button
+        android:id="@+id/button_send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Envoyer" />
+
+</LinearLayout>
