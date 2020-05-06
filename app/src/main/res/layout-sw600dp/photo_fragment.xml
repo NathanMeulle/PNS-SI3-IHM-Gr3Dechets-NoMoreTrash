@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pour aider nos municipaux, vous pouvez ajouter une photo"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        />
+
+    <ImageView
+        android:id="@+id/photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="#999"
+        android:layout_marginBottom="20dp"
+        android:layout_centerVertical="true"
+        />
+
+    <Button
+        android:id="@+id/boutonPhoto"
+        android:layout_width="280dp"
+        android:layout_height="118dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
+        android:text="Ouvrir l'appareil photo"
+        android:textSize="40dp"/>
+
+</RelativeLayout>
