@@ -150,7 +150,7 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
             Calendar beginTime = Calendar.getInstance();
             beginTime.set(date[2], date[1], date[0], date[3], date[4]);
             Calendar endTime = Calendar.getInstance();
-            endTime.set(date[2], date[1], date[0], date[3], date[4]);
+            endTime.set(date[2], date[1], date[0], date[3]+1, date[4]);
             Intent intent = new Intent(Intent.ACTION_INSERT)
                     .setData(CalendarContract.Events.CONTENT_URI)
                     .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis())
