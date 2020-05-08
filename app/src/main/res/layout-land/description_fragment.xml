@@ -1,39 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:id="@+id/description_fragment"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <Button
-        android:layout_marginTop="0dp"
-        android:layout_marginLeft="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/boutonAnnuler"
         android:layout_width="100dp"
         android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="0dp"
         android:background="#00000000"
         android:drawableLeft="@drawable/retour"
         android:stateListAnimator="@null"
-        android:text="Retour"/>
+        android:text="Retour"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
         android:id="@+id/infos_generales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Informations générales"
         android:layout_marginLeft="0dp"
+        android:layout_marginTop="40dp"
         android:layout_marginRight="0dp"
+        android:text="Informations générales"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@id/boutonAnnuler"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toLeftOf="@id/type"
-        android:layout_marginTop="40dp"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
+
+
     <RadioGroup
         android:id="@+id/groupInfo"
         android:layout_width="wrap_content"
@@ -41,8 +42,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         app:layout_constraintLeft_toLeftOf="@id/infos_generales"
-        app:layout_constraintTop_toBottomOf="@+id/infos_generales"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/infos_generales">
+
         <RadioButton
             android:id="@+id/radio_dechetUnique"
             android:layout_width="wrap_content"
@@ -50,16 +51,15 @@
             android:checked="true"
             android:text="Déchet unique"
             android:textColor="#000000"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp" />
+
         <RadioButton
             android:id="@+id/radio_dechargeSauvage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Décharge sauvage"
             android:textColor="#000000"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp" />
     </RadioGroup>
 
 
@@ -86,8 +86,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         app:layout_constraintLeft_toLeftOf="@id/type"
-        app:layout_constraintTop_toBottomOf="@+id/type"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/type" />
+
 
     <TextView
         android:id="@+id/verre"
@@ -96,16 +96,15 @@
         android:text="Verre"
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="@id/checkbox_verre"
         app:layout_constraintLeft_toRightOf="@id/checkbox_verre"
-        />
+        app:layout_constraintTop_toTopOf="@id/checkbox_verre" />
+
     <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/checkbox_carton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="@id/checkbox_verre"
-        app:layout_constraintTop_toBottomOf="@+id/checkbox_verre"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_verre" />
 
     <TextView
         android:id="@+id/carton"
@@ -114,16 +113,15 @@
         android:text="Carton"
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="@id/checkbox_carton"
         app:layout_constraintLeft_toRightOf="@id/checkbox_carton"
-        />
+        app:layout_constraintTop_toTopOf="@id/checkbox_carton" />
+
     <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/checkbox_papier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="@id/checkbox_carton"
-        app:layout_constraintTop_toBottomOf="@+id/checkbox_carton"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_carton" />
 
     <TextView
         android:id="@+id/papier"
@@ -132,17 +130,15 @@
         android:text="Papier"
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="@id/checkbox_papier"
         app:layout_constraintLeft_toRightOf="@id/checkbox_papier"
-        />
+        app:layout_constraintTop_toTopOf="@id/checkbox_papier" />
 
     <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/checkbox_plastique"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="@id/checkbox_papier"
-        app:layout_constraintTop_toBottomOf="@+id/checkbox_papier"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_papier" />
 
     <TextView
         android:id="@+id/plastique"
@@ -151,16 +147,15 @@
         android:text="Plastique"
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="@id/checkbox_plastique"
         app:layout_constraintLeft_toRightOf="@id/checkbox_plastique"
-        />
+        app:layout_constraintTop_toTopOf="@id/checkbox_plastique" />
+
     <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/checkbox_metal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="@id/checkbox_plastique"
-        app:layout_constraintTop_toBottomOf="@+id/checkbox_plastique"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_plastique" />
 
     <TextView
         android:id="@+id/metal"
@@ -169,16 +164,15 @@
         android:text="Métal"
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="@id/checkbox_metal"
         app:layout_constraintLeft_toRightOf="@id/checkbox_metal"
-        />
+        app:layout_constraintTop_toTopOf="@id/checkbox_metal" />
+
     <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/checkbox_autre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="@id/checkbox_metal"
-        app:layout_constraintTop_toBottomOf="@+id/checkbox_metal"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/checkbox_metal" />
 
     <TextView
         android:id="@+id/autre"
@@ -187,35 +181,32 @@
         android:text="Autre : "
         android:textColor="#000000"
         android:textSize="20sp"
-        app:layout_constraintTop_toTopOf="@id/checkbox_autre"
         app:layout_constraintLeft_toRightOf="@id/checkbox_autre"
-        />
+        app:layout_constraintTop_toTopOf="@id/checkbox_autre" />
 
     <EditText
         android:id="@+id/preciser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Préciser"
-        android:maxLines="1"
-        android:maxLength="17"
         android:layout_marginLeft="5dp"
-        app:layout_constraintLeft_toRightOf="@id/autre"
-        app:layout_constraintTop_toTopOf="@id/autre"
+        android:hint="Préciser"
+        android:maxLength="17"
+        android:maxLines="1"
         app:layout_constraintBottom_toBottomOf="@id/autre"
-        />
+        app:layout_constraintLeft_toRightOf="@id/autre"
+        app:layout_constraintTop_toTopOf="@id/autre" />
 
     <TextView
         android:id="@+id/taille"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="Taille"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_marginTop="20dp"
         app:layout_constraintLeft_toLeftOf="@id/infos_generales"
-        app:layout_constraintTop_toBottomOf="@id/groupInfo"
-        />
+        app:layout_constraintTop_toBottomOf="@id/groupInfo" />
 
     <RadioGroup
         android:id="@+id/grouptaille"
@@ -224,8 +215,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         app:layout_constraintLeft_toLeftOf="@id/taille"
-        app:layout_constraintTop_toBottomOf="@+id/taille"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/taille">
+
         <RadioButton
             android:id="@+id/radio_petit"
             android:layout_width="wrap_content"
@@ -233,17 +224,28 @@
             android:checked="true"
             android:text="Moins de 30 cm"
             android:textColor="#000000"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp" />
+
         <RadioButton
             android:id="@+id/radio_grand"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Plus de 30 cm"
             android:textColor="#000000"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp" />
     </RadioGroup>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
