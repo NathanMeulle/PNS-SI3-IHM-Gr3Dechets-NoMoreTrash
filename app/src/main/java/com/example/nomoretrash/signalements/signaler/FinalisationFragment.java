@@ -144,21 +144,19 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
             //POP UP
             requestPermissions(permission, PERMISSION_CODE);//On demande l'accès au calendrier
         } else {
-            ContentResolver cr = getActivity().getContentResolver();
-            ContentValues values = new ContentValues();
-            values.put(CalendarContract.Events.DTSTART, signalementObject.getDate());
-            values.put(CalendarContract.Events.TITLE, "Signalement d'un déchet");
-            values.put(CalendarContract.Events.DESCRIPTION, signalementObject.toString());
-            values.put(CalendarContract.Events.EVENT_LOCATION, signalementObject.getLocalisation());
-            values.put(CalendarContract.Events.HAS_ALARM, 1);
-            values.put(CalendarContract.Events.CALENDAR_ID, 1);
-            values.put(CalendarContract.Events.EVENT_TIMEZONE, Calendar.getInstance().getTimeZone().getID());
-            System.out.println(Calendar.getInstance().getTimeZone().getID());
-
-            Uri uri = cr.insert(CalendarContract.Events.CONTENT_URI, values);
-            Toast.makeText(getContext(),"Signalement ajouté dans votre Calendrier",Toast.LENGTH_LONG).show();
-
-            Intent intent = new Intent(Intent.ACTION_INSERT).setData(uri);
+            Calendar beginTime = Calendar.getInstance();
+            beginTime.set(2012, 0, 19, 7, 30);
+            Calendar endTime = Calendar.getInstance();
+            endTime.set(2012, 0, 19, 8, 30);
+            Intent intent = new Intent(Intent.ACTION_INSERT)
+                    .setData(CalendarContract.Events.CONTENT_URI)
+                    .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis())
+                    .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis())
+                    .putExtra(CalendarContract.Events.TITLE, "Yoga")
+                    .putExtra(CalendarContract.Events.DESCRIPTION, "Group class")
+                    .putExtra(CalendarContract.Events.EVENT_LOCATION, "The gym")
+                    .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY)
+                    .putExtra(Intent.EXTRA_EMAIL, "rowan@example.com,trevor@example.com");
             startActivity(intent);
         }
     }

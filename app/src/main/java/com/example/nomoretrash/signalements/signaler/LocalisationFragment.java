@@ -27,7 +27,9 @@ import com.example.nomoretrash.R;
 import com.example.nomoretrash.signalements.SignalementObject;
 
 import org.osmdroid.api.IMapController;
+import org.osmdroid.config.Configuration;
 import org.osmdroid.events.MapEventsReceiver;
+import org.osmdroid.library.BuildConfig;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
@@ -82,6 +84,7 @@ public class LocalisationFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.localisation_fragment, container, false);
         final IMapController mapController;
+        Configuration.getInstance().setUserAgentValue(BuildConfig.APPLICATION_ID);
 
         //Création de la map
         map = rootView.findViewById(R.id.map);
