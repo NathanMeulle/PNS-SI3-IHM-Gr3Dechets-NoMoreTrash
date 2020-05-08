@@ -144,23 +144,40 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
             //POP UP
             requestPermissions(permission, PERMISSION_CODE);//On demande l'accès au calendrier
         } else {
+            String dateS[] = signalementObject.getDate().split("[/ :]");
+            int date[] = StringToInt(dateS);
+
             Calendar beginTime = Calendar.getInstance();
-            beginTime.set(2012, 0, 19, 7, 30);
+            beginTime.set(date[2], date[1], date[0], date[3], date[4]);
             Calendar endTime = Calendar.getInstance();
-            endTime.set(2012, 0, 19, 8, 30);
+            endTime.set(date[2], date[1], date[0], date[3], date[4]);
             Intent intent = new Intent(Intent.ACTION_INSERT)
                     .setData(CalendarContract.Events.CONTENT_URI)
                     .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis())
                     .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis())
-                    .putExtra(CalendarContract.Events.TITLE, "Yoga")
-                    .putExtra(CalendarContract.Events.DESCRIPTION, "Group class")
-                    .putExtra(CalendarContract.Events.EVENT_LOCATION, "The gym")
-                    .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY)
-                    .putExtra(Intent.EXTRA_EMAIL, "rowan@example.com,trevor@example.com");
+                    .putExtra(CalendarContract.Events.TITLE, "Mon déchet signalé")
+                    .putExtra(CalendarContract.Events.DESCRIPTION, recap)
+                    .putExtra(CalendarContract.Events.EVENT_LOCATION, signalementObject.getLocalisation())
+                    .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_FREE)
+                    .putExtra(Intent.EXTRA_EMAIL, "nomoretrash3@gmail.com");
             startActivity(intent);
         }
     }
+    private int[] StringToInt(String[] s){
+        int[] r = new int[s.length];
+        for(int i = 0; i < s.length; i++){
+            r[i] = Integer.parseInt(s[i]);
+        }
+        return r;
+    }
 
+    private int[] dateFromString(String s){
+        int[] r = new int[5];
+        r[0]= Integer.parseInt(s.substring(0,2));
+        r[1]= Integer.parseInt(s.substring(3,5));
+        r[2]= Integer.parseInt(s.substring(3,5));
+        return r;
+    }
 
     private void sendNotification() {
         // Create two threads:
