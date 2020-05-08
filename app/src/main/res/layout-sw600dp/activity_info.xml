@@ -15,17 +15,18 @@
     >
 
     <Button
-        android:id="@+id/boutonRetour"
-        android:layout_width="221dp"
-        android:layout_height="78dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="00dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/boutonRetour"
+        android:layout_width="150dp"
+        android:layout_height="75dp"
         android:background="#00000000"
         android:drawableLeft="@drawable/retour"
         android:stateListAnimator="@null"
-        android:text="Retour"
-        android:textSize="40sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="25sp"
+        android:text="Retour"/>
 
     <TextView
         android:id="@+id/textView"
@@ -58,6 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/propos"
+                android:textSize="20sp"
                 android:textColor="#000"/>
 
         </LinearLayout>

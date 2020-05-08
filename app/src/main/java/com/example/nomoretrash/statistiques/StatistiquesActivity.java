@@ -75,19 +75,9 @@ public class StatistiquesActivity extends AppCompatActivity {
         });
 
         Intent intent = getIntent();
-
         if (intent.hasExtra("ma_liste_de_signalements")) {
             ArrayList<String> res = intent.getStringArrayListExtra("ma_liste_de_signalements");
-
             setStat(res);
-            System.out.println("rantanplan" +res);
-
-            try {
-                createDiagram(BATON);
-
-            } catch (Throwable throwable) {
-                throwable.printStackTrace();
-            }
         }
 
 
@@ -138,9 +128,7 @@ public class StatistiquesActivity extends AppCompatActivity {
     static DiagramFragment createDiagram(int type) throws Throwable {
         switch (type){
             case BATON: return DiagramBaton.newInstance();
-            case CIRCULAIRE:
-                return DiagramCircle.newInstance();
-
+            case CIRCULAIRE: return DiagramCircle.newInstance();
             default: throw new Throwable("erreur type incorrect");
         }
     }

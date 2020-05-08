@@ -18,216 +18,229 @@
         android:text="Retour"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/infos_generales"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="10dp"
-        android:text="Informations générales"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/boutonAnnuler" />
+        app:layout_constraintTop_toBottomOf="@id/boutonAnnuler">
 
-    <RadioGroup
-        android:id="@+id/groupInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/infos_generales">
-
-        <RadioButton
-            android:id="@+id/radio_dechetUnique"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="Déchet unique"
-            android:textColor="#000000"
-            android:textSize="20sp" />
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/infos_generales"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:text="Informations générales"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
 
-        <RadioButton
-            android:id="@+id/radio_dechargeSauvage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Décharge sauvage"
-            android:textColor="#000000"
-            android:textSize="20sp" />
-    </RadioGroup>
+            <RadioGroup
+                android:id="@+id/groupInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/infos_generales">
+
+                <RadioButton
+                    android:id="@+id/radio_dechetUnique"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Déchet unique"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <RadioButton
+                    android:id="@+id/radio_dechargeSauvage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Décharge sauvage"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+            </RadioGroup>
 
 
-    <TextView
-        android:id="@+id/type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="20dp"
-        android:text="Type"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/groupInfo" />
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:text="Type"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/groupInfo" />
 
-    <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/checkbox_verre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/type" />
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/checkbox_verre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/type" />
 
-    <TextView
-        android:id="@+id/verre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Verre"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintLeft_toRightOf="@id/checkbox_verre"
-        app:layout_constraintTop_toTopOf="@id/checkbox_verre" />
+            <TextView
+                android:id="@+id/verre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Verre"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toRightOf="@id/checkbox_verre"
+                app:layout_constraintTop_toTopOf="@id/checkbox_verre" />
 
-    <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/checkbox_carton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="@id/checkbox_verre"
-        app:layout_constraintTop_toBottomOf="@+id/checkbox_verre" />
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/checkbox_carton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/checkbox_verre"
+                app:layout_constraintTop_toBottomOf="@+id/checkbox_verre" />
 
-    <TextView
-        android:id="@+id/carton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Carton"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintLeft_toRightOf="@id/checkbox_carton"
-        app:layout_constraintTop_toTopOf="@id/checkbox_carton" />
+            <TextView
+                android:id="@+id/carton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carton"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toRightOf="@id/checkbox_carton"
+                app:layout_constraintTop_toTopOf="@id/checkbox_carton" />
 
-    <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/checkbox_papier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="@id/checkbox_carton"
-        app:layout_constraintTop_toBottomOf="@+id/checkbox_carton" />
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/checkbox_papier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/checkbox_carton"
+                app:layout_constraintTop_toBottomOf="@+id/checkbox_carton" />
 
-    <TextView
-        android:id="@+id/papier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Papier"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintLeft_toRightOf="@id/checkbox_papier"
-        app:layout_constraintTop_toTopOf="@id/checkbox_papier" />
+            <TextView
+                android:id="@+id/papier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Papier"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toRightOf="@id/checkbox_papier"
+                app:layout_constraintTop_toTopOf="@id/checkbox_papier" />
 
-    <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/checkbox_plastique"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="@id/checkbox_papier"
-        app:layout_constraintTop_toBottomOf="@+id/checkbox_papier" />
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/checkbox_plastique"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/checkbox_papier"
+                app:layout_constraintTop_toBottomOf="@+id/checkbox_papier" />
 
-    <TextView
-        android:id="@+id/plastique"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Plastique"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintLeft_toRightOf="@id/checkbox_plastique"
-        app:layout_constraintTop_toTopOf="@id/checkbox_plastique" />
+            <TextView
+                android:id="@+id/plastique"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Plastique"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toRightOf="@id/checkbox_plastique"
+                app:layout_constraintTop_toTopOf="@id/checkbox_plastique" />
 
-    <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/checkbox_metal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="@id/checkbox_plastique"
-        app:layout_constraintTop_toBottomOf="@+id/checkbox_plastique" />
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/checkbox_metal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/checkbox_plastique"
+                app:layout_constraintTop_toBottomOf="@+id/checkbox_plastique" />
 
-    <TextView
-        android:id="@+id/metal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Métal"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintLeft_toRightOf="@id/checkbox_metal"
-        app:layout_constraintTop_toTopOf="@id/checkbox_metal" />
+            <TextView
+                android:id="@+id/metal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Métal"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toRightOf="@id/checkbox_metal"
+                app:layout_constraintTop_toTopOf="@id/checkbox_metal" />
 
-    <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/checkbox_autre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="@id/checkbox_metal"
-        app:layout_constraintTop_toBottomOf="@+id/checkbox_metal" />
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/checkbox_autre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="@id/checkbox_metal"
+                app:layout_constraintTop_toBottomOf="@+id/checkbox_metal" />
 
-    <TextView
-        android:id="@+id/autre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Autre : "
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintLeft_toRightOf="@id/checkbox_autre"
-        app:layout_constraintTop_toTopOf="@id/checkbox_autre" />
+            <TextView
+                android:id="@+id/autre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Autre : "
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintLeft_toRightOf="@id/checkbox_autre"
+                app:layout_constraintTop_toTopOf="@id/checkbox_autre" />
 
-    <EditText
-        android:id="@+id/preciser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:hint="Préciser"
-        android:maxLength="20"
-        android:maxLines="1"
-        app:layout_constraintBottom_toBottomOf="@id/autre"
-        app:layout_constraintLeft_toRightOf="@id/autre"
-        app:layout_constraintTop_toTopOf="@id/autre" />
+            <EditText
+                android:id="@+id/preciser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:hint="Préciser"
+                android:maxLength="20"
+                android:maxLines="1"
+                app:layout_constraintBottom_toBottomOf="@id/autre"
+                app:layout_constraintLeft_toRightOf="@id/autre"
+                app:layout_constraintTop_toTopOf="@id/autre" />
 
-    <TextView
-        android:id="@+id/taille"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="15dp"
-        android:text="Taille"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/checkbox_autre" />
+            <TextView
+                android:id="@+id/taille"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="15dp"
+                android:text="Taille"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/checkbox_autre" />
 
-    <RadioGroup
-        android:id="@+id/grouptaille"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/taille">
+            <RadioGroup
+                android:id="@+id/grouptaille"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/taille">
 
-        <RadioButton
-            android:id="@+id/radio_petit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="Moins de 30 cm"
-            android:textColor="#000000"
-            android:textSize="20sp" />
+                <RadioButton
+                    android:id="@+id/radio_petit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Moins de 30 cm"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
 
-        <RadioButton
-            android:id="@+id/radio_grand"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Plus de 30 cm"
-            android:textColor="#000000"
-            android:textSize="20sp" />
-    </RadioGroup>
+                <RadioButton
+                    android:id="@+id/radio_grand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Plus de 30 cm"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+            </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
