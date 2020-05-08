@@ -36,6 +36,7 @@ public class DiagramCircle extends DiagramFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_diagram_circle, container, false);
 
+
         if (getyData() != null && getyData().length!=0) {
             setUpDiagramCircle(v);
         }
