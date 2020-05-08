@@ -73,13 +73,10 @@ public class DescriptionFragment extends Fragment {
                 if(!String.valueOf(s).equals("")) {
                     checkboxAutre.setChecked(true);
                     signalementObject.changeAUTRE();
-
                 }
-
                 else {
                     checkboxAutre.setChecked(false);
                     signalementObject.changeAUTRE();
-
                 }
             }
 
@@ -165,62 +162,21 @@ public class DescriptionFragment extends Fragment {
             }
         });
 
-        checkboxVerre.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                signalementObject.changeVERRE();
-            }
-        });
+        checkboxVerre.setOnClickListener(view -> signalementObject.changeVERRE());
 
-        checkboxCarton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                signalementObject.changeCARTON();
-            }
-        });
+        checkboxCarton.setOnClickListener(view -> signalementObject.changeCARTON());
 
-        checkboxPapier.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                signalementObject.changePAPIER();
-            }
-        });
+        checkboxPapier.setOnClickListener(view -> signalementObject.changePAPIER());
 
-        checkboxPlastique.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                signalementObject.changePLASTIQUE();
-            }
-        });
+        checkboxPlastique.setOnClickListener(view -> signalementObject.changePLASTIQUE());
 
-        checkboxMetal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                signalementObject.changeMETAL();
-            }
-        });
+        checkboxMetal.setOnClickListener(view -> signalementObject.changeMETAL());
 
-        checkboxAutre.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                signalementObject.changeAUTRE();
-            }
-        });
+        checkboxAutre.setOnClickListener(view -> signalementObject.changeAUTRE());
 
-        checkboxGros.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                signalementObject.changeGROS();
-            }
-        });
+        checkboxGros.setOnClickListener(view -> signalementObject.changeGROS());
 
-        checkboxPetit.setOnClickListener(new View.OnClickListener() {
-            @Override
-
-            public void onClick(View view) {
-                signalementObject.changePETIT();
-            }
-        });
+        checkboxPetit.setOnClickListener(view -> signalementObject.changePETIT());
     }
 
 

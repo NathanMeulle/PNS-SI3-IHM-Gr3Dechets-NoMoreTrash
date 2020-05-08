@@ -1,6 +1,5 @@
 package com.example.nomoretrash.signalements.signaler;
 
-
 import android.Manifest;
 import android.app.Activity;
 import android.content.ContentResolver;
@@ -137,9 +136,14 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
             mImageView.setRotation(90);
         }
     }
-    public void addToCalendar(){
 
-        try {
+    public void addToCalendar(){
+        if (ContextCompat.checkSelfPermission(FinalisationFragment.this.getContext(), Manifest.permission.WRITE_CALENDAR) == PackageManager.PERMISSION_DENIED) {
+            //Permission non accordée, on demande de nouveau la permission
+            String[] permission = {Manifest.permission.WRITE_CALENDAR, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+            //POP UP
+            requestPermissions(permission, PERMISSION_CODE);//On demande l'accès au calendrier
+        } else {
             ContentResolver cr = getActivity().getContentResolver();
             ContentValues values = new ContentValues();
             values.put(CalendarContract.Events.DTSTART, signalementObject.getDate());
@@ -150,17 +154,12 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
             values.put(CalendarContract.Events.CALENDAR_ID, 1);
             values.put(CalendarContract.Events.EVENT_TIMEZONE, Calendar.getInstance().getTimeZone().getID());
             System.out.println(Calendar.getInstance().getTimeZone().getID());
-            if (ContextCompat.checkSelfPermission(FinalisationFragment.this.getContext(), Manifest.permission.WRITE_CALENDAR) == PackageManager.PERMISSION_DENIED) {
-                //Permission non accordée, on demande de nouveau la permission
-                String[] permission = {Manifest.permission.WRITE_CALENDAR, Manifest.permission.WRITE_EXTERNAL_STORAGE};
-                //POP UP
-                requestPermissions(permission, PERMISSION_CODE);//On demande l'accès au calendrier
-            } else {
-                Uri uri = cr.insert(CalendarContract.Events.CONTENT_URI, values);
-                Toast.makeText(getContext(),"Signalement ajouté dans votre Calendrier",Toast.LENGTH_LONG).show();
-            }
-        }catch (Exception e) {
-            e.printStackTrace();
+
+            Uri uri = cr.insert(CalendarContract.Events.CONTENT_URI, values);
+            Toast.makeText(getContext(),"Signalement ajouté dans votre Calendrier",Toast.LENGTH_LONG).show();
+
+            Intent intent = new Intent(Intent.ACTION_INSERT).setData(uri);
+            startActivity(intent);
         }
     }
 
@@ -216,7 +215,7 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
     private void sendNotificationOnChannel(int icon, String title, String message, String channelId, int priority, Context context, Bitmap photo) {
 
         try {
-            for(int i = 1 ; i <= 10; i++){
+            for(int i = 1 ; i <= 20; i++){
                 Thread.sleep(1000);
                 System.out.println(i+" seconde(s) se sont écoulées");
             }
@@ -261,7 +260,7 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
                 recap += " métal,";
             if (signalementObject.isAUTRE())
                 recap += " autre,";
-            // TODO: 12/04/2020 a modifier en fonction de se qu'écrit l'utilisateur
+            // TODO: 12/04/2020 a modifier en fonction de ce qu'écrit l'utilisateur
         } else part2 = false;
         if (signalementObject.isGROS() || signalementObject.isPETIT()) {
             part3 = true;
@@ -294,7 +293,6 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
         part3 = false;
         part4 = false;
         notComplete = false;
-
     }
 }
 

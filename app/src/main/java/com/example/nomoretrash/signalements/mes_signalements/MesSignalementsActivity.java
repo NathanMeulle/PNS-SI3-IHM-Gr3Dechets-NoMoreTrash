@@ -23,7 +23,6 @@ public class MesSignalementsActivity extends ListActivity implements Signalement
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mes_signalements);
 
-
         //Liste de signalements
         listView = getListView();
 
