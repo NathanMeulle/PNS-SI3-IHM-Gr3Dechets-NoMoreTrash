@@ -9,8 +9,8 @@ Project to create an application for reporting waste.
 ## Présentation
 
 **Membres** : 
-- [Nada Elabdellaoui](https://github.com/Nadaelabdellaoui20)
 - [Leo Burette](https://github.com/LeoBurette)
+- [Nada Elabdellaoui](https://github.com/Nadaelabdellaoui20)
 - [Thibaut Esteve](https://github.com/Thibaut-Esteve)
 - [Romain Lamere](https://github.com/RomainLamere)
 - [Nathan Meulle](https://github.com/NathanMeulle)

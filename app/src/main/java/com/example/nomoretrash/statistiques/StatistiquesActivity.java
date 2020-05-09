@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import com.example.nomoretrash.R;
 import com.example.nomoretrash.statistiques.diagram.DiagramBaton;

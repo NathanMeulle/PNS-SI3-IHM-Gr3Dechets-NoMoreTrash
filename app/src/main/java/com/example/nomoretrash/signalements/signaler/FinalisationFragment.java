@@ -2,14 +2,11 @@ package com.example.nomoretrash.signalements.signaler;
 
 import android.Manifest;
 import android.app.Activity;
-import android.content.ContentResolver;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
-import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.view.LayoutInflater;
@@ -168,14 +165,6 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
         for(int i = 0; i < s.length; i++){
             r[i] = Integer.parseInt(s[i]);
         }
-        return r;
-    }
-
-    private int[] dateFromString(String s){
-        int[] r = new int[5];
-        r[0]= Integer.parseInt(s.substring(0,2));
-        r[1]= Integer.parseInt(s.substring(3,5));
-        r[2]= Integer.parseInt(s.substring(3,5));
         return r;
     }
 

@@ -1,17 +1,26 @@
 package com.example.nomoretrash.statistiques.diagram;
 
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 
 import com.example.nomoretrash.R;
-import com.example.nomoretrash.signalements.signaler.DescriptionFragment;
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.PercentFormatter;
+import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +31,8 @@ public class DiagramCircle extends DiagramFragment {
     private static final int[] MY_COLORS = {Color.rgb(193, 37, 82), Color.rgb(255, 102, 0),
             Color.rgb(245, 199, 0), Color.rgb(106, 150, 31),
             Color.rgb(179, 100, 53), Color.rgb(20, 90, 150)};
+
+    PieChart pieChart;
 
 
     public DiagramCircle() {
@@ -62,7 +73,7 @@ public class DiagramCircle extends DiagramFragment {
         dataSet.setColors(MY_COLORS);
 
         //Création du graph
-        PieChart pieChart = v.findViewById(R.id.pieChart1);
+        pieChart = v.findViewById(R.id.pieChart1);
         pieChart.setNoDataText("Pas encore de statistiques, effectuez d'autres signalements pour en avoir !");
         pieChart.setNoDataTextColor(Color.BLACK);
         pieChart.setData(pieData);
@@ -71,6 +82,30 @@ public class DiagramCircle extends DiagramFragment {
         pieChart.setRotationEnabled(false);
         pieChart.setHighlightPerTapEnabled(true);
         pieChart.getData().setDrawValues(false);
+        if(Configuration.ORIENTATION_LANDSCAPE==getActivity().getResources().getConfiguration().orientation) {
+            pieChart.getLegend().setVerticalAlignment(Legend.LegendVerticalAlignment.CENTER);
+            pieChart.getLegend().setOrientation(Legend.LegendOrientation.VERTICAL);
+            pieChart.setCenterTextSize(22);
+        }
+        else if(Configuration.ORIENTATION_PORTRAIT==getActivity().getResources().getConfiguration().orientation) {
+            pieChart.getLegend().setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
+            pieChart.getLegend().setOrientation(Legend.LegendOrientation.HORIZONTAL);
+            pieChart.setCenterTextSize(26);
+        }
+
+        pieChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
+            @Override
+            public void onValueSelected(Entry e, Highlight h) {
+                if (e == null)
+                    return;
+                pieChart.setCenterText(pieEntryList.get((int)h.getX()).getLabel() + " : " + Math.round(100*pieEntryList.get((int)h.getX()).getValue()/pieData.getYValueSum()) + "%");
+                pieChart.setCenterTextColor(Color.rgb(0,0,0));
+            }
+
+            @Override
+            public void onNothingSelected() {
+            }
+        });
         pieChart.setEntryLabelColor(Color.rgb(0,0,0));
         pieChart.setEntryLabelTextSize(18);
         pieChart.getLegend().setTextSize(21-getyData().length);

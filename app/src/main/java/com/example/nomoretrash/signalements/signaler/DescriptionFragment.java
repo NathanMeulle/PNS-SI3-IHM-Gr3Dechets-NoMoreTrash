@@ -104,25 +104,14 @@ public class DescriptionFragment extends Fragment {
         TextView type = rootView.findViewById(R.id.type);
         TextView taille = rootView.findViewById(R.id.taille);
 
-        infos.setTextColor(Color.BLACK);
         type.setTextColor(Color.BLACK);
-        taille.setTextColor(Color.BLACK);
     }
 
     private void changeColorsText(View rootView) {
-        TextView infos = rootView.findViewById(R.id.infos_generales);
         TextView type = rootView.findViewById(R.id.type);
-        TextView taille = rootView.findViewById(R.id.taille);
-
-        if(FinalisationFragment.notComplete && !FinalisationFragment.part1) {
-            infos.setTextColor(Color.RED);
-        }
 
         if(FinalisationFragment.notComplete && !FinalisationFragment.part2) {
             type.setTextColor(Color.RED);
-        }
-        if(FinalisationFragment.notComplete && !FinalisationFragment.part3) {
-            taille.setTextColor(Color.RED);
         }
     }
 
@@ -143,22 +132,16 @@ public class DescriptionFragment extends Fragment {
         checkboxDechetUnique.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                signalementObject.changeDECHET_UNIQUE();
-                if (signalementObject.isDECHET_UNIQUE() && signalementObject.isDECHARGE_SAUVAGE()) {
-                    signalementObject.changeDECHARGE_SAUVAGE();
-                    checkboxDechargeSauvage.setChecked(false);
-                }
+                signalementObject.setDECHARGE_SAUVAGE(false);
+                signalementObject.setDECHET_UNIQUE(true);
             }
         });
 
         checkboxDechargeSauvage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                signalementObject.changeDECHARGE_SAUVAGE();
-                if (signalementObject.isDECHET_UNIQUE() && signalementObject.isDECHARGE_SAUVAGE()) {
-                    signalementObject.changeDECHET_UNIQUE();
-                    checkboxDechetUnique.setChecked(false);
-                }
+                signalementObject.setDECHARGE_SAUVAGE(true);
+                signalementObject.setDECHET_UNIQUE(false);
             }
         });
 
@@ -174,9 +157,21 @@ public class DescriptionFragment extends Fragment {
 
         checkboxAutre.setOnClickListener(view -> signalementObject.changeAUTRE());
 
-        checkboxGros.setOnClickListener(view -> signalementObject.changeGROS());
+        checkboxGros.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signalementObject.setGROS(true);
+                signalementObject.setPETIT(false);
+            }
+        });
 
-        checkboxPetit.setOnClickListener(view -> signalementObject.changePETIT());
+        checkboxPetit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signalementObject.setPETIT(true);
+                signalementObject.setGROS(false);
+            }
+        });
     }
 
 
