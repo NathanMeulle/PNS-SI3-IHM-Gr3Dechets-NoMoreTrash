@@ -240,6 +240,9 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
         else {
             notification.setSmallIcon(icon).setContentTitle(title).setContentText(message).setPriority(priority);
         }
+        ///////////////////// ICI /////////////////////////
+        ApplicationDemo.deleteNotification(notificationId);
+        ///////////////////////////////////////////////////
         ApplicationDemo.getNotificationManager().notify( ++notificationId, notification.build());
     }
 

@@ -3,6 +3,7 @@ package com.example.nomoretrash;
 import android.app.Application;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Context;
 import android.os.Build;
 
 import java.util.Objects;
@@ -25,6 +26,12 @@ public class ApplicationDemo extends Application {
             notificationManager = getSystemService(NotificationManager.class);
             Objects.requireNonNull(notificationManager).createNotificationChannel(channel);
         }
+    }
+
+    public static void deleteNotification(int NOTIFICATION_ID){
+        //notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+        //la suppression de la notification se fait grâce à son ID
+        notificationManager.cancel(NOTIFICATION_ID);
     }
 
 
