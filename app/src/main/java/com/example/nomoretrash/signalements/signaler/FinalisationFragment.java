@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.os.Bundle;
 import android.provider.CalendarContract;
@@ -201,7 +202,7 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
                 signalementObject.setStatus(Status.EN_COURS);
                 sendNotificationOnChannel(R.drawable.chargement, titleConfirmation, notifConfirmation, saveChannelId, NotificationCompat.PRIORITY_DEFAULT, saveContext, signalementObject.getPhoto());
                 signalementObject.setStatus(Status.PRIS_EN_CHARGE);
-                sendNotificationOnChannel(R.drawable.validation, titleChecked, notifChecked, saveChannelId, NotificationCompat.PRIORITY_HIGH, saveContext, null);
+                sendNotificationOnChannel(R.drawable.validation, titleChecked, notifChecked, saveChannelId, NotificationCompat.PRIORITY_HIGH, saveContext, signalementObject.getPhoto());
                 signalementObject.setStatus(Status.TRAITE);
             }
         };
@@ -224,7 +225,7 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
     private void sendNotificationOnChannel(int icon, String title, String message, String channelId, int priority, Context context, Bitmap photo) {
 
         try {
-            for(int i = 1 ; i <= 20; i++){
+            for(int i = 1 ; i <= 15; i++){
                 Thread.sleep(1000);
                 System.out.println(i+" seconde(s) se sont écoulées");
             }
@@ -233,12 +234,16 @@ public class FinalisationFragment extends Fragment implements SignalementsObject
             Thread.currentThread().interrupt();
         }
         NotificationCompat.Builder notification = new NotificationCompat.Builder(context, channelId);
-        if(photo!=null){
-             notification.setSmallIcon(icon).setContentTitle(title).setContentText(message).setPriority(priority)
-                    .setLargeIcon(rotateBitmap(signalementObject.getPhoto(), 90));
+        if(photo!=null) {
+
+            notification.setSmallIcon(icon).setContentTitle(title).setContentText(message).setPriority(priority)
+                    .setLargeIcon(rotateBitmap(signalementObject.getPhoto(), 90))
+                    .setColor(Color.GREEN);
         }
         else {
-            notification.setSmallIcon(icon).setContentTitle(title).setContentText(message).setPriority(priority);
+            notification.setSmallIcon(icon).setContentTitle(title).setContentText(message).setPriority(priority)
+                    .setColor(Color.GREEN);
+
         }
         ///////////////////// ICI /////////////////////////
         ApplicationDemo.deleteNotification(notificationId);

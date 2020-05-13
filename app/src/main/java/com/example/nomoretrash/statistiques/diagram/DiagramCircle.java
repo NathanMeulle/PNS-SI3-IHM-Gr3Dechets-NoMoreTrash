@@ -3,13 +3,9 @@ package com.example.nomoretrash.statistiques.diagram;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
 
 import com.example.nomoretrash.R;
 import com.github.mikephil.charting.charts.PieChart;
@@ -18,7 +14,6 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
-import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 
