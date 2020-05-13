@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/recap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:textSize="20sp"
+        android:text="Ceci correspond au texte récapitulatif du signalement"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/photo"
+        android:layout_width="317dp"
+        android:layout_height="308dp"
+        android:layout_marginTop="40dp"
+        android:background="#000"
+        android:padding="1dp"
+        android:rotation="0"
+        android:scaleType="fitXY"
+        android:src="@drawable/photo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recap" />
+
+    <EditText
+        android:id="@+id/info_comp"
+        android:layout_width="363dp"
+        android:layout_height="94dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/border"
+        android:gravity="top|left"
+        android:hint="Information complémentaire : ..."
+        android:inputType="textMultiLine"
+        android:lines="8"
+        android:maxLines="8"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/boutonFinir"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/photo"
+        app:layout_constraintVertical_bias="0.004" />
+
+    <Button
+        android:id="@+id/boutonFinir"
+        android:layout_width="215dp"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="72dp"
+        android:background="#4CAF50"
+        android:text="Valider"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/boutonCalendrier"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/boutonCalendrier"
+        android:layout_width="215dp"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:background="#4CAF50"
+        android:text="Ajouter au Calendrier et valider"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="400dp"
+        app:layout_constraintRight_toLeftOf="@id/boutonFinir"
+        app:layout_constraintTop_toTopOf="@id/boutonFinir" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
